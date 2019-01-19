@@ -10,7 +10,7 @@ public class BaseMovement : MonoBehaviour {
 
     public enum PlayerState
     {
-        Walking,Casting,Attacking
+        Walking,Action,Block,dodge
     }
     public PlayerState currentPlayerState;
 
@@ -37,18 +37,26 @@ public class BaseMovement : MonoBehaviour {
 
                 Vector3 RIGHT = transform.TransformDirection(Vector3.right);
                 Vector3 FORWARD = transform.TransformDirection(Vector3.forward);
-                transform.localPosition += RIGHT * Input.GetAxis("Horizontal") * placeholderMovementSpeed / 1.5f * Time.deltaTime;
+                transform.localPosition += RIGHT * Input.GetAxis("Horizontal") * placeholderMovementSpeed / 1.5f * Time.deltaTime; // makes the player move slower to the sides
                 transform.localPosition += FORWARD * Input.GetAxis("Vertical") * placeholderMovementSpeed * Time.deltaTime;
 
+                break;
+            case PlayerState.Action:
+
+                // Set animation
+
+
 
                 break;
-            case PlayerState.Casting:
+
+            case PlayerState.Block:
                 break;
-            case PlayerState.Attacking:
+
+            case PlayerState.dodge:
                 break;
+
             default:
                 break;
         }
-
     }
 }
