@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class GM_Cards : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<Card> P1Combo1;
+    public List<Card> P1Combo2;
+    [Space]
+    public List<Card> P2Combo1;
+    public List<Card> P2Combo2;
 
-    // Update is called once per frame
-    void Update()
+    public void addCard()
     {
-        
+
+    }
+    public void removeCard()
+    {
+
     }
 }

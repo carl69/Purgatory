@@ -17,5 +17,6 @@ public class CM_OwendCards : MonoBehaviour
     private void Start()
     {
         GiveStarterDeck();
+        print("Yo here's your starter deck!");
     }
 }

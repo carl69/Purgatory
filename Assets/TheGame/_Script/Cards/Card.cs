@@ -8,13 +8,16 @@ public class Card : ScriptableObject
     public string Name;
     [TextArea]
     public string Description;
-    
-    public Sprite CardSprite;
+
+    public int ComboCost;
+    public float StaminaCost;
 
     public enum cardType
     {
-        Attack,Enchant
+        Attack,Magic,Enchant
     }
     public cardType CardType;
-
+    [Space]
+    public Sprite CardSprite;
+    public Animation AttackAnimation;
 }
