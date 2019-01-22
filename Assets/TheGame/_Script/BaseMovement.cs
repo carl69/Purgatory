@@ -43,9 +43,11 @@ public class BaseMovement : MonoBehaviour {
                 break;
             case PlayerState.Action:
 
-                // Set animation
+                // Sett animation for the action
 
+                // trigger or enchantment
 
+                // Do the action
 
                 break;
 
