@@ -136,3 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af1f2f9fbaabd144ad14b0b932b9a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  P1Combo1: []
+  P1Combo2: []
+  P2Combo1: []
+  P2Combo2: []

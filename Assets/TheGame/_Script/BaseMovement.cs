@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseMovement : MonoBehaviour {
+    public Card player;
+
     float placeholderMovementSpeed = 5;
     float placeholderRotateDampening = 20;
 
@@ -14,11 +16,35 @@ public class BaseMovement : MonoBehaviour {
     }
     public PlayerState currentPlayerState;
 
+    public enum Player
+    {
+        Player_1,Player_2
+    }
+    public Player ControllingPlayer;
+
+    public List<Card> Combo01;
+    public List<Card> Combo02;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+
+        GameObject GM = GameObject.FindGameObjectWithTag("GM");
+        GM_Cards GmCards = GM.GetComponent<GM_Cards>();
+
+        switch (ControllingPlayer)
+        {
+            case Player.Player_1:
+                Combo01 = GmCards.P1Combo1;
+                Combo02 = GmCards.P1Combo2;
+                break;
+            case Player.Player_2:
+                Combo01 = GmCards.P2Combo1;
+                Combo02 = GmCards.P2Combo2;
+                break;
+            default:
+                break;
+        }
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
