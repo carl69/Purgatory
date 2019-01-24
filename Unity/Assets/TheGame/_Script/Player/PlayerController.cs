@@ -24,6 +24,19 @@ public class PlayerController : MonoBehaviour
 
         movementDirection.y = movementDirection.y + gravityScale*(Physics.gravity.y * Time.deltaTime);
 
+        // GONNA PUT PLACEHOLDER CODE HERE
+        if (movementDirection.x != 0 || movementDirection.z != 0)
+        {
+            transform.GetChild(0).GetComponent<Animator>().SetBool("Walking",true);
+            transform.GetChild(0).GetComponent<Animator>().SetFloat("WalkingSpeed", movementDirection.z);
+
+        }
+        else
+        {
+            transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", false);
+
+        }
+
         controller.Move(movementDirection * Time.deltaTime);
 
  
