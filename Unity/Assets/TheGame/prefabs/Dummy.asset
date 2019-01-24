@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: New Class
+  m_Script: {fileID: 11500000, guid: 1fa96b3f870126e4aa53e7d3e03943d7, type: 3}
+  m_Name: Dummy
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
-  HP: 0
-  Def: 0
+  HP: 1000
+  Def: 20
