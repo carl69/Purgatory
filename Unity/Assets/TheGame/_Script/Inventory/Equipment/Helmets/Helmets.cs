@@ -6,12 +6,20 @@ public class Helmets : MonoBehaviour
 {
 
     // A class for Helmet attributes
-    class Helmet
+    [System.Serializable]
+    public class Helmet
     {
+        [SerializeField]
         private string tag;
+        [SerializeField]
         private float strength;
     }
 
-    private List<Helmet> helmets =  new List<Helmet>();
+    [SerializeField]
+    private List<Helmet> helmets = new List<Helmet>();
 
+    public List<Helmet> getHelmets()
+    {
+        return helmets;
+    }
 }
