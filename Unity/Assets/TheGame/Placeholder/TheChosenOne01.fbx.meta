@@ -254,6 +254,12 @@ ModelImporter:
     7400012: Armature|ArmatureAction.002
     7400014: Armature|Combat_Attack_Lunge
     7400016: Armature|Combat_Idle
+    7400018: Combat_Walking
+    7400020: Combat_Attack_Lunge.001
+    7400022: Armature|Combat_walk
+    7400024: Armature|Attack_Lunge
+    7400026: Armature|Movement_Idle
+    7400028: Armature|Movement_walk
     11100000: //RootNode
     13700000: TheChosenOne
     2186277476908879412: ImportLogs
