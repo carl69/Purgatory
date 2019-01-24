@@ -8,17 +8,16 @@ public class Card : ScriptableObject
     public string Name;
     [TextArea]
     public string Description;
-
-    public int ComboCost;
-    public float StaminaCost;
+    [Space]
+    public int ComboCost; // how much the card cost in a combo
+    public float StaminaCost; // how much stamina is drained from using this card
 
     public enum cardType
     {
-        Attack,Magic,Enchant
+        Attack,Magic
     }
-    public cardType CardType;
+    public cardType CardType; // the type of the card
     [Space]
     public Sprite CardSprite;
     public Animation AttackAnimation;
 }
-
