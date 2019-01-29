@@ -33,12 +33,19 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Mouse X") * rotateSpeed;
+        float deadzone = 0.25f;
+        Vector2 stickInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        if (stickInput.magnitude < deadzone)
+            stickInput = Vector2.zero;
+        else
+            stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
+
+        float horizontal = stickInput.x * rotateSpeed;
 
         tagetParent.Rotate(0, horizontal, 0);
 
         //get the y position of the mouse and rotates the pivot 
-        float vertical = Input.GetAxis("Mouse Y") *rotateSpeed;
+        float vertical = stickInput.y * rotateSpeed;
 
         //
         if (invertedY)
