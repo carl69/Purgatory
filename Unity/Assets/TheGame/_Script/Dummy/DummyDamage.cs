@@ -9,7 +9,6 @@ public class DummyDamage : MonoBehaviour
 
 public void TakeDamage( float damage )
     {
-
         float AfterArmoreAdd = damage - Dummy.Def; // Should get from playerManager
 
         if (AfterArmoreAdd <= 0) // checks if damage were delt
