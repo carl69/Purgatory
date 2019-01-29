@@ -142,11 +142,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Helmets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Arms: []
+  - tag: a
+    strength: 20
+  Arms:
+  - tag: 
   Chests: []
   Legs: []
 --- !u!4 &1016234615

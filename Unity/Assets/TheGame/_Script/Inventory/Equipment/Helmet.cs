@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Helmet : EquipmentItems
 {
     public Helmet(string t) : base(t)
@@ -11,4 +12,9 @@ public class Helmet : EquipmentItems
     // New variables for the helmet
     [SerializeField]
     private float strength;
+
+    public float getStrength()
+    {
+        return strength;
+    }
 }

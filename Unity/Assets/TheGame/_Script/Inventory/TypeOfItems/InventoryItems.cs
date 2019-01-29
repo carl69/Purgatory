@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InventoryItems : MonoBehaviour
+[System.Serializable]
+public class InventoryItems
 {
     [SerializeField]
-    protected string tag;
+    private string tag;
+
 
     public InventoryItems(string t)
     {
         this.tag = t;
+    }
+
+    public string getTag()
+    {
+        return this.tag;
     }
 
 }

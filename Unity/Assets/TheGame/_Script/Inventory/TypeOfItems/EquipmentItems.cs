@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EquipmentItems : InventoryItems
+[System.Serializable]
+public class EquipmentItems : InventoryItems
 {
     public EquipmentItems(string t) : base(t)
     {
