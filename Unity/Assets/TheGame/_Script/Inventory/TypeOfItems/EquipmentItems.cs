@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class EquipmentItems : InventoryItems
 {
-    public EquipmentItems(string t) : base(t)
+    public EquipmentItems(string t, int id) : base(t, id)
     {
     }
 }

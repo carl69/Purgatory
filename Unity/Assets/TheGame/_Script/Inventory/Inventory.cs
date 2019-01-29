@@ -4,42 +4,47 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-
+    // Inventory dictionary
     private Dictionary<string, Dictionary<string, List<InventoryItems>>> inventory = new Dictionary<string, Dictionary<string, List<InventoryItems>>>();
 
     // Equipment dictionary
-    private Dictionary<string, List<InventoryItems>> equipment = new Dictionary<string, List<InventoryItems>>();
+    private Dictionary<string, List<InventoryItems>> Equipment = new Dictionary<string, List<InventoryItems>>();
 
     // Lists of the equipment dictionary
     [SerializeField]
     private List<Helmet> Helmets = new List<Helmet>();
     [SerializeField]
-    private List<InventoryItems> Arms = new List<InventoryItems>();
+    private List<Arm> Arms = new List<Arm>();
     [SerializeField]
-    private List<InventoryItems> Chests = new List<InventoryItems>();
+    private List<Chest> Chests = new List<Chest>();
     [SerializeField]
-    private List<InventoryItems> Legs = new List<InventoryItems>();
+    private List<Leg> Legs = new List<Leg>();
 
     private void Start()
     {
         // Adding the equipment dictionary and his lists
-        inventory.Add("Equipment", equipment);
-        equipment.Add("Helmets", Helmets.ConvertAll(x => (InventoryItems)x));
-        equipment.Add("Arms", Arms);
-        equipment.Add("Chests", Chests);
-        equipment.Add("Legs", Legs);
+        inventory.Add("Equipment", Equipment);
+        Equipment.Add("Helmets", Helmets.ConvertAll(x => (InventoryItems)x));
+        Equipment.Add("Arms", Arms.ConvertAll(x => (InventoryItems)x));
+        Equipment.Add("Chests", Chests.ConvertAll(x => (InventoryItems)x));
+        Equipment.Add("Legs", Legs.ConvertAll(x => (InventoryItems)x));
     }
 
     private void Update()
     {
-        ////string name = inventory["Equipment"]["Helmets"][0].getTag();
-        ////Debug.Log(name);
+        //string name = inventory["Equipment"]["Helmets"][0].getTag();
+        //Debug.Log(name);
 
-        //Helmets.ConvertAll(x => (Helmet)x);
+
         // Example to access a Helmet called "a"
-        Helmet h = (Helmet)inventory["Equipment"]["Helmets"].Find(x => x.getTag() == "a");
-        float strength = h.getStrength();
-        //float s = (Helmet)inventory["Equipment"]["Helmets"][0].getStrength();
-        Debug.Log(strength);
+        //Helmet h = (Helmet)inventory["Equipment"]["Helmets"].Find(x => x.getTag() == "a");
+        //float strength = h.getStrength();
+        //Debug.Log(strength);
+
+    }
+
+    public Dictionary<string, Dictionary<string, List<InventoryItems>>> getInventory()
+    {
+        return inventory;
     }
 }

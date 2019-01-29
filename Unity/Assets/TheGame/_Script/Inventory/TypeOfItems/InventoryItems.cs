@@ -7,16 +7,19 @@ public class InventoryItems
 {
     [SerializeField]
     private string tag;
+    [SerializeField]
+    private int Id;
 
 
-    public InventoryItems(string t)
+    public InventoryItems(string t, int id)
     {
         this.tag = t;
+        this.Id = id;
     }
 
-    public string getTag()
+    public int getId()
     {
-        return this.tag;
+        return this.Id;
     }
 
 }

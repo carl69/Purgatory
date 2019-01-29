@@ -142,10 +142,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Helmets:
-  - tag: a
-    strength: 20
+  - tag: Spartan Helmet
+    Id: 1
+    strength: 0
   Arms:
   - tag: 
+    Id: 0
+    endurance: 0
   Chests: []
   Legs: []
 --- !u!4 &1016234615

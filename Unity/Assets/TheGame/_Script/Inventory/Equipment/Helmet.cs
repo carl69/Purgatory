@@ -5,9 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class Helmet : EquipmentItems
 {
-    public Helmet(string t) : base(t)
+    public Helmet(string t, int id) : base(t, id)
     {
     }
+     
 
     // New variables for the helmet
     [SerializeField]
