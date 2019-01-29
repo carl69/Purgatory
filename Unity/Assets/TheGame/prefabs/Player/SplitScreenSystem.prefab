@@ -165,9 +165,19 @@ PrefabInstance:
       objectReference: {fileID: 8949710172083895550}
     - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
+      propertyPath: rotateSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
       propertyPath: pivot
       value: 
       objectReference: {fileID: 4162778806564140250}
+    - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: invertedY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7667229571090416802, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_Bones.Array.data[0]
@@ -1207,9 +1217,19 @@ PrefabInstance:
       objectReference: {fileID: 4951890964531631403}
     - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
+      propertyPath: rotateSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
       propertyPath: pivot
       value: 
       objectReference: {fileID: 94098574204919055}
+    - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: invertedY
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7667229571090416802, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_Bones.Array.data[0]
