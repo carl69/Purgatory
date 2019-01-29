@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    InventoryExtensions inventoryExtensions;
+    //private InventoryExtensions inventoryExtensions;
 
     // Inventory dictionary
     private Dictionary<string, Dictionary<string, List<InventoryItems>>> inventory = new Dictionary<string, Dictionary<string, List<InventoryItems>>>();
@@ -22,6 +22,15 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private List<Leg> Legs = new List<Leg>();
 
+    // Cards dictionary
+    private Dictionary<string, List<InventoryItems>> Cards = new Dictionary<string, List<InventoryItems>>();
+
+    // Lists of the cards dictionary
+    [SerializeField]
+    private List<MagicCard> MagicCards = new List<MagicCard>();
+    [SerializeField]
+    private List<AttackCard> AttackCards = new List<AttackCard>();
+
     private void Start()
     {
 
@@ -32,8 +41,13 @@ public class Inventory : MonoBehaviour
         Equipment.Add("Chests", Chests.ConvertAll(x => (InventoryItems)x));
         Equipment.Add("Legs", Legs.ConvertAll(x => (InventoryItems)x));
 
+        // Adding the cards dictionary and his lists
+        inventory.Add("Cards", Cards);
+        Equipment.Add("MagicCards", MagicCards.ConvertAll(x => (InventoryItems)x));
+        Equipment.Add("AttackCards", AttackCards.ConvertAll(x => (InventoryItems)x));
+
         // To access the inventoryExtensions methods
-        inventoryExtensions = GetComponent<InventoryExtensions>();
+        //inventoryExtensions = GetComponent<InventoryExtensions>();
     }
 
     public Dictionary<string, Dictionary<string, List<InventoryItems>>> getInventory()
