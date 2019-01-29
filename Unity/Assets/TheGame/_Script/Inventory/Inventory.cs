@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    InventoryExtensions inventoryExtensions;
+
     // Inventory dictionary
     private Dictionary<string, Dictionary<string, List<InventoryItems>>> inventory = new Dictionary<string, Dictionary<string, List<InventoryItems>>>();
 
@@ -22,25 +24,16 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+
         // Adding the equipment dictionary and his lists
         inventory.Add("Equipment", Equipment);
         Equipment.Add("Helmets", Helmets.ConvertAll(x => (InventoryItems)x));
         Equipment.Add("Arms", Arms.ConvertAll(x => (InventoryItems)x));
         Equipment.Add("Chests", Chests.ConvertAll(x => (InventoryItems)x));
         Equipment.Add("Legs", Legs.ConvertAll(x => (InventoryItems)x));
-    }
 
-    private void Update()
-    {
-        //string name = inventory["Equipment"]["Helmets"][0].getTag();
-        //Debug.Log(name);
-
-
-        // Example to access a Helmet called "a"
-        //Helmet h = (Helmet)inventory["Equipment"]["Helmets"].Find(x => x.getTag() == "a");
-        //float strength = h.getStrength();
-        //Debug.Log(strength);
-
+        // To access the inventoryExtensions methods
+        inventoryExtensions = GetComponent<InventoryExtensions>();
     }
 
     public Dictionary<string, Dictionary<string, List<InventoryItems>>> getInventory()

@@ -17,6 +17,7 @@ public class InventoryItems
         this.Id = id;
     }
 
+
     public int getId()
     {
         return this.Id;

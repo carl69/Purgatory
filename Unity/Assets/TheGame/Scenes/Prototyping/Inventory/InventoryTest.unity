@@ -112,24 +112,13 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1016234613
+--- !u!1 &1016234613 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8106420068749274205, guid: 4b07725b817864d47a1d24e05e98c66d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8106420069077577256}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1016234615}
-  - component: {fileID: 1016234614}
-  m_Layer: 0
-  m_Name: Inventory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1016234614
+--- !u!114 &1016234616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,33 +127,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1016234613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 826e13f76d27a6a4fac4e58ac65687d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 21f65ffdf4ca4ff498f486181312174a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Helmets:
-  - tag: Spartan Helmet
-    Id: 1
-    strength: 0
-  Arms:
-  - tag: 
-    Id: 0
-    endurance: 0
-  Chests: []
-  Legs: []
---- !u!4 &1016234615
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016234613}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7231202, y: 0.027161114, z: -2.04588}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1171637777
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,3 +281,113 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8106420069077577256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8106420068749274205, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_Name
+      value: Inventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.7231202
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.027161114
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.04588
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: Chests.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: Legs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: Helmets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: Helmets.Array.data[0].strength
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: Helmets.Array.data[1].tag
+      value: Spartan Helmet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: Helmets.Array.data[1].Id
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: Helmets.Array.data[1].strength
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: Helmets.Array.data[0].H
+      value: 
+      objectReference: {fileID: 11400000, guid: 065ff5c28c73c3e46b75fdcc8bd4011f,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4b07725b817864d47a1d24e05e98c66d, type: 3}
