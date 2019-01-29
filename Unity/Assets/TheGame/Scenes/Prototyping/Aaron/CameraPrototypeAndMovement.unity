@@ -703,5 +703,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: DashDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: gravityScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: Drag.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: Drag.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: Drag.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}

@@ -11,23 +11,15 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 movementDirection;
 
-    Vector3 _velocity;
-    Vector3 Drag;
-    float DashDistance;
+    public Vector3 Drag;
+    public float DashDistance;
 
     Rigidbody rb;
-
-    public float dashTime;
-    public float dashSpeed;
-    public float startDashTime;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
-
-
-        dashTime = startDashTime;
     }
 
     // Update is called once per frame
@@ -35,7 +27,7 @@ public class PlayerController : MonoBehaviour
     {
 
         //movementDirection = new Vector3(Input.GetAxis("Horizontal")*moveSpeed, 0.0f, Input.GetAxis("Vertical")*moveSpeed);
-        movementDirection = (transform.forward * Input.GetAxis("Vertical") /** moveSpeed*/) + (transform.right * Input.GetAxis("Horizontal")/** moveSpeed*/);
+        movementDirection = (transform.forward * Input.GetAxis("Vertical") * moveSpeed) + (transform.right * Input.GetAxis("Horizontal")* moveSpeed);
 
         movementDirection.y = movementDirection.y + gravityScale*(Physics.gravity.y * Time.deltaTime);
 
@@ -58,25 +50,19 @@ public class PlayerController : MonoBehaviour
             dash();
         }
 
-        controller.Move(movementDirection * moveSpeed * Time.deltaTime);
+        controller.Move(movementDirection * Time.deltaTime);
 
 
     }
 
     void dash()
     {
-            Debug.Log("Dash");
-        movementDirection += Vector3.Scale(transform.forward,
-                                       DashDistance * new Vector3((Mathf.Log(1f / (Time.deltaTime * Drag.x + 1)) / -Time.deltaTime),
-                                                                  0,
-                                                                  (Mathf.Log(1f / (Time.deltaTime * Drag.z + 1)) / -Time.deltaTime)));
-
-        movementDirection.x /= 1 + Drag.x * Time.deltaTime;
-        movementDirection.y /= 1 + Drag.y * Time.deltaTime;
-        ////movementDirection.z /= 1 + Drag.z * Time.deltaTime;
+        if (movementDirection.x != 0.0f || movementDirection.z != 0.0f)
+            movementDirection += new Vector3(movementDirection.x / Mathf.Abs(movementDirection.x), 0.0f, movementDirection.z / Mathf.Abs(movementDirection.z)) * DashDistance;
+        //else
+        //    controller.Move(transform.forward * moveSpeed * Time.deltaTime);
 
     }
-
     //IEnumerator dash()
     //{
     //    for (float f = dashTime; f >= 0; f -= Time.deltaTime)
