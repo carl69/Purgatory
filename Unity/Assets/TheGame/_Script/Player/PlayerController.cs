@@ -45,6 +45,14 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+
         if (Input.GetButtonDown("Dash"))
         {
             dash();
