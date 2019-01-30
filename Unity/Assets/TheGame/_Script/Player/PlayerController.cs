@@ -84,7 +84,15 @@ public class PlayerController : MonoBehaviour
         controller.Move(movementDirection * Time.deltaTime);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+            if (other.gameObject.tag != "Floor")
+            {
+                newPosition = transform.position;
+                dashing = false;
+            }
 
+    }
     private void FixedUpdate()
     {
 
