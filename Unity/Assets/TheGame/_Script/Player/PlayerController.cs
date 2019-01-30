@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 movementDirection;
 
+    public float X;
+    public float Y;
+
     public Vector3 Drag;
     public float DashDistance;
 
@@ -65,13 +68,18 @@ public class PlayerController : MonoBehaviour
                 this.transform.position = newPosition;
             }
             else
-                transform.position += (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal"))* DashDistance;
+            {
+                Vector3 forwardMovement = transform.forward * Input.GetAxis("Vertical");
+                Vector3 sideMovement = transform.right * Input.GetAxis("Horizontal");
+                Vector3 dahsDirection = sideMovement + forwardMovement;
+                transform.position += dahsDirection.normalized * DashDistance;
+            
+            }
         }
 
 
         ////////////////////////////////////////////////////////////////////////////////////////
         controller.Move(movementDirection * Time.deltaTime);
-           
     }
 
 

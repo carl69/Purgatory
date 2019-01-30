@@ -692,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
         type: 3}
       propertyPath: DashDistance
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
         type: 3}
