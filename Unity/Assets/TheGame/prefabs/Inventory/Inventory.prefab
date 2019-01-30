@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8106420068749274207}
   - component: {fileID: 8106420068749274206}
+  - component: {fileID: 1016234616}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -43,13 +44,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826e13f76d27a6a4fac4e58ac65687d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Helmets:
-  - tag: Spartan Helmet
-    Id: 1
-    strength: 0
-  Arms:
-  - tag: 
-    Id: 0
-    endurance: 0
-  Chests: []
-  Legs: []
+  equipment:
+    helmets:
+    - tag: SpartanHelmet
+      id: 1
+      helmetStats:
+        strength: 0
+    arms:
+    - tag: 
+      id: 0
+      armStats:
+        hardness: 0
+    chests: []
+    legs: []
+  attacks:
+    weaponAttacks:
+    - tag: 
+      id: 0
+      weaponAttackStats:
+        weapon_Power: 0
+    spellAttacks:
+    - tag: 
+      id: 0
+      spellAttackStats:
+        magic_Power: 0
+  weapons:
+    oneHandedWeapons: []
+    twoHanedWeapons: []
+--- !u!114 &1016234616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8106420068749274205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f65ffdf4ca4ff498f486181312174a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

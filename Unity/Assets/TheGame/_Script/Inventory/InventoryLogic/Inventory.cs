@@ -25,50 +25,72 @@ public class Inventory : MonoBehaviour
 
     //---------------------------------------------------------------------------------------------------------
 
+    // Attack's struct
+    [SerializeField]
+    private AttackItems attacks = new AttackItems();
+    public AttackItems Attacks { get { return this.attacks; } }
+
+
     // Attacks' dictionary
     private string attacksKey = "Attacks";
     public string AttacksKey { get { return this.attacksKey; } }
-    private Dictionary<string, List<InventoryItems>> Attacks = new Dictionary<string, List<InventoryItems>>();
+    private Dictionary<string, List<InventoryItems>> Attacks_Dictionary = new Dictionary<string, List<InventoryItems>>();
 
-    // Lists of the attacks' dictionary
-    private string spellAttacksKey = "SpellAttacks";
-    public string SpellAttacksKey { get { return this.spellAttacksKey; } }
-    [SerializeField]
-    private List<Spell_Attack> spellAttacks = new List<Spell_Attack>();
+    //---------------------------------------------------------------------------------------------------------
 
-    private string weaponAttacksKey = "WeaponAttacks";
-    public string WeaponAttacksKey { get { return this.weaponAttacksKey; } }
+    // Weapon's struct
     [SerializeField]
-    private List<Weapon_Attack> weaponAttacks = new List<Weapon_Attack>();
+    private WeaponItems weapons = new WeaponItems();
+    public WeaponItems Weapons { get { return this.weapons; } }
+
+
+    // Weapon's dictionary
+    private string weaponsKey = "Attacks";
+    public string WeaponsKey { get { return this.weaponsKey; } }
+    private Dictionary<string, List<InventoryItems>> Weapons_Dictionary = new Dictionary<string, List<InventoryItems>>();
 
 
     private void Start()
     {
+        // Setting the keys of the equipment dictionary
         equipment.HelmetsKey = "Helmets";
         equipment.ArmsKey = "Arms";
         equipment.ChestsKey = "Chests";
         equipment.LegsKey = "Legs";
 
-        // Adding the equipment dictionary and his lists
+        // Adding the equipment's dictionary and his lists
         inventory.Add(equipmentKey, Equipment_Dictionary);
         Equipment_Dictionary.Add(equipment.HelmetsKey, equipment.Helmets.ConvertAll(x => (InventoryItems)x));
         Equipment_Dictionary.Add(equipment.ArmsKey, equipment.Arms.ConvertAll(x => (InventoryItems)x));
         Equipment_Dictionary.Add(equipment.ChestsKey, equipment.Chests.ConvertAll(x => (InventoryItems)x));
         Equipment_Dictionary.Add(equipment.LegsKey, equipment.Legs.ConvertAll(x => (InventoryItems)x));
 
+        //-----------------------------------------------------------------------------------------------------------
 
-        // Adding the cards dictionary and his lists
-        inventory.Add(attacksKey, Attacks);
-        Equipment_Dictionary.Add(spellAttacksKey, spellAttacks.ConvertAll(x => (InventoryItems)x));
-        Equipment_Dictionary.Add(weaponAttacksKey, weaponAttacks.ConvertAll(x => (InventoryItems)x));
+        // Setting the keys of the attacks dictionary
+        attacks.WeaponAttacksKey = "WeaponAttacks";
+        attacks.SpellAttacksKey = "SpellAttacks";
+
+        // Adding the attack's dictionary and his lists
+        inventory.Add(attacksKey, Attacks_Dictionary);
+        Attacks_Dictionary.Add(attacks.WeaponAttacksKey, attacks.WeaponAttacks.ConvertAll(x => (InventoryItems)x));
+        Attacks_Dictionary.Add(attacks.SpellAttacksKey, attacks.SpellAttacks.ConvertAll(x => (InventoryItems)x));
+
+        //-----------------------------------------------------------------------------------------------------------
+
+        // Setting the keys of the weapons dictionary
+        weapons.OneHandedWeaponsKey = "OneHandedWeapons";
+        weapons.TwoHandedWeaponsKey = "TwoHandedWeapons";
+
+        // Adding the attack's dictionary and his lists
+        inventory.Add(weaponsKey, Weapons_Dictionary);
+        Weapons_Dictionary.Add(weapons.OneHandedWeaponsKey, weapons.OneHandedWeapons.ConvertAll(x => (InventoryItems)x));
+        Weapons_Dictionary.Add(weapons.TwoHandedWeaponsKey, weapons.TwoHanedWeapons.ConvertAll(x => (InventoryItems)x));
+  
+        //---------------------------------------------------------------------------------------------------------------
 
         // To access the inventoryExtensions methods
         // inventoryExtensions = GetComponent<InventoryExtensions>();
-    }
-
-    private void Update()
-    {
-        //Debug.Log(inventoryExtensions.FindHelmet(1).HelmetStats_.Strength);
     }
 
 }

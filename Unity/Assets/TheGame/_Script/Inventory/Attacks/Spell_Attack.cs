@@ -3,22 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Spell_Attack : AttackItems
+public class Spell_Attack : InventoryItems
 {
     // Constructor of the cards
     public Spell_Attack(string t, int Id) : base(t, Id)
     {
     }
 
-    // New attributes for the magic card
+    // Struct with the stats
     [SerializeField]
-    private float magic_Power;
-    public float Magic_Power
-    {
-        get { return this.magic_Power; }
-        set { this.magic_Power = value; }
-    }
-
-
-
+    private SpellAttackStats spellAttackStats;
+    public SpellAttackStats SpellAttackStats { get { return this.spellAttackStats; } }
 }

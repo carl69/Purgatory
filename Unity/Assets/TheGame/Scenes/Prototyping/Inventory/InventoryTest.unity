@@ -112,24 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1016234613 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8106420068749274205, guid: 4b07725b817864d47a1d24e05e98c66d,
-    type: 3}
-  m_PrefabInstance: {fileID: 8106420069077577256}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1016234616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016234613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f65ffdf4ca4ff498f486181312174a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1171637777
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,87 +329,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Chests.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Legs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Helmets.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: MagicCards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: AttackCards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: equipment.helmets.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: equipment.arms.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Helmets.Array.data[0].strength
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Helmets.Array.data[1].tag
-      value: Spartan Helmet
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Helmets.Array.data[1].Id
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Helmets.Array.data[1].strength
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Helmets.Array.data[0].H
-      value: 
-      objectReference: {fileID: 11400000, guid: 065ff5c28c73c3e46b75fdcc8bd4011f,
-        type: 2}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Helmets.Array.data[0].id
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Helmets.Array.data[0].stats.strength
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: Helmets.Array.data[0].helmetStats.strength
-      value: 89
-      objectReference: {fileID: 0}
-    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
-        type: 3}
-      propertyPath: equipment.helmets.Array.data[0].id
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b07725b817864d47a1d24e05e98c66d, type: 3}

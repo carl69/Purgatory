@@ -3,9 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class AttackItems : InventoryItems
+public struct AttackItems
 {
-    public AttackItems(string t, int Id) : base(t, Id)
-    {
-    }
+    // Weapon attacks
+    private string weaponAttacksKey;
+    public string WeaponAttacksKey { get { return this.weaponAttacksKey; } set { this.weaponAttacksKey = value; } }
+
+    [SerializeField]
+    private List<Weapon_Attack> weaponAttacks;
+    public List<Weapon_Attack> WeaponAttacks { get { return this.weaponAttacks; } }
+
+
+    // Spell attacks
+    private string spellAttacksKey;
+    public string SpellAttacksKey { get { return this.spellAttacksKey; } set { this.spellAttacksKey = value; } }
+
+    [SerializeField]
+    private List<Spell_Attack> spellAttacks;
+    public List<Spell_Attack> SpellAttacks { get { return this.spellAttacks; } }
 }
