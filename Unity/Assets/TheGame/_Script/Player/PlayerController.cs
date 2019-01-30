@@ -14,16 +14,14 @@ public class PlayerController : MonoBehaviour
     public Vector3 Drag;
     public float DashDistance;
 
-    Rigidbody rb;
     public float smoothLevel;
 
-    Transform newPositionTransform;
+    Vector3 newPosition;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();
-        newPositionTransform = transform;
+        newPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -61,7 +59,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Dash"))
         {
-            newPositionTransform.position = transform.position + transform.forward * DashDistance;
+            if (movementDirection.x == 0 && movementDirection.z == 0)
+            {//needs to be refinde to be activate only when the player is not pressing, the movement takes a little long than the pressing
+                newPosition = transform.position + transform.forward * DashDistance;
+                this.transform.position = newPosition;
+            }
+            else
+                transform.position += (transform.forward * Input.GetAxis("Vertical") + transform.right * Input.GetAxis("Horizontal"))* DashDistance;
         }
 
 
