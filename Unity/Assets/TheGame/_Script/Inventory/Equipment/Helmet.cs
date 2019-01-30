@@ -10,13 +10,8 @@ public class Helmet : EquipmentItems
     {
     }
 
-    // New attributes for the helmet
+    // Struct with the stats
     [SerializeField]
-    private float strength;
-    public float Strength
-    {
-        get { return this.strength; }
-        set { this.strength = value; }
-    }
-
+    private HelmetStats helmetStats;
+    public HelmetStats HelmetStats_ { get { return this.helmetStats; } }
 }

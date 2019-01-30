@@ -10,12 +10,8 @@ public class Leg : EquipmentItems
     {
     }
 
-    // New attributes for the leg
+    // Struct with the stats
     [SerializeField]
-    private float endurance;
-    public float Endurance
-    {
-        get { return this.endurance; }
-        set { this.endurance = value; }
-    }
+    private LegStats legStats;
+    public LegStats LegStats_ { get { return this.legStats; } }
 }

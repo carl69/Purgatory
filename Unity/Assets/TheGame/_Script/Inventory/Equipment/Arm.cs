@@ -10,12 +10,8 @@ public class Arm : EquipmentItems
     {
     }
 
-    // New variables for the arm
+    // Struct with the stats
     [SerializeField]
-    private float endurance;
-    public float Endurance
-    {
-        get { return this.endurance; }
-        set { this.endurance = value; }
-    }
+    private ArmStats armStats;
+    public ArmStats ArmtStats_ { get { return this.armStats; } }
 }

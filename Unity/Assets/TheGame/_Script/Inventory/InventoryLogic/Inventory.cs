@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private InventoryExtensions inventoryExtensions;
+    // private InventoryExtensions inventoryExtensions;
 
     // Inventory dictionary
     private Dictionary<string, Dictionary<string, List<InventoryItems>>> inventory = new Dictionary<string, Dictionary<string, List<InventoryItems>>>();
@@ -40,7 +40,7 @@ public class Inventory : MonoBehaviour
 
     //---------------------------------------------------------------------------------------------------------
     
-        // Attacks dictionary
+    // Attacks dictionary
     private string attacksKey = "Attacks";
     public string AttacksKey { get { return this.attacksKey; } }
     private Dictionary<string, List<InventoryItems>> Attacks = new Dictionary<string, List<InventoryItems>>();
@@ -55,6 +55,9 @@ public class Inventory : MonoBehaviour
     public string WeaponAttacksKey { get { return this.weaponAttacksKey; } }
     [SerializeField]
     private List<Weapon_Attack> weaponAttacks = new List<Weapon_Attack>();
+
+    //[SerializeField]
+    //private Equip eq;
 
     private void Start()
     {
@@ -73,11 +76,12 @@ public class Inventory : MonoBehaviour
         Equipment.Add(weaponAttacksKey, weaponAttacks.ConvertAll(x => (InventoryItems)x));
 
         // To access the inventoryExtensions methods
-        inventoryExtensions = GetComponent<InventoryExtensions>();
+        // inventoryExtensions = GetComponent<InventoryExtensions>();
     }
 
     private void Update()
     {
-        Debug.Log(inventoryExtensions.FindHelmet(1).Strength);
+        //Debug.Log(inventoryExtensions.FindHelmet(1).HelmetStats_.Strength);
     }
+
 }

@@ -10,12 +10,8 @@ public class Chest : EquipmentItems
     {
     }
 
-    // New attributes for the chest
+    // Struct with the stats
     [SerializeField]
-    private float resistance;
-    public float Resistance
-    {
-        get { return this.resistance; }
-        set { this.resistance = value; }
-    }
+    private ChestStats chestStats;
+    public ChestStats ChestStats_ { get { return this.chestStats; } }
 }

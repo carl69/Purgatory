@@ -9,4 +9,5 @@ public class EquipmentItems : InventoryItems
     public EquipmentItems(string t, int Id) : base(t, Id)
     {
     }
+
 }
