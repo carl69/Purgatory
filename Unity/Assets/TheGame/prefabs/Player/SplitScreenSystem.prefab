@@ -25,6 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a56331c3e3e9e41932a4f693e95db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack: {fileID: 0}
 --- !u!1 &7967951350408594634
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,11 +139,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9042541803799483440, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
@@ -177,6 +173,11 @@ PrefabInstance:
         type: 3}
       propertyPath: invertedY
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7667229571090416802, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
@@ -1217,6 +1218,11 @@ PrefabInstance:
       objectReference: {fileID: 4951890964531631403}
     - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
+      propertyPath: smoothLevel
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
       propertyPath: rotateSpeed
       value: 5
       objectReference: {fileID: 0}
@@ -1229,6 +1235,36 @@ PrefabInstance:
         type: 3}
       propertyPath: invertedY
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: gravityScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: Drag.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: Drag.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: Drag.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: DashDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: smoothLevel
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7667229571090416802, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
