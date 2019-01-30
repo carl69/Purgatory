@@ -20,4 +20,6 @@ public class Card : ScriptableObject
     [Space]
     public Sprite CardSprite;
     public Animation AttackAnimation;
+
+    public float damage;
 }

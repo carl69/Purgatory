@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class WeaponDealDamage : MonoBehaviour
 {
+    public Card attack;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Target")
         {
-            other.GetComponent<DummyTakeDamage>().TakeDamage(5f);
+            other.GetComponent<DummyTakeDamage>().TakeDamage(attack);
         }
     }
 }

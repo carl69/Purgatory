@@ -4,9 +4,26 @@ using UnityEngine;
 
 public class DummyTakeDamage : MonoBehaviour
 {
+    float maxHealth;
+    public float hp = 1000;
+    public float hpRegain = 50;
 
-    public void TakeDamage(float DMG)
+    private void Start()
     {
-        print("Poor dummy took: " + DMG.ToString() + " Damage, you rood asshole! >:(");
+        maxHealth = hp;
+    }
+
+    private void FixedUpdate()
+    {
+        if (hp < maxHealth) 
+        {
+            hp += hpRegain * Time.deltaTime;
+        }
+    }
+
+    public void TakeDamage(Card atk)
+    {
+        hp -= atk.damage;
+        print("Dummy has: " + hp + "/" + maxHealth + " Life left!");
     }
 }
