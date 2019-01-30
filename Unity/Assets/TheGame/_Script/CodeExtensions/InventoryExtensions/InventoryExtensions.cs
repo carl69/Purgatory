@@ -5,40 +5,42 @@ using UnityEngine;
 public class InventoryExtensions : MonoBehaviour
 {
 
-    private Dictionary<string, Dictionary<string, List<InventoryItems>>> inv;
+    private Inventory inv;
 
     private void Start()
     {
-        inv = GetComponent<Inventory>().getInventory();
+        inv = GetComponent<Inventory>();
     }
 
     // Method to find an specific Helmet
-    public Helmet FindHelmet(int id)
+    public Helmet FindHelmet(int HelmetId)
     {
-        Helmet helmet = (Helmet)inv["Equipment"]["Helmets"].Find(x => x.getId() == id);
+        Helmet helmet = (Helmet) inv.Inventory_[inv.EquipmentKey][inv.HelmetsKey].Find(x => x.Id == HelmetId);
         return helmet;
     }
 
     // Method to find an specific Arm
-    public Arm FindArm(int id)
+    public Arm FindArm(int ArmId)
     {
-        Arm arm = (Arm)inv["Equipment"]["Arms"].Find(x => x.getId() == id);
+        Arm arm = (Arm) inv.Inventory_[inv.EquipmentKey][inv.ArmsKey].Find(x => x.Id == ArmId);
         return arm;
     }
 
     // Method to find an specific Chest
-    public Chest FindChest(int id)
+    public Chest FindChest(int ChestId)
     {
-        Chest chest = (Chest)inv["Equipment"]["Chests"].Find(x => x.getId() == id);
+        Chest chest = (Chest) inv.Inventory_[inv.EquipmentKey][inv.ChestsKey].Find(x => x.Id == ChestId);
         return chest;
     }
 
     // Method to find an specific Leg
-    public Leg FindLeg(int id)
+    public Leg FindLeg(int LegId)
     {
-        Leg leg = (Leg)inv["Equipment"]["Legs"].Find(x => x.getId() == id);
+        Leg leg = (Leg) inv.Inventory_[inv.EquipmentKey][inv.LegsKey].Find(x => x.Id == LegId);
         return leg;
     }
 
+    // Method to find an specific Magic Attack
 
+    // Method to find an specific Magic Attack
 }

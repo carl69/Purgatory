@@ -5,27 +5,27 @@ using UnityEngine;
 [System.Serializable]
 public class InventoryItems
 {
+    // Attributes of the class
     [SerializeField]
     private string tag;
+    public string Tag
+    {
+        get { return this.tag; }
+        set { this.tag = value; }
+    }
+
     [SerializeField]
-    private int Id;
+    private int id;
+    public int Id
+    {
+        get { return this.id; }
+        set { this.id = value; }
+    }
 
-
-    public InventoryItems(string t, int id)
+    // Constructor of the class
+    public InventoryItems(string t, int Id)
     {
         this.tag = t;
-        this.Id = id;
-    }
-
-    // Method to get the tag
-    public string getTag()
-    {
-        return this.tag;
-    }
-
-    // Method to get the id of the elements
-    public int getId()
-    {
-        return this.Id;
+        this.id = Id;
     }
 }

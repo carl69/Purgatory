@@ -376,7 +376,7 @@ PrefabInstance:
     - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
         type: 3}
       propertyPath: Helmets.Array.data[0].strength
-      value: 0
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
         type: 3}
@@ -399,5 +399,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 065ff5c28c73c3e46b75fdcc8bd4011f,
         type: 2}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: Helmets.Array.data[0].id
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b07725b817864d47a1d24e05e98c66d, type: 3}

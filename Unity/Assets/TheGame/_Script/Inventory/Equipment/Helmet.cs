@@ -5,19 +5,18 @@ using UnityEngine;
 [System.Serializable]
 public class Helmet : EquipmentItems
 {
-    public Helmet(string t, int id) : base(t, id)
+    // Constructor for the class
+    public Helmet(string t, int Id) : base(t, Id)
     {
     }
 
-
-    // New variables for the helmet
+    // New attributes for the helmet
     [SerializeField]
     private float strength;
-
-
-    // Method to access the strength of the helmets
-    public float getStrength()
+    public float Strength
     {
-        return strength;
+        get { return this.strength; }
+        set { this.strength = value; }
     }
+
 }

@@ -5,11 +5,17 @@ using UnityEngine;
 [System.Serializable]
 public class Chest : EquipmentItems
 {
-    public Chest(string t, int id) : base(t, id)
+    // Constructor of the class
+    public Chest(string t, int Id) : base(t, Id)
     {
     }
 
-    // New variables for the chest
+    // New attributes for the chest
     [SerializeField]
     private float resistance;
+    public float Resistance
+    {
+        get { return this.resistance; }
+        set { this.resistance = value; }
+    }
 }
