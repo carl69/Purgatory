@@ -11,41 +11,26 @@ public class Inventory : MonoBehaviour
     public Dictionary<string, Dictionary<string, List<InventoryItems>>> Inventory_ { get { return this.inventory; } }
 
     //------------------------------------------------------------------------------------------------------------
+
+    // Equipment's struct
+    [SerializeField]
+    private EquipmentItems equipment = new EquipmentItems();
+    public EquipmentItems Equipment { get { return this.equipment; } }
     
-    // Equipment dictionary
+
+    // Equipment's dictionary
     private string equipmentKey = "Equipment";
     public string EquipmentKey { get { return this.equipmentKey; } }
-    private Dictionary<string, List<InventoryItems>> Equipment = new Dictionary<string, List<InventoryItems>>();
-
-    // Lists of the equipment dictionary
-    private string helmetsKey = "Helmets";
-    public string HelmetsKey { get { return this.helmetsKey; } }
-    [SerializeField]
-    private List<Helmet> Helmets = new List<Helmet>();
-
-    private string armsKey = "Arms";
-    public string ArmsKey { get { return this.armsKey; } }
-    [SerializeField]
-    private List<Arm> Arms = new List<Arm>();
-
-    private string chestsKey = "Chests";
-    public string ChestsKey { get { return this.chestsKey; } }
-    [SerializeField]
-    private List<Chest> Chests = new List<Chest>();
-
-    private string legsKey = "Legs";
-    public string LegsKey { get { return this.legsKey; } }
-    [SerializeField]
-    private List<Leg> Legs = new List<Leg>();
+    private Dictionary<string, List<InventoryItems>> Equipment_Dictionary = new Dictionary<string, List<InventoryItems>>();
 
     //---------------------------------------------------------------------------------------------------------
-    
-    // Attacks dictionary
+
+    // Attacks' dictionary
     private string attacksKey = "Attacks";
     public string AttacksKey { get { return this.attacksKey; } }
     private Dictionary<string, List<InventoryItems>> Attacks = new Dictionary<string, List<InventoryItems>>();
 
-    // Lists of the attacks dictionary
+    // Lists of the attacks' dictionary
     private string spellAttacksKey = "SpellAttacks";
     public string SpellAttacksKey { get { return this.spellAttacksKey; } }
     [SerializeField]
@@ -56,24 +41,26 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private List<Weapon_Attack> weaponAttacks = new List<Weapon_Attack>();
 
-    //[SerializeField]
-    //private Equip eq;
 
     private void Start()
     {
+        equipment.HelmetsKey = "Helmets";
+        equipment.ArmsKey = "Arms";
+        equipment.ChestsKey = "Chests";
+        equipment.LegsKey = "Legs";
 
         // Adding the equipment dictionary and his lists
-        inventory.Add(equipmentKey, Equipment);
-        Equipment.Add(helmetsKey, Helmets.ConvertAll(x => (InventoryItems)x));
-        Equipment.Add(armsKey, Arms.ConvertAll(x => (InventoryItems)x));
-        Equipment.Add(chestsKey, Chests.ConvertAll(x => (InventoryItems)x));
-        Equipment.Add(legsKey, Legs.ConvertAll(x => (InventoryItems)x));
+        inventory.Add(equipmentKey, Equipment_Dictionary);
+        Equipment_Dictionary.Add(equipment.HelmetsKey, equipment.Helmets.ConvertAll(x => (InventoryItems)x));
+        Equipment_Dictionary.Add(equipment.ArmsKey, equipment.Arms.ConvertAll(x => (InventoryItems)x));
+        Equipment_Dictionary.Add(equipment.ChestsKey, equipment.Chests.ConvertAll(x => (InventoryItems)x));
+        Equipment_Dictionary.Add(equipment.LegsKey, equipment.Legs.ConvertAll(x => (InventoryItems)x));
 
 
         // Adding the cards dictionary and his lists
         inventory.Add(attacksKey, Attacks);
-        Equipment.Add(spellAttacksKey, spellAttacks.ConvertAll(x => (InventoryItems)x));
-        Equipment.Add(weaponAttacksKey, weaponAttacks.ConvertAll(x => (InventoryItems)x));
+        Equipment_Dictionary.Add(spellAttacksKey, spellAttacks.ConvertAll(x => (InventoryItems)x));
+        Equipment_Dictionary.Add(weaponAttacksKey, weaponAttacks.ConvertAll(x => (InventoryItems)x));
 
         // To access the inventoryExtensions methods
         // inventoryExtensions = GetComponent<InventoryExtensions>();

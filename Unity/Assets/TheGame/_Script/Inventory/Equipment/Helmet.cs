@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Helmet : EquipmentItems
+public class Helmet : InventoryItems
 {
     // Constructor for the class
     public Helmet(string t, int Id) : base(t, Id)

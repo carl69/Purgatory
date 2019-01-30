@@ -375,6 +375,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
         type: 3}
+      propertyPath: equipment.helmets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: equipment.arms.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
       propertyPath: Helmets.Array.data[0].strength
       value: 12
       objectReference: {fileID: 0}
@@ -413,6 +423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Helmets.Array.data[0].helmetStats.strength
       value: 89
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: equipment.helmets.Array.data[0].id
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b07725b817864d47a1d24e05e98c66d, type: 3}
