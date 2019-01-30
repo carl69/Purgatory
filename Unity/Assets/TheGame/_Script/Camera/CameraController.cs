@@ -7,6 +7,9 @@ public class CameraController : MonoBehaviour
     public Transform target;
     private Transform tagetParent;
 
+    public float smoothLevel;
+
+
     public Vector3 offset;
 
     public float maxAngle = 45;
@@ -31,7 +34,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         float deadzone = 0.25f;
         Vector2 stickInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
@@ -69,13 +72,24 @@ public class CameraController : MonoBehaviour
         float desireAngleX = pivot.eulerAngles.x;
 
         Quaternion rotation = Quaternion.Euler(desireAngleX, desireAngleY,0);
-        transform.position = target.position - (rotation * offset);
 
-        if(transform.position.y < target.transform.position.y - 0.5f)
+
+        transform.position = Vector3.Lerp(
+                    transform.position, target.position - (rotation * offset), Time.deltaTime * smoothLevel);
+
+
+        if (transform.position.y < target.transform.position.y - 0.5f)
         {
             transform.position = new Vector3(transform.position.x, target.transform.position.y - 0.5f, transform.position.z);
         }
         
         transform.LookAt(target);
     }
+
+
+
+    /// <summary>
+    /// Método que hace la actualización de la posición, mirando la posición del target
+    /// y cambiando (suavizando) la posición de la cámara.
+    /// </summary>
 }

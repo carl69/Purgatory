@@ -448,7 +448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987794121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.34, y: 2.58, z: -0.15}
+  m_LocalPosition: {x: -6.26, y: 0.1, z: 7.84}
   m_LocalScale: {x: 4.74, y: 0.91, z: 2.48}
   m_Children: []
   m_Father: {fileID: 0}
@@ -706,7 +706,7 @@ PrefabInstance:
     - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
         type: 3}
       propertyPath: DashDistance
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
         type: 3}
@@ -732,6 +732,16 @@ PrefabInstance:
         type: 3}
       propertyPath: Drag.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: smoothLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 94098574986543870, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: smoothLevel
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}

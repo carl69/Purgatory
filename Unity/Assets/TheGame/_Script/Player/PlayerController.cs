@@ -9,17 +9,21 @@ public class PlayerController : MonoBehaviour
     public float gravityScale;
     // Start is called before the first frame update
 
-    private Vector3 movementDirection;
+    public Vector3 movementDirection;
 
     public Vector3 Drag;
     public float DashDistance;
 
     Rigidbody rb;
+    public float smoothLevel;
+
+    Transform newPositionTransform;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
+        newPositionTransform = transform;
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class PlayerController : MonoBehaviour
     {
 
         //movementDirection = new Vector3(Input.GetAxis("Horizontal")*moveSpeed, 0.0f, Input.GetAxis("Vertical")*moveSpeed);
+
+        //TRY TO USE TWO DIFFRENT VARIABLES IN ORDER TO KEEP THAT INFORMATION AND CAN USE IT TO THE DODGE HABILITY
         movementDirection = (transform.forward * Input.GetAxis("Vertical") * moveSpeed) + (transform.right * Input.GetAxis("Horizontal")* moveSpeed);
 
         movementDirection.y = movementDirection.y + gravityScale*(Physics.gravity.y * Time.deltaTime);
@@ -51,32 +57,24 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////
+       
 
         if (Input.GetButtonDown("Dash"))
         {
-            dash();
+            newPositionTransform.position = transform.position + transform.forward * DashDistance;
         }
 
+
+        ////////////////////////////////////////////////////////////////////////////////////////
         controller.Move(movementDirection * Time.deltaTime);
-
-
+           
     }
 
-    void dash()
+
+    private void LateUpdate()
     {
-        if (movementDirection.x != 0.0f || movementDirection.z != 0.0f)
-            movementDirection += new Vector3(movementDirection.x / Mathf.Abs(movementDirection.x), 0.0f, movementDirection.z / Mathf.Abs(movementDirection.z)) * DashDistance;
-        //else
-        //    controller.Move(transform.forward * moveSpeed * Time.deltaTime);
 
+        //transform.position = Vector3.Lerp(
+        //   transform.position, newPositionTransform.position, Time.deltaTime * smoothLevel);
     }
-    //IEnumerator dash()
-    //{
-    //    for (float f = dashTime; f >= 0; f -= Time.deltaTime)
-    //    {
-    //        controller.Move(movementDirection * 20 * Time.deltaTime);
-    //        yield return null;
-    //    }
-    //}
 }
