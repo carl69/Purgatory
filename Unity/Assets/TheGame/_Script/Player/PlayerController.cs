@@ -93,6 +93,7 @@ public class PlayerController : MonoBehaviour
             }
 
     }
+
     private void FixedUpdate()
     {
 
