@@ -12,16 +12,17 @@ public class InventoryExtensions : MonoBehaviour
     }
 
     // Method to find an specific inventoryItem
-    public InventoryItems FindInventoryItem(string InventoryItem, int itemId)
+    public InventoryItems FindInventoryItem(string InventoryItem, string TypeofItem, int itemId)
     {
-        InventoryItems invItem = inv.Inventory_[InventoryItem]["Helmets"].Find(x => x.Id == itemId); 
-        return invItem;
+        InventoryItems item = inv.Inventory_[InventoryItem][TypeofItem].Find(x => x.Id == itemId); 
+        return item;
     }
 
     // Method to find an specific Helmet
     public Helmet FindHelmet(int HelmetId)
     {
-        Helmet helmet = (Helmet) inv.Inventory_[inv.EquipmentKey][inv.Equipment.HelmetsKey].Find(x => x.Id == HelmetId);
+        Helmet helmet = (Helmet) FindInventoryItem(inv.EquipmentKey, inv.Equipment.HelmetsKey, HelmetId);
+        //Helmet helmet = (Helmet)inv.Inventory_[inv.EquipmentKey][inv.Equipment.HelmetsKey].Find(x => x.Id == HelmetId);
         return helmet;
     }
 

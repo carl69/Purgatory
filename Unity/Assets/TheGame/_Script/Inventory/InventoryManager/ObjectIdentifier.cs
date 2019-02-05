@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class ObjectIdentifier : MonoBehaviour
 {
-    public enum items { Equipment, Attacks, Weapons}
+    public enum TypeOfInventoryItems { Equipment, Attacks, Weapons}
+    public enum TypeOfItem { Helmet, Arm, Chest, Leg}
 
     [SerializeField]
-    private items item;
-    public items Item { get { return this.item; } }
+    private TypeOfInventoryItems inventoryItem;
+    public TypeOfInventoryItems InventoryItem { get { return this.inventoryItem; } }
+
+    [SerializeField]
+    private TypeOfItem item;
+    public TypeOfItem Item { get { return this.item; } }
 
     [SerializeField]
     private int objectId;

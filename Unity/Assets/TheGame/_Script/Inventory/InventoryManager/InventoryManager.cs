@@ -17,15 +17,10 @@ public class InventoryManager : MonoBehaviour
         inv_ = inventory.GetComponent<Inventory>();
     }
 
-    public void updatePlayerGear()
-    {
-
-    }
-
     public void gearSelected()
     {
         //objectId = GetComponent<ObjectIdentifier>().ObjectId;
-        InventoryItems it = inv_.InventoryExtensions.FindInventoryItem("Equipment", 1);
+        InventoryItems it = inv_.InventoryExtensions.FindInventoryItem("Equipment", "Helmets", 1);
         Debug.Log(it.Tag);
 
     }

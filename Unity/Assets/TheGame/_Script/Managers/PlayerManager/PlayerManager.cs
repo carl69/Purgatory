@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     private float stamina;
     public float Stamina { get { return this.stamina; } }
 
-    // List with the specific gear of the player
-    private Dictionary<string, InventoryItems> gear;
+    // Two queues with the combos the player can perform
+    private Queue<InventoryItems> ComboSet1;
+    private Queue<InventoryItems> ComboSet2;
 }
