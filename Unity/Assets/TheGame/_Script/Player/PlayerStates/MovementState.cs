@@ -5,23 +5,13 @@ using UnityEngine;
 public class MovementState : State
 {
 
-    public float moveSpeed;
+    public float moveSpeed = 10;
     public CharacterController controller;
-    public float gravityScale;
+    public float gravityScale = 2;
     // Start is called before the first frame update
 
     public Vector3 movementDirection;
 
-    public float X;
-    public float Y;
-
-    public Vector3 Drag;
-    public float DashDistance;
-    public bool dashing = false;
-
-    public float smoothLevel;
-
-    Vector3 newPosition;
 
     public MovementState(Player player) : base(player)
     {
@@ -53,12 +43,18 @@ public class MovementState : State
             player.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
 
         }
+        if (Input.GetButtonDown("Dash"))
+        {
 
+            player.SetState(new DashState(player));
+        }
+
+        controller.Move(movementDirection * Time.deltaTime);
     }
 
     public override void OnStateEnter()//MoementStatement start
     {
+        Debug.Log("Movement State Entered");
         controller = player.GetComponent<CharacterController>();
-        newPosition = player.transform.position;
     }
 }

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5975185780772696923}
   - component: {fileID: 342849514}
   - component: {fileID: 342849513}
+  - component: {fileID: 8608130640739164977}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -150,7 +151,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5975185780772696922}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebf96ce838b980540aa752012002205c, type: 3}
   m_Name: 
@@ -158,6 +159,25 @@ MonoBehaviour:
   moveSpeed: 5
   controller: {fileID: 0}
   gravityScale: 40
+  movementDirection: {x: 0, y: 0, z: 0}
+  X: 0
+  Y: 0
+  Drag: {x: 0, y: 0, z: 0}
+  DashDistance: 0
+  dashing: 0
+  smoothLevel: 0
+--- !u!114 &8608130640739164977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975185780772696922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302f0b5efb3b9ce408a8fc8b0ef31c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5975185781003259971
 PrefabInstance:
   m_ObjectHideFlags: 0

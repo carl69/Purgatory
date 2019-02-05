@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        //SetState(new BasicMovementState(this));
+        SetState(new MovementState(this));
     }
 
     private void Update()
