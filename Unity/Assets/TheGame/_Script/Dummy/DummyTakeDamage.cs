@@ -24,6 +24,15 @@ public class DummyTakeDamage : MonoBehaviour
     public void TakeDamage(Card atk)
     {
         hp -= atk.damage;
-        print("Dummy has: " + hp + "/" + maxHealth + " Life left!");
+        if (hp <= 0)
+        {
+            print("Dummy has: " + hp + "/" + maxHealth + " Life left!");
+            print("You killed the Dummy! The mighty dummy used full heal.");
+            hp = maxHealth;
+        }
+        else
+        {
+            print("Dummy has: " + hp + "/" + maxHealth + " Life left!");
+        }
     }
 }

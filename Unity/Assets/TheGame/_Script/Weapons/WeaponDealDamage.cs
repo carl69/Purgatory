@@ -32,6 +32,7 @@ public class WeaponDealDamage : MonoBehaviour
     {
         if (other.tag == "Target")
         {
+            bCollider.enabled = false;
             other.GetComponent<DummyTakeDamage>().TakeDamage(attack);
         }
     }
