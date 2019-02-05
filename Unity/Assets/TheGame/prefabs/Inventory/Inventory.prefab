@@ -49,7 +49,7 @@ MonoBehaviour:
     - tag: SpartanHelmet
       id: 1
       helmetStats:
-        strength: 0
+        strength: 13
     arms:
     - tag: 
       id: 0

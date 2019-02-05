@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // private InventoryExtensions inventoryExtensions;
+    private InventoryExtensions inventoryExtensions;
+    public InventoryExtensions InventoryExtensions { get { return this.inventoryExtensions; } }
 
     // Inventory dictionary
     private Dictionary<string, Dictionary<string, List<InventoryItems>>> inventory = new Dictionary<string, Dictionary<string, List<InventoryItems>>>();
@@ -45,7 +46,7 @@ public class Inventory : MonoBehaviour
 
 
     // Weapon's dictionary
-    private string weaponsKey = "Attacks";
+    private string weaponsKey = "Weapons";
     public string WeaponsKey { get { return this.weaponsKey; } }
     private Dictionary<string, List<InventoryItems>> Weapons_Dictionary = new Dictionary<string, List<InventoryItems>>();
 
@@ -90,7 +91,7 @@ public class Inventory : MonoBehaviour
         //---------------------------------------------------------------------------------------------------------------
 
         // To access the inventoryExtensions methods
-        // inventoryExtensions = GetComponent<InventoryExtensions>();
+        inventoryExtensions = GetComponent<InventoryExtensions>();
     }
 
 }

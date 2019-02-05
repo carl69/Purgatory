@@ -9,5 +9,5 @@ public class PlayerManager : MonoBehaviour
     public float Stamina { get { return this.stamina; } }
 
     // List with the specific gear of the player
-    private List<InventoryItems> gear;
+    private Dictionary<string, InventoryItems> gear;
 }
