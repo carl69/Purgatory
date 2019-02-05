@@ -20,8 +20,7 @@ public class DashState : State
     public override void Tick()
     {
         ///////////////////////////////////
-        Vector3 raycastOrigin = new Vector3(player.transform.position.x, player.transform.position.y /*- player.transform.localScale.y*/, player.transform.position.z);
-        Ray playerRay = new Ray(raycastOrigin, dashDirection_);
+        Vector3 raycastOrigin = new Vector3(player.transform.position.x, player.transform.position.y - 0.7f /*- player.transform.localScale.y*/, player.transform.position.z);
         Debug.DrawRay(raycastOrigin, dashDirection_, Color.red, dashDistance_);
         //////////////////////////////////
 
@@ -36,22 +35,26 @@ public class DashState : State
     public override void OnStateEnter()
     {
         newPosition = player.transform.position;
+
+        checkNewPosition();//check if the new position with the default sashdistance is reacheable with the default dodge distance
+
         newPosition = player.transform.position + dashDirection_.normalized * dashDistance_;
         //player.SetState(new MovementState(player));
 
         //method that calculates if the new position is accessible.
-        checkNewPosition();
+
 
     }
     void checkNewPosition()
     {
+        Debug.Log("checking position");
         RaycastHit hit;
-        Vector3 raycastOrigin = new Vector3(player.transform.position.x, player.transform.position.y /*- player.transform.localScale.y +3f*/, player.transform.position.z);
+        Vector3 raycastOrigin = new Vector3(player.transform.position.x, player.transform.position.y -0.7f /*- player.transform.localScale.y +3f*/, player.transform.position.z);
         Ray playerRay = new Ray(raycastOrigin, dashDirection_);
 
         if(Physics.Raycast(playerRay, out hit, dashDistance_))
         {
-            dashDistance_ = hit.distance;
+            dashDistance_ = hit.distance -0.5f; // if the suposed new position of the player is not recheable it will change the dashDistance to the correct one in front of the obstacle.
         }
     }
 }
