@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerManager", menuName = "PlayerManager", order = 51)]
-public class PlayerManager : ScriptableObject
+public class PlayerManager : MonoBehaviour
 {
     [SerializeField]
     private float stamina;
+    public float Stamina { get { return this.stamina; } }
+
+    // List with the specific gear of the player
+    private List<InventoryItems> gear;
 }
