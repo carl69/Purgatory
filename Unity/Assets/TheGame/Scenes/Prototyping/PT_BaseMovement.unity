@@ -582,6 +582,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SplitScreenSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 300534039, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 11400000, guid: e442f5f72981eab48806ffadc22e2586,
+        type: 2}
     - target: {fileID: 102377039757330690, guid: b956c7850cb7f12478d487b62d6e920d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -642,11 +647,6 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 300534039, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}
-      propertyPath: attack
-      value: 
-      objectReference: {fileID: 11400000, guid: e442f5f72981eab48806ffadc22e2586,
-        type: 2}
     - target: {fileID: 2226975632365367654, guid: b956c7850cb7f12478d487b62d6e920d,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -690,7 +690,7 @@ PrefabInstance:
     - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d,
         type: 3}
