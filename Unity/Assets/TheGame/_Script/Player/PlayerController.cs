@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     Vector3 newPosition;
 
+    // PLACEHOLDER FOR ATTACKS
+    public WeaponDealDamage WDD;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -57,7 +59,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
-
+                WDD.Attack(new Vector2(0.3f , 0.5f));
             }
 
         }
