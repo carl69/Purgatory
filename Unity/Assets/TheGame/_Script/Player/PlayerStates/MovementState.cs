@@ -5,9 +5,9 @@ using UnityEngine;
 public class MovementState : State
 {
 
-    public float moveSpeed = 10;
+    public float moveSpeed = 5;
     public CharacterController controller;
-    public float gravityScale = 2;
+    public float gravityScale = 10;
     // Start is called before the first frame update
 
     public Vector3 movementDirection;
@@ -45,8 +45,12 @@ public class MovementState : State
         }
         if (Input.GetButtonDown("Dash"))
         {
+            Vector3 forwardMovement = player.transform.forward * Input.GetAxis("Vertical");
+            Vector3 sideMovement = player.transform.right * Input.GetAxis("Horizontal");
 
-            player.SetState(new DashState(player));
+            Vector3 dahsDirection = sideMovement + forwardMovement;
+
+            player.SetState(new DashState(player, dahsDirection));
         }
 
         controller.Move(movementDirection * Time.deltaTime);
@@ -54,7 +58,6 @@ public class MovementState : State
 
     public override void OnStateEnter()//MoementStatement start
     {
-        Debug.Log("Movement State Entered");
         controller = player.GetComponent<CharacterController>();
     }
 }
