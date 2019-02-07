@@ -21,5 +21,8 @@ public class Card : ScriptableObject
     public Sprite CardSprite;
     public Animation AttackAnimation;
 
+    public float pointOfNoReturn;
+    public float endOfAttack;
+
     public float damage;
 }

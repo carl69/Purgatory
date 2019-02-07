@@ -20,9 +20,9 @@ public class WeaponDealDamage : MonoBehaviour
     }
     IEnumerator EnableAttack( Vector2 attackT)
     {
-        yield return new WaitForSeconds(attackT.x);
+        yield return new WaitForSeconds(attack.pointOfNoReturn);
         bCollider.enabled = true;
-        yield return new WaitForSeconds(attackT.y);
+        yield return new WaitForSeconds(attack.endOfAttack);
         bCollider.enabled = false;
 
 
