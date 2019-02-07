@@ -713,9 +713,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 812328872419754857, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: joyStickActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 863079903, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}
       propertyPath: player_Id
       value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 863079903, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}
+      propertyPath: joyStickActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4951890965863628388, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}

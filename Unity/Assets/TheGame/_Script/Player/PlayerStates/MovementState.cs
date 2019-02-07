@@ -8,23 +8,30 @@ public class MovementState : State
     public float moveSpeed = 5;
     public float gravityScale = 10;
 
+    /// <summary>
+    private char inputController = 'K';
+    /// </summary>
 
     public CharacterController controller;
     public Vector3 movementDirection;
 
     public MovementState(Player player) : base(player)
     {
+
     }
 
     public override void OnStateEnter()//MoementStatement start
     {
         controller = player.GetComponent<CharacterController>();
+
+        if (player.JoyStickActive) inputController = 'J';
+
     }
 
     public override void Tick()//MovementStatement update
     {
         //horizontal plane movement (3D)
-        movementDirection = (player.transform.forward * Input.GetAxis("Vertical_P" + player.Player_Id) * moveSpeed) + (player.transform.right * Input.GetAxis("Horizontal_P" + player.Player_Id) * moveSpeed);
+        movementDirection = (player.transform.forward * Input.GetAxis("Vertical_P" + player.Player_Id + inputController) * moveSpeed) + (player.transform.right * Input.GetAxis("Horizontal_P" + player.Player_Id + inputController) * moveSpeed);
         //vertical movement(3D) 
         movementDirection.y = movementDirection.y + gravityScale * (Physics.gravity.y * Time.deltaTime);
 
@@ -49,12 +56,8 @@ public class MovementState : State
         }
 
 
-        if (Input.GetButtonDown("Dash_P" + player.Player_Id))//when the dash button is pressed we make the calculations of movement direction and use this information that it is going to be used for the DashState
+        if (Input.GetButtonDown("Dash_P" + player.Player_Id + inputController))//when the dash button is pressed we make the calculations of movement direction and use this information that it is going to be used for the DashState
         {
-            if(player.Player_Id == '1')
-            {
-                Debug.Log("Player 1 : " + player.Player_Id);
-            }else Debug.Log("Player 2 : " + player.Player_Id);
 
             Vector3 dahsDirection;
             if (movementDirection.x == 0 && movementDirection.z == 0)
@@ -64,8 +67,8 @@ public class MovementState : State
             }
             else
             {//if not we calculate the dash direction on the direction of the player movement
-                Vector3 forwardMovement = player.transform.forward * Input.GetAxis("Vertical_P" + player.Player_Id);
-                Vector3 sideMovement = player.transform.right * Input.GetAxis("Horizontal_P" + player.Player_Id);
+                Vector3 forwardMovement = player.transform.forward * Input.GetAxis("Vertical_P" + player.Player_Id + inputController);
+                Vector3 sideMovement = player.transform.right * Input.GetAxis("Horizontal_P" + player.Player_Id + inputController);
                 dahsDirection = sideMovement + forwardMovement;
 
                 player.SetState(new DashState(player, dahsDirection));

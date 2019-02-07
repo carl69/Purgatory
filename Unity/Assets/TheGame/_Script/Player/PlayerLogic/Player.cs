@@ -11,12 +11,15 @@ public class Player : MonoBehaviour
     /// <testing_purposes>
     [SerializeField]
     private char player_Id = ' ';
-
     public char Player_Id { get { return this.player_Id; } set { this.player_Id = value;  } }
+
+    [SerializeField]
+    private bool joyStickActive = false;
+    public bool JoyStickActive { get { return this.joyStickActive; } set { this.joyStickActive = value; } }
     /// </testing_purposes>
 
 
-    
+
     private void Start()
     {
         SetState(new MovementState(this));
