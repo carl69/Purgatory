@@ -38,7 +38,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302f0b5efb3b9ce408a8fc8b0ef31c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_Id: 32
+  player_Id: 49
+  joyStickActive: 1
 --- !u!1 &7967951350408594634
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,11 +93,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 102377039757330690}
     m_Modifications:
-    - target: {fileID: 1474879975583442488, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: m_Name
-      value: Player2System
-      objectReference: {fileID: 0}
     - target: {fileID: 6512038009061035647, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -152,6 +148,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1474879975583442488, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: m_Name
+      value: Player2System
+      objectReference: {fileID: 0}
     - target: {fileID: 9042541803799483440, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
@@ -189,8 +190,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5763866825828203632, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: player_Id
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763866825828203632, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: joyStickActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667229571090416802, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
@@ -623,8 +629,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3377662564020939573}
     m_RemovedComponents:
-    - {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
-    - {fileID: 4074463964248107176, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
+    - {fileID: 5763866825828203632, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
 --- !u!4 &3377662564020939425 stripped
 Transform:
@@ -1161,11 +1166,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 102377039757330690}
     m_Modifications:
-    - target: {fileID: 1474879975583442488, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: m_Name
-      value: Player1System
-      objectReference: {fileID: 0}
     - target: {fileID: 6512038009061035647, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1220,6 +1220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474879975583442488, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: m_Name
+      value: Player1System
       objectReference: {fileID: 0}
     - target: {fileID: 9042541803799483440, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
@@ -1681,7 +1686,8 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 1609114752892994272}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6261755956956263739, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
 --- !u!4 &2768774695830149299 stripped
 Transform:
