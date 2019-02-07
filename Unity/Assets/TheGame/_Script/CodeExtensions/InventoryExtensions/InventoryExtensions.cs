@@ -11,12 +11,21 @@ public class InventoryExtensions : MonoBehaviour
         inv = GetComponent<Inventory>();
     }
 
+    //// Method to find an specific inventoryItem
+    //public InventoryItems FindInventoryItem(string InventoryItem, string TypeofItem, int itemId)
+    //{
+    //    InventoryItems item = inv.Inventory_[InventoryItem][TypeofItem].Find(x => x.Id == itemId); 
+    //    return item;
+    //}
+
+    // TEST-------------------------------------------------------------------------------------------
     // Method to find an specific inventoryItem
     public InventoryItems FindInventoryItem(string InventoryItem, string TypeofItem, int itemId)
     {
-        InventoryItems item = inv.Inventory_[InventoryItem][TypeofItem].Find(x => x.Id == itemId); 
+        InventoryItems item = inv.Inventory_[InventoryItem][TypeofItem].Find(x => x.Id == itemId);
         return item;
     }
+    //-------------------------------------------------------------------------------------------------
 
     // Method to find an specific Helmet
     public Helmet FindHelmet(int HelmetId)

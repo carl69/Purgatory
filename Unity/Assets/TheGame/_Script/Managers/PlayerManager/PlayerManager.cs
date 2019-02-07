@@ -6,6 +6,10 @@ public class PlayerManager : MonoBehaviour
 {
     // Player STATS
     [SerializeField]
+    private int player_id;
+    public int Player_id { get { return this.player_id; } }
+
+    [SerializeField]
     private float stamina;
     public float Stamina { get { return this.stamina; } }
 
@@ -21,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     public Dictionary<string, InventoryItems> CurrrentEquipment { get { return this.currrentEquipment; } }
 
     // The WEAPON the player has selected
-    InventoryItems currentWeapon;
+    private InventoryItems currentWeapon;
     public InventoryItems CurrentWeapon { get { return this.currentWeapon; } }
 
     // A dictionary with the CURRENT ATTACKS of the player
