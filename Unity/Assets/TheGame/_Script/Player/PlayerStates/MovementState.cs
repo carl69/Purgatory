@@ -60,7 +60,7 @@ public class MovementState : State
         {
 
             Vector3 dahsDirection;
-            if (movementDirection.x == 0 && movementDirection.z == 0)
+            if (Input.GetAxis("Vertical_P" + player.Player_Id + inputController) == 0 && Input.GetAxis("Horizontal_P" + player.Player_Id + inputController) == 0)
             {//if the player is not movig the dash is backwards
                 dahsDirection =  -player.transform.forward;
                 player.SetState(new DashState(player, dahsDirection));
