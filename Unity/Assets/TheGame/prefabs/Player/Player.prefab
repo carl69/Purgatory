@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 5975185780772696920}
   - component: {fileID: 5975185780772696923}
   - component: {fileID: 342849514}
-  - component: {fileID: 342849513}
   - component: {fileID: 8608130640739164977}
   m_Layer: 0
   m_Name: Player
@@ -144,28 +143,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &342849513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975185780772696922}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf96ce838b980540aa752012002205c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  controller: {fileID: 0}
-  gravityScale: 40
-  movementDirection: {x: 0, y: 0, z: 0}
-  X: 0
-  Y: 0
-  Drag: {x: 0, y: 0, z: 0}
-  DashDistance: 0
-  dashing: 0
-  smoothLevel: 0
 --- !u!114 &8608130640739164977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302f0b5efb3b9ce408a8fc8b0ef31c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_Id: 32
 --- !u!1001 &5975185781003259971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -237,6 +215,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 3ed4890a18ebb184a8035ca249c21a79, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2babf8eadad30fa458038e42a64c26dc, type: 2}
     - target: {fileID: 13700000, guid: 3ed4890a18ebb184a8035ca249c21a79, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
@@ -581,10 +563,6 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 5975185781003389805}
-    - target: {fileID: 9500000, guid: 3ed4890a18ebb184a8035ca249c21a79, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2babf8eadad30fa458038e42a64c26dc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ed4890a18ebb184a8035ca249c21a79, type: 3}
 --- !u!4 &5975185781003389795 stripped
