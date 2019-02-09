@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public Transform target;
     private Transform tagetParent;
+    public Player player;
 
     public float smoothLevel;
 
@@ -31,63 +32,64 @@ public class CameraController : MonoBehaviour
         offset = target.position - transform.position;
         pivot.transform.position = target.transform.position;
         pivot.transform.parent = target.transform;
-    }
+
+        player = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).GetComponent<Player>();//we get acces to the player 
+
+            }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        float deadzone = 0.25f;
-        Vector2 stickInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-        if (stickInput.magnitude < deadzone)
-            stickInput = Vector2.zero;
-        else
-            stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
 
-        float horizontal = stickInput.x * rotateSpeed;
+            float deadzone = 0.25f;
+            Vector2 stickInput = new Vector2(Input.GetAxis("CameraX_P1"), Input.GetAxis("CameraY_P1"));
+            if (stickInput.magnitude < deadzone)
+                stickInput = Vector2.zero;
+            else
+                stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
 
-        tagetParent.Rotate(0, horizontal, 0);
+            float horizontal = stickInput.x * rotateSpeed;
 
-        //get the y position of the mouse and rotates the pivot 
-        float vertical = stickInput.y * rotateSpeed;
+            tagetParent.Rotate(0, horizontal, 0);
 
-        //
-        if (invertedY)
-        {
-            vertical = -vertical;
-        }
+            //get the y position of the mouse and rotates the pivot 
+            float vertical = stickInput.y * rotateSpeed;
 
-        pivot.Rotate(-vertical, 0, 0);
+            //
+            if (invertedY)
+            {
+                vertical = -vertical;
+            }
 
-        if(pivot.rotation.eulerAngles.x > maxAngle && pivot.rotation.eulerAngles.x < 180f)
-        {
-            pivot.rotation = Quaternion.Euler(maxAngle, 0, 0);
-        }
+            pivot.Rotate(-vertical, 0, 0);
 
-        if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 360f-minAngle)
-        {
-            pivot.rotation = Quaternion.Euler(360f - minAngle, 0, 0);
-        }
+            if (pivot.rotation.eulerAngles.x > maxAngle && pivot.rotation.eulerAngles.x < 180f)
+            {
+                pivot.rotation = Quaternion.Euler(maxAngle, 0, 0);
+            }
 
-        float desireAngleY = target.eulerAngles.y;
-        float desireAngleX = pivot.eulerAngles.x;
+            if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 360f - minAngle)
+            {
+                pivot.rotation = Quaternion.Euler(360f - minAngle, 0, 0);
+            }
 
-        Quaternion rotation = Quaternion.Euler(desireAngleX, desireAngleY,0);
+            float desireAngleY = target.eulerAngles.y;
+            float desireAngleX = pivot.eulerAngles.x;
 
-
-        transform.position = Vector3.Lerp(
-                    transform.position, target.position - (rotation * offset), Time.deltaTime * smoothLevel);
+            Quaternion rotation = Quaternion.Euler(desireAngleX, desireAngleY, 0);
 
 
-        if (transform.position.y < target.transform.position.y - 0.5f)
-        {
-            transform.position = new Vector3(transform.position.x, target.transform.position.y - 0.5f, transform.position.z);
-        }
-        
-        transform.LookAt(target);
+            transform.position = Vector3.Lerp(
+                        transform.position, target.position - (rotation * offset), Time.deltaTime * smoothLevel);
+
+
+            if (transform.position.y < target.transform.position.y - 0.5f)
+            {
+                transform.position = new Vector3(transform.position.x, target.transform.position.y - 0.5f, transform.position.z);
+            }
+
+            transform.LookAt(target);
     }
-
-
-
     /// <summary>
     /// Método que hace la actualización de la posición, mirando la posición del target
     /// y cambiando (suavizando) la posición de la cámara.
