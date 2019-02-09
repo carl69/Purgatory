@@ -4,24 +4,14 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+
     [SerializeField]
-    private GameObject inventory;
-    private Inventory inv_;
-    string inventoryItem;
+    PlayerManager playerManager;
 
-    InventoryItems item;
-    int objectId;
 
-    private void Start()
+    public void updateGear(string inventoryItem, string listItem, InventoryItems item)
     {
-        inv_ = inventory.GetComponent<Inventory>();
-    }
-
-    public void gearSelected()
-    {
-        //objectId = GetComponent<ObjectIdentifier>().ObjectId;
-        InventoryItems it = inv_.InventoryExtensions.FindInventoryItem("Equipment", "Helmets", 1);
-        Debug.Log(it.Tag);
-
+        // Access to playerManager dictionary with the two strings and modify the value assigned to that key
+        // myDictionary[myKey] = myNewValue;
     }
 }

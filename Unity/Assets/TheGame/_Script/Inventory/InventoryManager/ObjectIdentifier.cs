@@ -19,14 +19,17 @@ public class ObjectIdentifier : MonoBehaviour
     private int objectId;
     public int ObjectId { get { return this.objectId; } }
 
+    [SerializeField]
+    private InventoryManager inventoryManager;
+
     // I need it public to let the script know I'm referring to that specific inventory
     [SerializeField]
     private Inventory inventory;
 
-    public void FindItem()
+    public void ItemSelected()
     {
         InventoryItems i = inventory.InventoryExtensions.FindInventoryItem(inventoryItem.ToString(), item.ToString(), objectId);
-        Debug.Log(i.Tag);
+        inventoryManager.updateGear(inventoryItem.ToString(), item.ToString(), i);
     }
 
 }
