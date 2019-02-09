@@ -7,6 +7,10 @@ public class WeaponDealDamage : MonoBehaviour
     public Card attack;
     BoxCollider bCollider;
 
+    /// <summary>
+    public bool atacking = false;
+    /// </summary>
+
     private void Start()
     {
         bCollider = this.transform.GetComponent<BoxCollider>();
@@ -14,18 +18,19 @@ public class WeaponDealDamage : MonoBehaviour
 
     }
 
-    public void Attack(Vector2 attackTime)
+    public void Attack()
     {
-        StartCoroutine("EnableAttack", attackTime);
+        atacking = true;
+        StartCoroutine("EnableAttack");
     }
-    IEnumerator EnableAttack( Vector2 attackT)
+    IEnumerator EnableAttack()
     {
         yield return new WaitForSeconds(attack.pointOfNoReturn);
         bCollider.enabled = true;
         yield return new WaitForSeconds(attack.endOfAttack);
         bCollider.enabled = false;
 
-
+        atacking = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,5 +40,10 @@ public class WeaponDealDamage : MonoBehaviour
             bCollider.enabled = false;
             other.GetComponent<DummyTakeDamage>().TakeDamage(attack);
         }
+    }
+
+    public bool isAtacking()
+    {
+        return atacking;
     }
 }

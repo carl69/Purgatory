@@ -6,7 +6,7 @@ public class MovementState : State
 {
 
     public float moveSpeed = 5;
-    public float gravityScale = 10;
+    public float gravityScale = 100;
 
     /// <summary>
     private char inputController = 'K';
@@ -44,19 +44,15 @@ public class MovementState : State
         }
         else
         {
-
             player.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", false);
-
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Atack_P" + player.Player_Id))
         {
-            player.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
-
+            player.SetState(new AtackState(player));
         }
 
         Vector3 dahsDirection;
-
         if (Input.GetButtonDown("Dash_P" + player.Player_Id + inputController))//when the dash button is pressed we make the calculations of movement direction and use this information that it is going to be used for the DashState
         {
 

@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
-                WDD.Attack(new Vector2(0.12f , 0.5f));
+                ////////////////WDD.Attack(new Vector2(0.12f , 0.5f));
             }
 
         }

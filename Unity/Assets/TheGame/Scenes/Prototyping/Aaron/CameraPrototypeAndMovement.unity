@@ -707,5 +707,10 @@ PrefabInstance:
       propertyPath: joyStickActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 300534039, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}
+      propertyPath: attack
+      value: 
+      objectReference: {fileID: 11400000, guid: e442f5f72981eab48806ffadc22e2586,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}
