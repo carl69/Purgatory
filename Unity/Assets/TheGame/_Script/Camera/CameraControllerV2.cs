@@ -41,7 +41,7 @@ public class CameraControllerV2 : MonoBehaviour
     void LateUpdate()
     {
         float deadzone = 0.25f;
-        Vector2 stickInput = new Vector2(Input.GetAxis("CameraX_P1"), Input.GetAxis("CameraY_P1"));
+        Vector2 stickInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         if (stickInput.magnitude < deadzone)
             stickInput = Vector2.zero;
         else
@@ -80,7 +80,7 @@ public class CameraControllerV2 : MonoBehaviour
         transform.rotation = rotation;
 
         transform.position = Vector3.Lerp(
-                    transform.position, target.position - (/*rotation * */offset), Time.deltaTime * smoothLevel);
+                    transform.position, target.position - (/*rotation **/ offset), Time.deltaTime * smoothLevel);
 
 
         if (transform.position.y < target.transform.position.y - 0.5f)

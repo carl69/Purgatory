@@ -51,6 +51,8 @@ public class MovementStateV2 : MonoBehaviour
 
         desireMoveDirection = forward * inputZ + right * inputX;
 
+        //////desireMoveDirection = new Vector3(inputX, 0.0f, inputZ);/* forward * inputZ + right * inputX;*/
+
         if (!blockRotationPlayer)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(desireMoveDirection), desiredRotationSpeed);
