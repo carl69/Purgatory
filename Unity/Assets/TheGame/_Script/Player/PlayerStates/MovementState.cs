@@ -55,11 +55,12 @@ public class MovementState : State
 
         }
 
+        Vector3 dahsDirection;
 
         if (Input.GetButtonDown("Dash_P" + player.Player_Id + inputController))//when the dash button is pressed we make the calculations of movement direction and use this information that it is going to be used for the DashState
         {
 
-            Vector3 dahsDirection;
+
             if (Input.GetAxis("Vertical_P" + player.Player_Id + inputController) == 0 && Input.GetAxis("Horizontal_P" + player.Player_Id + inputController) == 0)
             {//if the player is not movig the dash is backwards
                 dahsDirection =  -player.transform.forward;
