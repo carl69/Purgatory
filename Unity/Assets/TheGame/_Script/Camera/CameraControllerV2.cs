@@ -4,94 +4,44 @@ using UnityEngine;
 
 public class CameraControllerV2 : MonoBehaviour
 {
-    public Transform target;
-    private Transform tagetParent;
-    public Player player;
+    public Transform PlayerTransform;
+    private Vector3 _cameraOfset;
 
-    public float smoothLevel = 100;
-
-
-    public Vector3 offset;
-
-    public float maxAngle = 45;
-    public float minAngle = 60;
-
-    public float rotateSpeed;
-
+    public bool lookAtPlayer = true;
 
     public Transform pivot;
 
-    public bool invertedY;
+    [Range(0.01f, 1.0f)]
+    public float Smoothfactor = 0.5f;
 
+
+    public bool rotationAllow = true;
+    public float rotateSpeed = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
-
-        tagetParent = target.transform.parent;
-
-        offset = target.position - transform.position;
-        pivot.transform.position = target.transform.position;
-        pivot.transform.parent = target.transform;
-
-        player = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).GetComponent<Player>();//we get acces to the player 
+        _cameraOfset = transform.position - PlayerTransform.position;
 
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        float deadzone = 0.25f;
-        Vector2 stickInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-        if (stickInput.magnitude < deadzone)
-            stickInput = Vector2.zero;
-        else
-            stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
 
-        float horizontal = stickInput.x * rotateSpeed;
 
-        tagetParent.Rotate(0, horizontal, 0);
+        //if (rotationAllow)
+        //{
+            Quaternion camChangeAngleHorizontal = Quaternion.AngleAxis(Input.GetAxis("CameraX_P1") * rotateSpeed, Vector3.up);
+            _cameraOfset = camChangeAngleHorizontal *_cameraOfset;
+        //}
 
-        //get the y position of the mouse and rotates the pivot 
-        float vertical = stickInput.y * rotateSpeed;
+        Vector3 newPosition = PlayerTransform.position + _cameraOfset;
 
-        //
-        if (invertedY)
+        transform.position = Vector3.Slerp(transform.position, newPosition, Smoothfactor);
+
+        if (lookAtPlayer || rotationAllow)
         {
-            vertical = -vertical;
+            transform.LookAt(PlayerTransform);
         }
-
-        pivot.Rotate(-vertical, 0, 0);
-
-        if (pivot.rotation.eulerAngles.x > maxAngle && pivot.rotation.eulerAngles.x < 180f)
-        {
-            pivot.rotation = Quaternion.Euler(maxAngle, 0, 0);
-        }
-
-        if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 360f - minAngle)
-        {
-            pivot.rotation = Quaternion.Euler(360f - minAngle, 0, 0);
-        }
-
-        float desireAngleY = target.eulerAngles.y;
-        float desireAngleX = pivot.eulerAngles.x;
-
-        Quaternion rotation = Quaternion.Euler(desireAngleX, desireAngleY, 0);
-
-        transform.rotation = rotation;
-
-        transform.position = Vector3.Lerp(
-                    transform.position, target.position - (/*rotation **/ offset), Time.deltaTime * smoothLevel);
-
-
-        if (transform.position.y < target.transform.position.y - 0.5f)
-        {
-            transform.position = new Vector3(transform.position.x, target.transform.position.y - 0.5f, transform.position.z);
-        }
-
-        transform.LookAt(target);
     }
-    /// <summary>
-    /// Método que hace la actualización de la posición, mirando la posición del target
-    /// y cambiando (suavizando) la posición de la cámara.
-    /// </summary>
 }
