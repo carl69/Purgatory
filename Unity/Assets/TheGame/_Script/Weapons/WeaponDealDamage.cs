@@ -20,6 +20,7 @@ public class WeaponDealDamage : MonoBehaviour
 
     public void Attack()
     {
+        //attack = TheAttack;
         atacking = true;
         StartCoroutine("EnableAttack");
     }

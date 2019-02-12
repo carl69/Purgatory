@@ -6,7 +6,6 @@ public class AtackState : State
 {
 
     WeaponDealDamage weaponDealDamage_;
-
     public AtackState(Player player) : base(player)
     {
 
@@ -22,6 +21,7 @@ public class AtackState : State
     {
         weaponDealDamage_ = player.GetComponentInChildren<WeaponDealDamage>();
         player.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
+
 
         weaponDealDamage_.Attack();
 
