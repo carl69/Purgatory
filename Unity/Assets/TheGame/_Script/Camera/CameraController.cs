@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     private Transform tagetParent;
     public Player player;
 
-    public float smoothLevel;
+    public float smoothLevel = 100;
 
 
     public Vector3 offset;
@@ -16,12 +16,12 @@ public class CameraController : MonoBehaviour
     public float maxAngle = 45;
     public float minAngle = 60;
 
-    public float rotateSpeed;
+    public float rotateSpeed = 2;
 
 
     public Transform pivot;
 
-    public bool invertedY;
+    public bool invertedY = true;
 
     // Start is called before the first frame update
     void Start()
