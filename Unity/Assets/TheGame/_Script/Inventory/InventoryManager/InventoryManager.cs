@@ -6,12 +6,11 @@ public class InventoryManager : MonoBehaviour
 {
 
     [SerializeField]
-    PlayerManager playerManager;
+    private PlayerManager playerManager;
 
 
     public void updateGear(string inventoryItem, string listItem, InventoryItems item)
     {
-        // Access to playerManager dictionary with the two strings and modify the value assigned to that key
-        // myDictionary[myKey] = myNewValue;
+        playerManager.CurrentInventory[inventoryItem][listItem] = item;
     }
 }

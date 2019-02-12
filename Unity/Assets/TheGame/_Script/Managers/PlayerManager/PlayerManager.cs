@@ -20,17 +20,41 @@ public class PlayerManager : MonoBehaviour
     Spell_Attack spell3 = new Spell_Attack("Combo3", 5);
     //--------------------------------------------------------
 
-    // A dictionary with the CURRENT EQUIPMENT of the player
-    private Dictionary<string, InventoryItems> currrentEquipment = new Dictionary<string, InventoryItems>();
-    public Dictionary<string, InventoryItems> CurrrentEquipment { get { return this.currrentEquipment; } }
+    // A dictionary with the CURRENT INVENTORY of the player
+    private Dictionary<string, Dictionary<string, InventoryItems>> currentInventory = new Dictionary<string, Dictionary<string, InventoryItems>>();
+    public Dictionary<string, Dictionary<string, InventoryItems>> CurrentInventory { get { return this.currentInventory; } }
 
-    // The WEAPON the player has selected
-    private InventoryItems currentWeapon;
-    public InventoryItems CurrentWeapon { get { return this.currentWeapon; } }
+
+    // A dictionary with the CURRENT EQUIPMENT of the player
+    private Dictionary<string, InventoryItems> currentEquipment = new Dictionary<string, InventoryItems>();
+    public Dictionary<string, InventoryItems> CurrentEquipment { get { return this.currentEquipment; } }
+
+
+    // A dictionary with the CURRENT WEAPONS of the player
+    private Dictionary<string, InventoryItems> currentWeapons = new Dictionary<string, InventoryItems>();
+    public Dictionary<string, InventoryItems> CurrentWeapons { get { return this.currentWeapons; } }
+
 
     // A dictionary with the CURRENT ATTACKS of the player
-    private Dictionary<string, InventoryItems> currrentAttacks = new Dictionary<string, InventoryItems>();
-    public Dictionary<string, InventoryItems> CurrrentAttacks { get { return this.currrentAttacks; } }
+    private Dictionary<string, InventoryItems> currentAttacks = new Dictionary<string, InventoryItems>();
+    public Dictionary<string, InventoryItems> CurrentAttacks { get { return this.currentAttacks; } }
+
+
+    // Inventory Items for the equipment
+    InventoryItems helmet = new InventoryItems("Default", 0);
+    InventoryItems arm = new InventoryItems("Default", 0);
+    InventoryItems chest = new InventoryItems("Default", 0);
+    InventoryItems leg = new InventoryItems("Default", 0);
+
+    // Inventory Items for the weapons
+    InventoryItems oneHandedWeapon = new InventoryItems("Default", 0);
+    InventoryItems twoHandedWeapon = new InventoryItems("Default", 0);
+
+    // Inventory Items for Attacks
+    InventoryItems weaponAttack = new InventoryItems("Default", 0);
+    InventoryItems SpellAttack = new InventoryItems("Default", 0);
+
+
 
     // Two queues with the COMBOS the player can perform
     private Queue<InventoryItems> comboSet1 = new Queue<InventoryItems>();
@@ -40,13 +64,42 @@ public class PlayerManager : MonoBehaviour
 
 
 
-    // TESTING: CAN BE DELETED
-    //------------------------------------------------------
+    
+    
     private void Start()
     {
+        // Adding each dictionary to the player's inventory
+        currentInventory.Add("Equipment", currentEquipment);
+        currentInventory.Add("Weapons", currentWeapons);
+        currentInventory.Add("Attacks", currentAttacks);
+
+        // Adding the Equipment
+        currentEquipment.Add("Helmets", helmet);
+        currentEquipment.Add("Arms", arm);
+        currentEquipment.Add("Chests", chest);
+        currentEquipment.Add("Legs", leg);
+
+        // Adding the wepaons
+        currentWeapons.Add("OneHandedWeapons", oneHandedWeapon);
+        currentWeapons.Add("TwoHandedWeapons", twoHandedWeapon);
+
+        // Adding the attacks
+        currentAttacks.Add("WeaponAttacks", weaponAttack);
+        currentAttacks.Add("SpellAttacks", SpellAttack);
+
+
+        //------------------------------------------------------
+        // TESTING: CAN BE DELETED
         comboSet1.Enqueue(spell1);
         comboSet1.Enqueue(weaponatk1);
         comboSet1.Enqueue(spell3);
+        //------------------------------------------------------
     }
-    //------------------------------------------------------
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+            Debug.Log(currentInventory["Equipment"]["Helmets"].Tag);
+    }
+
 }
