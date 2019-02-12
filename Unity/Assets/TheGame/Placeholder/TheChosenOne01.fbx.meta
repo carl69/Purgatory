@@ -119,6 +119,50 @@ ModelImporter:
     100226: Ulna.L.001
     100228: Ulna.R
     100230: Ulna.R.001
+    100232: Hand_Grip.L
+    100234: Hand_Grip.L_end
+    100236: Hand_Grip.R
+    100238: Hand_Grip.R_end
+    100240: Hand_Index01.L
+    100242: Hand_Index01.R
+    100244: Hand_Index02.L
+    100246: Hand_Index02.R
+    100248: Hand_Index03.L
+    100250: Hand_Index03.L_end
+    100252: Hand_Index03.R
+    100254: Hand_Index03.R_end
+    100256: Hand_Little01.L
+    100258: Hand_Little01.R
+    100260: Hand_Little02.L
+    100262: Hand_Little02.R
+    100264: Hand_Little03.L
+    100266: Hand_Little03.L_end
+    100268: Hand_Little03.R
+    100270: Hand_Little03.R_end
+    100272: Hand_Middle01.L
+    100274: Hand_Middle01.R
+    100276: Hand_Middle02.L
+    100278: Hand_Middle02.R
+    100280: Hand_Middle03.L
+    100282: Hand_Middle03.L_end
+    100284: Hand_Middle03.R
+    100286: Hand_Middle03.R_end
+    100288: Hand_Ring01.L
+    100290: Hand_Ring01.R
+    100292: Hand_Ring02.L
+    100294: Hand_Ring02.R
+    100296: Hand_Ring03.L
+    100298: Hand_Ring03.L_end
+    100300: Hand_Ring03.R
+    100302: Hand_Ring03.R_end
+    100304: Hand_Thumb01.L
+    100306: Hand_Thumb01.R
+    100308: Hand_Thumb02.L
+    100310: Hand_Thumb02.R
+    100312: Hand_Thumb03.L
+    100314: Hand_Thumb03.L_end
+    100316: Hand_Thumb03.R
+    100318: Hand_Thumb03.R_end
     400000: Cube
     400002: TheChosenOne
     400004: //RootNode
@@ -235,6 +279,50 @@ ModelImporter:
     400226: Ulna.L.001
     400228: Ulna.R
     400230: Ulna.R.001
+    400232: Hand_Grip.L
+    400234: Hand_Grip.L_end
+    400236: Hand_Grip.R
+    400238: Hand_Grip.R_end
+    400240: Hand_Index01.L
+    400242: Hand_Index01.R
+    400244: Hand_Index02.L
+    400246: Hand_Index02.R
+    400248: Hand_Index03.L
+    400250: Hand_Index03.L_end
+    400252: Hand_Index03.R
+    400254: Hand_Index03.R_end
+    400256: Hand_Little01.L
+    400258: Hand_Little01.R
+    400260: Hand_Little02.L
+    400262: Hand_Little02.R
+    400264: Hand_Little03.L
+    400266: Hand_Little03.L_end
+    400268: Hand_Little03.R
+    400270: Hand_Little03.R_end
+    400272: Hand_Middle01.L
+    400274: Hand_Middle01.R
+    400276: Hand_Middle02.L
+    400278: Hand_Middle02.R
+    400280: Hand_Middle03.L
+    400282: Hand_Middle03.L_end
+    400284: Hand_Middle03.R
+    400286: Hand_Middle03.R_end
+    400288: Hand_Ring01.L
+    400290: Hand_Ring01.R
+    400292: Hand_Ring02.L
+    400294: Hand_Ring02.R
+    400296: Hand_Ring03.L
+    400298: Hand_Ring03.L_end
+    400300: Hand_Ring03.R
+    400302: Hand_Ring03.R_end
+    400304: Hand_Thumb01.L
+    400306: Hand_Thumb01.R
+    400308: Hand_Thumb02.L
+    400310: Hand_Thumb02.R
+    400312: Hand_Thumb03.L
+    400314: Hand_Thumb03.L_end
+    400316: Hand_Thumb03.R
+    400318: Hand_Thumb03.R_end
     2100000: No Name
     2300000: Cube
     2300002: TheChosenOne

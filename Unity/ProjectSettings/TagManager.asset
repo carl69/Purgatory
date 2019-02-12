@@ -8,6 +8,7 @@ TagManager:
   - DoNotDestroy
   - GM
   - Floor
+  - PlayerAudio
   layers:
   - Default
   - TransparentFX
