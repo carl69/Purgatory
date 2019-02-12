@@ -7,6 +7,10 @@ public class Player : MonoBehaviour
     // Current state of the player
     private State currentState;
 
+    // Player Manager with the current items of the player
+    private PlayerManager playerManager;
+    public PlayerManager PlayerManager { get { return this.playerManager; } }
+
 
     /// <testing_purposes>
     [SerializeField]
@@ -22,6 +26,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        playerManager = GetComponent<PlayerManager>();
+
         SetState(new MovementState(this));
     }
 
