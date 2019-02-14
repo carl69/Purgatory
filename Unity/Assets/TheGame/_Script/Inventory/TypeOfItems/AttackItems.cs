@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public struct AttackItems
 {
+
     // Weapon attacks
     private string weaponAttacksKey;
     public string WeaponAttacksKey { get { return this.weaponAttacksKey; } set { this.weaponAttacksKey = value; } }

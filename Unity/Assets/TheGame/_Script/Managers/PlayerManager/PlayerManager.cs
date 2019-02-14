@@ -26,32 +26,50 @@ public class PlayerManager : MonoBehaviour
 
 
     // A dictionary with the CURRENT EQUIPMENT of the player
+    private string currentEquipmentKey = "Equipment";
     private Dictionary<string, InventoryItems> currentEquipment = new Dictionary<string, InventoryItems>();
     public Dictionary<string, InventoryItems> CurrentEquipment { get { return this.currentEquipment; } }
 
 
     // A dictionary with the CURRENT WEAPONS of the player
+    private string currentWeaponsKey = "Weapons";
     private Dictionary<string, InventoryItems> currentWeapons = new Dictionary<string, InventoryItems>();
     public Dictionary<string, InventoryItems> CurrentWeapons { get { return this.currentWeapons; } }
 
 
     // A dictionary with the CURRENT ATTACKS of the player
+    private string currentAttacksKey = "Attacks";
     private Dictionary<string, InventoryItems> currentAttacks = new Dictionary<string, InventoryItems>();
     public Dictionary<string, InventoryItems> CurrentAttacks { get { return this.currentAttacks; } }
 
 
     // Inventory Items for the equipment
+    private string currentHelmetKey = "Helmets";
     InventoryItems helmet = new InventoryItems("Default", 0);
+
+    private string currentArmKey = "Arms";
     InventoryItems arm = new InventoryItems("Default", 0);
+
+    private string currentChestKey = "Chests";
     InventoryItems chest = new InventoryItems("Default", 0);
+
+    private string currentLegKey = "Legs";
     InventoryItems leg = new InventoryItems("Default", 0);
 
+
     // Inventory Items for the weapons
+    private string currentOneHandedWeaponKey = "OneHandedWeapons";
     InventoryItems oneHandedWeapon = new InventoryItems("Default", 0);
+
+    private string currentTwoHandedWeaponKey = "TwoHandedWeapons";
     InventoryItems twoHandedWeapon = new InventoryItems("Default", 0);
 
+
     // Inventory Items for Attacks
+    private string currentWeaponAttackKey = "WeaponAttacks";
     InventoryItems weaponAttack = new InventoryItems("Default", 0);
+
+    private string currentSpellAttackKey = "SpellAttacks";
     InventoryItems SpellAttack = new InventoryItems("Default", 0);
 
 
@@ -68,25 +86,8 @@ public class PlayerManager : MonoBehaviour
     
     private void Start()
     {
-        // Adding each dictionary to the player's inventory
-        currentInventory.Add("Equipment", currentEquipment);
-        currentInventory.Add("Weapons", currentWeapons);
-        currentInventory.Add("Attacks", currentAttacks);
 
-        // Adding the Equipment
-        currentEquipment.Add("Helmets", helmet);
-        currentEquipment.Add("Arms", arm);
-        currentEquipment.Add("Chests", chest);
-        currentEquipment.Add("Legs", leg);
-
-        // Adding the wepaons
-        currentWeapons.Add("OneHandedWeapons", oneHandedWeapon);
-        currentWeapons.Add("TwoHandedWeapons", twoHandedWeapon);
-
-        // Adding the attacks
-        currentAttacks.Add("WeaponAttacks", weaponAttack);
-        currentAttacks.Add("SpellAttacks", SpellAttack);
-
+        CreatePlayerInventory();
 
         //------------------------------------------------------
         // TESTING: CAN BE DELETED
@@ -98,8 +99,35 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        // TESTING PURPOSES------------------------------------------
         if (Input.GetKeyDown(KeyCode.T))
             Debug.Log(currentInventory["Equipment"]["Helmets"].Tag);
+        // TESTING PURPOSES------------------------------------------
+    }
+
+    private void CreatePlayerInventory()
+    {
+        // Adding each dictionary to the player's inventory
+        currentInventory.Add(currentEquipmentKey, currentEquipment);
+        currentInventory.Add(currentWeaponsKey, currentWeapons);
+        currentInventory.Add(currentAttacksKey, currentAttacks);
+
+
+        // Adding the Equipment
+        currentEquipment.Add(currentHelmetKey, helmet);
+        currentEquipment.Add(currentArmKey, arm);
+        currentEquipment.Add(currentChestKey, chest);
+        currentEquipment.Add(currentLegKey, leg);
+
+
+        // Adding the wepaons
+        currentWeapons.Add(currentOneHandedWeaponKey, oneHandedWeapon);
+        currentWeapons.Add(currentTwoHandedWeaponKey, twoHandedWeapon);
+
+
+        // Adding the attacks
+        currentAttacks.Add(currentWeaponAttackKey, weaponAttack);
+        currentAttacks.Add(currentSpellAttackKey, SpellAttack);
     }
 
 }
