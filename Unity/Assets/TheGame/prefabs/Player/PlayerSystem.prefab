@@ -46,20 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_id: 0
   stamina: 0
---- !u!114 &1166514417770565127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7667229570930043931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 302f0b5efb3b9ce408a8fc8b0ef31c9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_Id: 50
-  joyStickActive: 1
 --- !u!114 &2045692220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +58,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf37de79f0e92824eb5ab50892ab1d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator_: {fileID: 584226550304985832}
+--- !u!114 &1166514417770565127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667229570930043931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302f0b5efb3b9ce408a8fc8b0ef31c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_Id: 49
+  joyStickActive: 0
 --- !u!1001 &4074463963081948451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -657,6 +658,12 @@ PrefabInstance:
       objectReference: {fileID: 584226550313991334}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 585f88fe8b08bad4b8382c7c58438caf, type: 3}
+--- !u!95 &584226550304985832 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3499562515473092009, guid: 585f88fe8b08bad4b8382c7c58438caf,
+    type: 3}
+  m_PrefabInstance: {fileID: 4074463963915231041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &584226550313991334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3499562515482616807, guid: 585f88fe8b08bad4b8382c7c58438caf,

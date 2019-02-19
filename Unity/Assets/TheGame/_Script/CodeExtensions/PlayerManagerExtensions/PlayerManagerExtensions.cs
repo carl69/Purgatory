@@ -19,19 +19,20 @@ public class PlayerManagerExtensions : MonoBehaviour
 
     public void executeComboSet1()
     {
-        string combo = playerManager_.ComboSet1.Dequeue();
-        animator_.SetTrigger(combo);
-        playerManager_.ComboSet1.Enqueue(combo);
+        AttackData comboAttackk = playerManager_.ComboSet1.Dequeue();
+        Debug.Log(comboAttackk.Tag);
+        animator_.SetTrigger(comboAttackk.AttackAnimation);
+        playerManager_.ComboSet1.Enqueue(comboAttackk);
     }
 
-    public void addAttackToCombo(Queue<string> comboSet, AttackData attack)
+    public void addAttackToCombo(Queue<AttackData> comboSet, AttackData attack)
     {
-        comboSet.Enqueue(attack.AttackAnimation);
+        comboSet.Enqueue(attack);
         comboNumber++;
         attack.ComboNumber = comboNumber;
     }
 
-    public void removeAttackFromCombo(Queue<string> comboSet, AttackData attack)
+    public void removeAttackFromCombo(Queue<AttackData> comboSet, AttackData attack)
     {
         comboSet.Dequeue();
         comboNumber--;

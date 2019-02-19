@@ -20,12 +20,6 @@ public class PlayerManager : MonoBehaviour
     private Player player;
     public Player Player { get { return this.player; } }
 
-    // TESTING: CAN BE DELETED
-    //--------------------------------------------------------
-    //Spell_Attack spell1 = new Spell_Attack("Combo1", 3);
-    //Weapon_Attack weaponatk1 = new Weapon_Attack("Combo2", 4);
-    //Spell_Attack spell3 = new Spell_Attack("Combo3", 5);
-    //--------------------------------------------------------
 
     // A dictionary with the CURRENT INVENTORY of the player
     private Dictionary<string, Dictionary<string, InventoryItems>> currentInventory = new Dictionary<string, Dictionary<string, InventoryItems>>();
@@ -82,17 +76,17 @@ public class PlayerManager : MonoBehaviour
 
 
     // Two queues with the COMBOS the player can perform
-    private Queue<string> comboSet1 = new Queue<string>();
-    public Queue<string> ComboSet1 { get { return this.comboSet1; } }
-    private Queue<string> comboSet2 = new Queue<string>();
-    public Queue<string> ComboSet2 { get { return this.comboSet2; } }
+    private Queue<AttackData> comboSet1 = new Queue<AttackData>();
+    public Queue<AttackData> ComboSet1 { get { return this.comboSet1; } }
+    private Queue<AttackData> comboSet2 = new Queue<AttackData>();
+    public Queue<AttackData> ComboSet2 { get { return this.comboSet2; } }
 
 
     //------------------------------------------------------
     // TESTING: CAN BE DELETED
-    Weapon_Attack atk1 = new Weapon_Attack("1", 1, "Attack");
-    Weapon_Attack atk2 = new Weapon_Attack("2", 2, "Attack");
-    Weapon_Attack atk3 = new Weapon_Attack("3", 3, "Attack");
+    Weapon_Attack atk1 = new Weapon_Attack("Attack 1", 1, "Attack");
+    Weapon_Attack atk2 = new Weapon_Attack("Attack 2", 2, "Attack");
+    Weapon_Attack atk3 = new Weapon_Attack("Attack 3", 3, "Attack");
     //------------------------------------------------------
 
 
@@ -103,28 +97,10 @@ public class PlayerManager : MonoBehaviour
         playerManagerExtensions.addAttackToCombo(comboSet1, atk1);
         playerManagerExtensions.addAttackToCombo(comboSet1, atk2);
         playerManagerExtensions.addAttackToCombo(comboSet1, atk3);
-
-
-
-        //------------------------------------------------------
-        // TESTING: CAN BE DELETED
-        //comboSet1.Enqueue(spell1);
-        //comboSet1.Enqueue(weaponatk1);
-        //comboSet1.Enqueue(spell3);
-        //------------------------------------------------------
-
-
     }
 
     private void Update()
     {
-
-
-        // TESTING PURPOSES------------------------------------------
-        //if (Input.GetKeyDown(KeyCode.T))
-        //    Debug.Log(currentInventory["Equipment"]["Helmets"].Tag);
-        // TESTING PURPOSES------------------------------------------
-
         if (Input.GetKeyDown(KeyCode.T))
             playerManagerExtensions.executeComboSet1();
     }

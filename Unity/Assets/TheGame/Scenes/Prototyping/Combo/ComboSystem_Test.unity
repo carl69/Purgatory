@@ -124,11 +124,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSystem
       objectReference: {fileID: 0}
-    - target: {fileID: 1474879975583442488, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6512038009061035647, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,28 +179,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2045692220, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
-      propertyPath: animator_
-      value: 
-      objectReference: {fileID: 175728180}
-    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: player_Id
-      value: 49
-      objectReference: {fileID: 0}
-    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: joyStickActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
---- !u!95 &175728180 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 584226550304985832, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-    type: 3}
-  m_PrefabInstance: {fileID: 175728179}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &288312378
 GameObject:
   m_ObjectHideFlags: 0
