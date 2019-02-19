@@ -636,6 +636,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory
       objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: attacks.spellAttacks.Array.data[0].attackAnimation
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
         type: 3}
       propertyPath: m_LocalPosition.x

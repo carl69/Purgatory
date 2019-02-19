@@ -18,7 +18,6 @@ public class PlayerManagerExtensions : MonoBehaviour
     public void executeComboSet1()
     {
         string combo = playerManager_.ComboSet1.Dequeue();
-        print(combo);
         animator_.SetTrigger(combo);
         playerManager_.ComboSet1.Enqueue(combo);
     }
