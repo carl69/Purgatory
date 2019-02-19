@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
     private bool joyStickActive = false;
     public bool JoyStickActive { get { return this.joyStickActive; } set { this.joyStickActive = value; } }
     /// </testing_purposes>
+    /// 
+    public int pNumber;
+
+    public string isDS4 = "";
 
 
 
@@ -46,5 +50,15 @@ public class Player : MonoBehaviour
 
         if (currentState != null)
             currentState.OnStateEnter();
+    }
+
+    public void setNumber(int i)
+    {
+        pNumber = i;
+    }
+
+    public void setPS4()
+    {
+        isDS4 = "PS";
     }
 }

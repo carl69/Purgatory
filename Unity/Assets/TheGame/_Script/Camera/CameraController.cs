@@ -46,8 +46,8 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
             float deadzone = 0.25f;
-            Vector2 stickInput = new Vector2(Input.GetAxis("CameraX_P" + player.Player_Id + controller), Input.GetAxis("CameraY_P" + player.Player_Id+ controller));
-            if (stickInput.magnitude < deadzone)
+        Vector2 stickInput = new Vector2(Input.GetAxis("RHorizontal" + player.isDS4 + player.pNumber.ToString() /*"CameraX_P" + player.Player_Id + player.inputController*/), Input.GetAxis("RVertical" + player.isDS4 + player.pNumber.ToString()/*"CameraY_P" + player.Player_Id + player.inputController*/));/*= new Vector2(Input.GetAxis("CameraX_P" + player.Player_Id + controller), Input.GetAxis("CameraY_P" + player.Player_Id+ controller));*/
+        if (stickInput.magnitude < deadzone)
                 stickInput = Vector2.zero;
             else
                 stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
