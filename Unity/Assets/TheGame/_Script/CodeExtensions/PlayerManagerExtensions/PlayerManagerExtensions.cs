@@ -20,7 +20,6 @@ public class PlayerManagerExtensions : MonoBehaviour
     public void executeComboSet1()
     {
         AttackData comboAttackk = playerManager_.ComboSet1.Dequeue();
-        Debug.Log(comboAttackk.Tag);
         animator_.SetTrigger(comboAttackk.AttackAnimation);
         playerManager_.ComboSet1.Enqueue(comboAttackk);
     }

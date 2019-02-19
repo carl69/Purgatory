@@ -46,38 +46,39 @@ public class PlayerManager : MonoBehaviour
 
     // Inventory Items for the equipment
     private string currentHelmetKey = "Helmets";
-    InventoryItems helmet = new InventoryItems("Default", 0);
+    private InventoryItems helmet = new InventoryItems("Default", 0);
 
     private string currentArmKey = "Arms";
-    InventoryItems arm = new InventoryItems("Default", 0);
+    private InventoryItems arm = new InventoryItems("Default", 0);
 
     private string currentChestKey = "Chests";
-    InventoryItems chest = new InventoryItems("Default", 0);
+    private InventoryItems chest = new InventoryItems("Default", 0);
 
     private string currentLegKey = "Legs";
-    InventoryItems leg = new InventoryItems("Default", 0);
+    private InventoryItems leg = new InventoryItems("Default", 0);
 
 
     // Inventory Items for the weapons
     private string currentOneHandedWeaponKey = "OneHandedWeapons";
-    InventoryItems oneHandedWeapon = new InventoryItems("Default", 0);
+    private InventoryItems oneHandedWeapon = new InventoryItems("Default", 0);
 
     private string currentTwoHandedWeaponKey = "TwoHandedWeapons";
-    InventoryItems twoHandedWeapon = new InventoryItems("Default", 0);
+    private InventoryItems twoHandedWeapon = new InventoryItems("Default", 0);
 
 
     // Inventory Items for Attacks
-    private string currentWeaponAttackKey = "WeaponAttacks";
-    InventoryItems weaponAttack = new InventoryItems("Default", 0);
+    private string currentWeaponAttacksKey = "WeaponAttacks";
+    private InventoryItems WeaponAttack = new InventoryItems("Default", 0);
 
-    private string currentSpellAttackKey = "SpellAttacks";
-    InventoryItems SpellAttack = new InventoryItems("Default", 0);
+    private string currentSpellAttacksKey = "SpellAttacks";
+    private InventoryItems SpellAttack = new InventoryItems("Default", 0);
 
 
-
-    // Two queues with the COMBOS the player can perform
+    // A queue with the first combo set the player can perform
     private Queue<AttackData> comboSet1 = new Queue<AttackData>();
     public Queue<AttackData> ComboSet1 { get { return this.comboSet1; } }
+
+    // A queue with the second combo set the player can perform
     private Queue<AttackData> comboSet2 = new Queue<AttackData>();
     public Queue<AttackData> ComboSet2 { get { return this.comboSet2; } }
 
@@ -126,8 +127,8 @@ public class PlayerManager : MonoBehaviour
 
 
         // Adding the attacks
-        currentAttacks.Add(currentWeaponAttackKey, weaponAttack);
-        currentAttacks.Add(currentSpellAttackKey, SpellAttack);
+        currentAttacks.Add(currentWeaponAttacksKey, WeaponAttack);
+        currentAttacks.Add(currentSpellAttacksKey, SpellAttack);
 
         playerManagerExtensions = GetComponent<PlayerManagerExtensions>();
     }
