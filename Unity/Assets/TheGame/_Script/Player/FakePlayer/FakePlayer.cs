@@ -16,7 +16,7 @@ public class FakePlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             Debug.Log("Execute attack animation");
-            playerManagerExtensions_.executeComboSet1();
+            //playerManagerExtensions_.executeComboSet1();
         }
     }
 }

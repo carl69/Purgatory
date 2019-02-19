@@ -10,6 +10,7 @@ public class PlayerManagerExtensions : MonoBehaviour
     private Animator animator_;
 
     private int comboNumber = -1;
+    private float timeLastAttackExecuted;
 
 
     private void Start()
@@ -17,11 +18,23 @@ public class PlayerManagerExtensions : MonoBehaviour
         playerManager_ = GetComponent<PlayerManager>();
     }
 
-    public void executeComboSet1()
+    public void executeComboSet(Queue<AttackData> comboSet)
     {
-        AttackData comboAttackk = playerManager_.ComboSet1.Dequeue();
-        animator_.SetTrigger(comboAttackk.AttackAnimation);
-        playerManager_.ComboSet1.Enqueue(comboAttackk);
+
+
+        if (Time.time > timeLastAttackExecuted + playerManager_.AllowedTimeBetweenAttacks)
+        {
+            AttackData comboAttack = comboSet.Dequeue();
+            animator_.SetTrigger(comboAttack.AttackAnimation);
+            comboSet.Enqueue(comboAttack);
+
+            timeLastAttackExecuted = Time.time;
+        }
+        else
+        {
+            Debug.Log("Failed Combo");
+        }
+        
     }
 
     public void addAttackToCombo(Queue<AttackData> comboSet, AttackData attack)

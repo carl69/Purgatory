@@ -13,6 +13,10 @@ public class PlayerManager : MonoBehaviour
     public int Player_id { get { return this.player_id; } }
 
     [SerializeField]
+    private float allowedTimeBetweenAttacks = 1.5f;
+    public float AllowedTimeBetweenAttacks { get { return this.allowedTimeBetweenAttacks; } }
+
+    [SerializeField]
     private float stamina;
     public float Stamina { get { return this.stamina; } }
 
@@ -103,7 +107,7 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
-            playerManagerExtensions.executeComboSet1();
+            playerManagerExtensions.executeComboSet(comboSet1);
     }
 
     private void CreatePlayerInventory()
