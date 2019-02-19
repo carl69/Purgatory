@@ -179,6 +179,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2045692220, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
+      propertyPath: animator_
+      value: 
+      objectReference: {fileID: 1473797034}
+    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: joyStickActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
 --- !u!1 &288312378
@@ -250,6 +259,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!95 &1473797034 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 584226550304985832, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+    type: 3}
+  m_PrefabInstance: {fileID: 11250775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1856633311
 GameObject:
   m_ObjectHideFlags: 0
