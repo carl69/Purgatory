@@ -87,18 +87,24 @@ public class PlayerManager : MonoBehaviour
     private Queue<string> comboSet2 = new Queue<string>();
     public Queue<string> ComboSet2 { get { return this.comboSet2; } }
 
-    
-    
+
+    //------------------------------------------------------
+    // TESTING: CAN BE DELETED
+    Weapon_Attack atk1 = new Weapon_Attack("1", 1, "Attack");
+    Weapon_Attack atk2 = new Weapon_Attack("2", 2, "Attack");
+    Weapon_Attack atk3 = new Weapon_Attack("3", 3, "Attack");
+    //------------------------------------------------------
+
+
     private void Start()
     {
         CreatePlayerInventory();
 
-        //------------------------------------------------------
-        // TESTING: CAN BE DELETED
-        comboSet1.Enqueue("Attack");
-        comboSet1.Enqueue("Attack");
-        comboSet1.Enqueue("Attack");
-        //------------------------------------------------------
+        playerManagerExtensions.addAttackToCombo(comboSet1, atk1);
+        playerManagerExtensions.addAttackToCombo(comboSet1, atk2);
+        playerManagerExtensions.addAttackToCombo(comboSet1, atk3);
+
+
 
         //------------------------------------------------------
         // TESTING: CAN BE DELETED
@@ -107,7 +113,7 @@ public class PlayerManager : MonoBehaviour
         //comboSet1.Enqueue(spell3);
         //------------------------------------------------------
 
-        playerManagerExtensions = GetComponent<PlayerManagerExtensions>();
+
     }
 
     private void Update()
@@ -146,6 +152,8 @@ public class PlayerManager : MonoBehaviour
         // Adding the attacks
         currentAttacks.Add(currentWeaponAttackKey, weaponAttack);
         currentAttacks.Add(currentSpellAttackKey, SpellAttack);
+
+        playerManagerExtensions = GetComponent<PlayerManagerExtensions>();
     }
 
 }

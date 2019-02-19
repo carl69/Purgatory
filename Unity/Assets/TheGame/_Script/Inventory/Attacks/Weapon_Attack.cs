@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Weapon_Attack : AttacksData
+public class Weapon_Attack : AttackData
 {
     // Constructor of the class
-    public Weapon_Attack(string t, int Id) : base(t, Id)
+    public Weapon_Attack(string t, int Id, string atkAnimation) : base(t, Id, atkAnimation)
     {
     }
 

@@ -9,6 +9,8 @@ public class PlayerManagerExtensions : MonoBehaviour
     [SerializeField]
     private Animator animator_;
 
+    private int comboNumber = -1;
+
 
     private void Start()
     {
@@ -20,5 +22,18 @@ public class PlayerManagerExtensions : MonoBehaviour
         string combo = playerManager_.ComboSet1.Dequeue();
         animator_.SetTrigger(combo);
         playerManager_.ComboSet1.Enqueue(combo);
+    }
+
+    public void addAttackToCombo(Queue<string> comboSet, AttackData attack)
+    {
+        comboSet.Enqueue(attack.AttackAnimation);
+        comboNumber++;
+        attack.ComboNumber = comboNumber;
+    }
+
+    public void removeAttackFromCombo(Queue<string> comboSet, AttackData attack)
+    {
+        comboSet.Dequeue();
+        comboNumber--;
     }
 }

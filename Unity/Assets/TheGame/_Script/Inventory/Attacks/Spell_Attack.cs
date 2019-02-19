@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Spell_Attack : AttacksData
+public class Spell_Attack : AttackData
 {
     // Constructor of the cards
-    public Spell_Attack(string t, int Id) : base(t, Id)
+    public Spell_Attack(string t, int Id, string atkAnimation) : base(t, Id, atkAnimation)
     {
     }
 
