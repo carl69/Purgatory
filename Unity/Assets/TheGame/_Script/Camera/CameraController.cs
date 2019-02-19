@@ -22,6 +22,7 @@ public class CameraController : MonoBehaviour
     public Transform pivot;
 
     public bool invertedY = true;
+    string controller = "";
 
     // Start is called before the first frame update
     void Start()
@@ -35,13 +36,17 @@ public class CameraController : MonoBehaviour
 
         player = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).GetComponent<Player>();//we get acces to the player 
 
+        if(!player.JoyStickActive)
+            controller = "K";
+        else controller = "J";
+
             }
 
     // Update is called once per frame
     void LateUpdate()
     {
             float deadzone = 0.25f;
-            Vector2 stickInput = new Vector2(Input.GetAxis("CameraX_P" + player.Player_Id), Input.GetAxis("CameraY_P" + player.Player_Id));
+            Vector2 stickInput = new Vector2(Input.GetAxis("CameraX_P" + player.Player_Id + controller), Input.GetAxis("CameraY_P" + player.Player_Id+ controller));
             if (stickInput.magnitude < deadzone)
                 stickInput = Vector2.zero;
             else
