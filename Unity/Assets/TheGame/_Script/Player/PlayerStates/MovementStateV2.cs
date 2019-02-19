@@ -22,9 +22,13 @@ public class MovementStateV2 : MonoBehaviour
 
     public float moveSpeed = 5;
 
+    public Player player;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        //player = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).GetComponent<Player>();
+        player = FindObjectOfType<Player>().GetComponent<Player>();
     }
 
     void Update()
@@ -36,9 +40,9 @@ public class MovementStateV2 : MonoBehaviour
 
     private void playerMovement()
     {
-        inputX = Input.GetAxis("Horizontal_P1J");
+        inputX = Input.GetAxis("Horizontal1Test" /*+ player.pNumber.ToString()*/);
    
-        inputZ = Input.GetAxis("Vertical_P1J");
+        inputZ = Input.GetAxis("Vertical1Test" /*+ player.pNumber.ToString()*/);
 
         Vector3 forward = cam.transform.forward;
         var right = cam.transform.right;
@@ -63,10 +67,13 @@ public class MovementStateV2 : MonoBehaviour
 
     void InputMagnitude()
     {
+        inputX = Input.GetAxis("Horizontal1Test" /*+ player.pNumber.ToString()*/);
 
-        inputX = Input.GetAxis("Horizontal_P1J");
+        inputZ = Input.GetAxis("Vertical1Test" /*+ player.pNumber.ToString()*/);
 
-        inputZ = Input.GetAxis("Vertical_P1J");
+        //inputX = Input.GetAxis("Horizontal_P1J");
+
+        //inputZ = Input.GetAxis("Vertical_P1J");
 
         speed = new Vector2(inputX, inputZ).sqrMagnitude;
 
