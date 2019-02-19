@@ -53,6 +53,15 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
+        createInventory();
+
+        // To access the inventoryExtensions methods
+        inventoryExtensions = GetComponent<InventoryExtensions>();
+    }
+
+    // Method that sets up the inventory
+    private void createInventory()
+    {
         // Setting the keys of the equipment dictionary
         equipment.HelmetsKey = "Helmets";
         equipment.ArmsKey = "Arms";
@@ -87,11 +96,8 @@ public class Inventory : MonoBehaviour
         inventory.Add(weaponsKey, Weapons_Dictionary);
         Weapons_Dictionary.Add(weapons.OneHandedWeaponsKey, weapons.OneHandedWeapons.ConvertAll(x => (InventoryItems)x));
         Weapons_Dictionary.Add(weapons.TwoHandedWeaponsKey, weapons.TwoHanedWeapons.ConvertAll(x => (InventoryItems)x));
-  
-        //---------------------------------------------------------------------------------------------------------------
 
-        // To access the inventoryExtensions methods
-        inventoryExtensions = GetComponent<InventoryExtensions>();
+        //---------------------------------------------------------------------------------------------------------------
     }
 
 }

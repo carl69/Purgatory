@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    // A variable to access code extensions
+    PlayerManagerExtensions playerManagerExtensions;
+
     // Player STATS
     [SerializeField]
     private int player_id;
@@ -13,11 +16,15 @@ public class PlayerManager : MonoBehaviour
     private float stamina;
     public float Stamina { get { return this.stamina; } }
 
+    // A variable to be able to have access to the player
+    private Player player;
+    public Player Player { get { return this.player; } }
+
     // TESTING: CAN BE DELETED
     //--------------------------------------------------------
-    Spell_Attack spell1 = new Spell_Attack("Combo1", 3);
-    Weapon_Attack weaponatk1 = new Weapon_Attack("Combo2", 4);
-    Spell_Attack spell3 = new Spell_Attack("Combo3", 5);
+    //Spell_Attack spell1 = new Spell_Attack("Combo1", 3);
+    //Weapon_Attack weaponatk1 = new Weapon_Attack("Combo2", 4);
+    //Spell_Attack spell3 = new Spell_Attack("Combo3", 5);
     //--------------------------------------------------------
 
     // A dictionary with the CURRENT INVENTORY of the player
@@ -75,34 +82,45 @@ public class PlayerManager : MonoBehaviour
 
 
     // Two queues with the COMBOS the player can perform
-    private Queue<InventoryItems> comboSet1 = new Queue<InventoryItems>();
-    public Queue<InventoryItems> ComboSet1 { get { return this.comboSet1; } }
-    private Queue<InventoryItems> comboSet2 = new Queue<InventoryItems>();
-    public Queue<InventoryItems> ComboSet2 { get { return this.comboSet2; } }
-
-
+    private Queue<string> comboSet1 = new Queue<string>();
+    public Queue<string> ComboSet1 { get { return this.comboSet1; } }
+    private Queue<string> comboSet2 = new Queue<string>();
+    public Queue<string> ComboSet2 { get { return this.comboSet2; } }
 
     
     
     private void Start()
     {
-
         CreatePlayerInventory();
 
         //------------------------------------------------------
         // TESTING: CAN BE DELETED
-        comboSet1.Enqueue(spell1);
-        comboSet1.Enqueue(weaponatk1);
-        comboSet1.Enqueue(spell3);
+        comboSet1.Enqueue("Attack");
+        comboSet1.Enqueue("Attack");
+        comboSet1.Enqueue("Attack");
         //------------------------------------------------------
+
+        //------------------------------------------------------
+        // TESTING: CAN BE DELETED
+        //comboSet1.Enqueue(spell1);
+        //comboSet1.Enqueue(weaponatk1);
+        //comboSet1.Enqueue(spell3);
+        //------------------------------------------------------
+
+        playerManagerExtensions = GetComponent<PlayerManagerExtensions>();
     }
 
     private void Update()
     {
+
+
         // TESTING PURPOSES------------------------------------------
+        //if (Input.GetKeyDown(KeyCode.T))
+        //    Debug.Log(currentInventory["Equipment"]["Helmets"].Tag);
+        // TESTING PURPOSES------------------------------------------
+
         if (Input.GetKeyDown(KeyCode.T))
-            Debug.Log(currentInventory["Equipment"]["Helmets"].Tag);
-        // TESTING PURPOSES------------------------------------------
+            playerManagerExtensions.executeComboSet1();
     }
 
     private void CreatePlayerInventory()
