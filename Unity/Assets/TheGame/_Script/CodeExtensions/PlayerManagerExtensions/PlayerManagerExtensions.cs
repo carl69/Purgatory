@@ -10,7 +10,6 @@ public class PlayerManagerExtensions : MonoBehaviour
     private Animator animator_;
 
     private int comboNumber = -1;
-    private float timeLastAttackExecuted = 0.0f;
 
 
     private void Start()

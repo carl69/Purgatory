@@ -109,9 +109,9 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
+        {
             playerManagerExtensions.executeComboSet(comboSet1);
-        else if (Input.GetKeyDown(KeyCode.P))
-            playerManagerExtensions.restartCombo(comboSet1);
+        }     
     }
 
     private void CreatePlayerInventory()
