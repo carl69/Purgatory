@@ -37,9 +37,9 @@ public class Player : MonoBehaviour
 
     /// </testing_purposes>
     /// 
-    public int pNumber = 1;
+    public int pNumber = 0;
 
-    public string isDS4 = "PS";
+    public string isDS4 = "";
 
 
 
