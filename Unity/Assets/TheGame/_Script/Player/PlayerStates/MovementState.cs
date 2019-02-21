@@ -15,6 +15,7 @@ public class MovementState : State
     public CharacterController controller;
     public Vector3 movementDirection;
 
+
     string verticalInput;
     string horizontalInput;
 
@@ -27,14 +28,26 @@ public class MovementState : State
     {
         controller = player.GetComponent<CharacterController>();
 
-        if (player.JoyStickActive) {
-            inputController = 'J';
+
+        if (player.Testing)
+        {
+            if (player.TestingWithController)
+            {
+                verticalInput = "Vertical1Test";
+                horizontalInput = "Horizontal1Test";
+            }
+            else
+            {
+                verticalInput = "VerticalK";
+                horizontalInput = "HorizontalK";
+            }
+        }
+        else
+        {
             verticalInput = "Vertical" + player.pNumber.ToString();
             horizontalInput = "Horizontal" + player.pNumber.ToString();
-    }
+        }
 
-        verticalInput = "VerticalK";
-        horizontalInput = "HorizontalK";
 
 
     }

@@ -34,7 +34,6 @@ public class CameraControllerV2 : MonoBehaviour
         //if (rotationAllow)
         //{
             Quaternion camChangeAngleHorizontal = Quaternion.AngleAxis(Input.GetAxis("RHorizontal1Test"/*"Horizontal" + player.pNumber.ToString()*/) * rotateSpeed, Vector3.up);
-        Debug.Log(camChangeAngleHorizontal);
             _cameraOfset = camChangeAngleHorizontal *_cameraOfset;
         //}
 

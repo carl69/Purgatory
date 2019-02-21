@@ -40,21 +40,48 @@ public class CameraController : MonoBehaviour
 
         player = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).GetComponent<Player>();//we get acces to the player 
 
-        if (!player.JoyStickActive)
+        //if (!player.JoyStickActive)
+        //{
+        //    controller = "K";
+        //     verticalInput = "Mouse Y" ;
+        //     horizontalInput = "Mouse X" ;
+
+        //}
+        //else { controller = "J";
+
+
+        //}
+
+
+        if (player.Testing)
         {
-            controller = "K";
-             verticalInput = "Mouse Y" ;
-             horizontalInput = "Mouse X" ;
+            if (player.TestingWithController)
+            {
+                if (player.IsPs4Controller)
+                {
+                    verticalInput = "RVertical1Ps4Test";
+                    horizontalInput = "RHorizontal1Ps4Test";
 
-        }
-        else { controller = "J";
-             verticalInput = "RVertical" + player.isDS4 + player.pNumber.ToString();
-             horizontalInput = "RHorizontal" + player.isDS4 + player.pNumber.ToString();
-
-        }
-
+                } else
+                {
+                    verticalInput = "RVertical1Test";
+                    horizontalInput = "RHorizontal1Test";
+                }
 
             }
+            else
+            {
+                verticalInput = "Mouse Y";
+                horizontalInput = "Mouse X";
+            }
+        }
+        else
+        {
+            verticalInput = "RVertical" + player.isDS4 + player.pNumber.ToString();
+            horizontalInput = "RHorizontal" + player.isDS4 + player.pNumber.ToString();
+        }
+
+    }
 
     // Update is called once per frame
     void LateUpdate()
