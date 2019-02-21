@@ -14,13 +14,13 @@ public class MenuBehaviour : MonoBehaviour
     {
         AudioManagerObject = GameObject.FindGameObjectWithTag("AudioManager");
 
-        if (GameObject.FindGameObjectWithTag("Menu_Pause").gameObject != null)
-        {
-            PauseMenu = GameObject.FindGameObjectWithTag("Menu_Pause").gameObject;
-            PauseMenu.SetActive(false);
-        }
-        else return;
-    
+        //if (GameObject.FindGameObjectWithTag("Menu_Pause").gameObject != null)
+        //{
+        //    PauseMenu = GameObject.FindGameObjectWithTag("Menu_Pause").gameObject;
+        //    PauseMenu.SetActive(false);
+        //}
+        //else return;
+
     }
     
     //Button functions

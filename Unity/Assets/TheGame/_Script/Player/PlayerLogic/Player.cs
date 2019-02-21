@@ -22,9 +22,9 @@ public class Player : MonoBehaviour
     public bool JoyStickActive { get { return this.joyStickActive; } set { this.joyStickActive = value; } }
     /// </testing_purposes>
     /// 
-    public int pNumber;
+    public int pNumber = 1;
 
-    public string isDS4 = "";
+    public string isDS4 = "PS";
 
 
 
