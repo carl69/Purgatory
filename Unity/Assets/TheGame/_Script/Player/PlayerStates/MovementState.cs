@@ -15,6 +15,9 @@ public class MovementState : State
     public CharacterController controller;
     public Vector3 movementDirection;
 
+    string verticalInput;
+    string horizontalInput;
+
     public MovementState(Player player) : base(player)
     {
 
@@ -24,14 +27,22 @@ public class MovementState : State
     {
         controller = player.GetComponent<CharacterController>();
 
-        if (player.JoyStickActive) inputController = 'J';
+        if (player.JoyStickActive) {
+            inputController = 'J';
+            verticalInput = "Vertical" + player.pNumber.ToString();
+            horizontalInput = "Horizontal" + player.pNumber.ToString();
+    }
+
+        verticalInput = "VerticalK";
+        horizontalInput = "HorizontalK";
+
 
     }
 
     public override void Tick()//MovementStatement update
     {
         //horizontal plane movement (3D)
-        movementDirection = (player.transform.forward * Input.GetAxis("Vertical" + player.pNumber.ToString()/*"Vertical_P" + player.Player_Id + inputController*/) * moveSpeed) + (player.transform.right * Input.GetAxis("Horizontal" + player.pNumber.ToString()/*"Horizontal_P" + player.Player_Id + inputController*/) * moveSpeed);
+        movementDirection = (player.transform.forward * Input.GetAxis(verticalInput/*"Vertical_P" + player.Player_Id + inputController*/) * moveSpeed) + (player.transform.right * Input.GetAxis(horizontalInput/*"Horizontal_P" + player.Player_Id + inputController*/) * moveSpeed);
         //vertical movement(3D) 
         movementDirection.y = movementDirection.y + gravityScale * (Physics.gravity.y * Time.deltaTime);
 

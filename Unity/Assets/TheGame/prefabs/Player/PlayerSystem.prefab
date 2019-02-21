@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_id: 0
+  allowedTimeBetweenAttacks: 1.5
   stamina: 0
 --- !u!114 &2045692220
 MonoBehaviour:
@@ -73,6 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_Id: 49
   joyStickActive: 0
+  pNumber: 0
+  isDS4: 
 --- !u!1001 &4074463963081948451
 PrefabInstance:
   m_ObjectHideFlags: 0

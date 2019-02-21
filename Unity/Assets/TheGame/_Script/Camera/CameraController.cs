@@ -24,6 +24,10 @@ public class CameraController : MonoBehaviour
     public bool invertedY = true;
     string controller = "";
 
+
+    string verticalInput;
+    string horizontalInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,9 +40,19 @@ public class CameraController : MonoBehaviour
 
         player = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).GetComponent<Player>();//we get acces to the player 
 
-        if(!player.JoyStickActive)
+        if (!player.JoyStickActive)
+        {
             controller = "K";
-        else controller = "J";
+             verticalInput = "Mouse Y" ;
+             horizontalInput = "Mouse X" ;
+
+        }
+        else { controller = "J";
+             verticalInput = "RVertical" + player.isDS4 + player.pNumber.ToString();
+             horizontalInput = "RHorizontal" + player.isDS4 + player.pNumber.ToString();
+
+        }
+
 
             }
 
@@ -46,7 +60,7 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
             float deadzone = 0.25f;
-        Vector2 stickInput = new Vector2(Input.GetAxis("RHorizontal" + player.isDS4 + player.pNumber.ToString() /*"CameraX_P" + player.Player_Id + player.inputController*/), Input.GetAxis("RVertical" + player.isDS4 + player.pNumber.ToString()/*"CameraY_P" + player.Player_Id + player.inputController*/));/*= new Vector2(Input.GetAxis("CameraX_P" + player.Player_Id + controller), Input.GetAxis("CameraY_P" + player.Player_Id+ controller));*/
+        Vector2 stickInput = new Vector2(Input.GetAxis(horizontalInput /*"CameraX_P" + player.Player_Id + player.inputController*/), Input.GetAxis(verticalInput/*"CameraY_P" + player.Player_Id + player.inputController*/));/*= new Vector2(Input.GetAxis("CameraX_P" + player.Player_Id + controller), Input.GetAxis("CameraY_P" + player.Player_Id+ controller));*/
         if (stickInput.magnitude < deadzone)
                 stickInput = Vector2.zero;
             else
