@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     // A variable to access code extensions
-    PlayerManagerExtensions playerManagerExtensions;
+    private PlayerManagerExtensions playerManagerExtensions;
+    public PlayerManagerExtensions PlayerManagerExtensions { get { return this.playerManagerExtensions; } }
 
     // Player STATS
     [SerializeField]
@@ -43,8 +44,8 @@ public class PlayerManager : MonoBehaviour
 
     //----------------------------------------------------------------------------------
     // A dictionary with the CURRENT ATTACKS of the player
-    private Dictionary<string, Queue<AttackData>> currentCombos = new Dictionary<string, Queue<AttackData>>();
-    public Dictionary<string, Queue<AttackData>> CurrentCombos { get { return this.currentCombos; } }
+    private Dictionary<string, Queue<Weapon_Attack>> currentCombos = new Dictionary<string, Queue<Weapon_Attack>>();
+    public Dictionary<string, Queue<Weapon_Attack>> CurrentCombos { get { return this.currentCombos; } }
     //-----------------------------------------------------------------------------------
 
     // Inventory Items for the equipment
@@ -79,13 +80,13 @@ public class PlayerManager : MonoBehaviour
 
     // A queue with the first combo set the player can perform
     private string currentCombo1Key = "ComboSet1";
-    private Queue<AttackData> comboSet1 = new Queue<AttackData>();
-    public Queue<AttackData> ComboSet1 { get { return this.comboSet1; } }
+    private Queue<Weapon_Attack> comboSet1 = new Queue<Weapon_Attack>();
+    public Queue<Weapon_Attack> ComboSet1 { get { return this.comboSet1; } }
 
     // A queue with the second combo set the player can perform
     private string currentCombo2Key = "ComboSet2";
-    private Queue<AttackData> comboSet2 = new Queue<AttackData>();
-    public Queue<AttackData> ComboSet2 { get { return this.comboSet2; } }
+    private Queue<Weapon_Attack> comboSet2 = new Queue<Weapon_Attack>();
+    public Queue<Weapon_Attack> ComboSet2 { get { return this.comboSet2; } }
 
 
     //------------------------------------------------------
@@ -109,6 +110,8 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
             playerManagerExtensions.executeComboSet(comboSet1);
+        else if (Input.GetKeyDown(KeyCode.P))
+            playerManagerExtensions.restartCombo(comboSet1);
     }
 
     private void CreatePlayerInventory()

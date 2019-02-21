@@ -13,4 +13,20 @@ public class InventoryManager : MonoBehaviour
     {
         playerManager.CurrentInventory[inventoryItem][listItem] = item;
     }
+
+    public void updateCombo(string comboSet, InventoryItems attack)
+    {
+        playerManager.PlayerManagerExtensions.addAttackToCombo(playerManager.ComboSet1,(Weapon_Attack) attack);
+    }
+
+    private void Update()
+    {
+        InventoryItems ad = new InventoryItems("AttackSword", 1);
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            updateCombo("a", ad);
+            Debug.Log(playerManager.ComboSet1.Dequeue().Tag);
+        }
+            
+    }
 }

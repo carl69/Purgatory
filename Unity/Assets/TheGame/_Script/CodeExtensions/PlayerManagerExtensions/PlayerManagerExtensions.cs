@@ -10,7 +10,7 @@ public class PlayerManagerExtensions : MonoBehaviour
     private Animator animator_;
 
     private int comboNumber = -1;
-    private float timeLastAttackExecuted;
+    private float timeLastAttackExecuted = 0.0f;
 
 
     private void Start()
@@ -18,35 +18,35 @@ public class PlayerManagerExtensions : MonoBehaviour
         playerManager_ = GetComponent<PlayerManager>();
     }
 
-    public void executeComboSet(Queue<AttackData> comboSet)
-    {
-
-
-        if (Time.time > timeLastAttackExecuted + playerManager_.AllowedTimeBetweenAttacks)
-        {
-            AttackData comboAttack = comboSet.Dequeue();
-            animator_.SetTrigger(comboAttack.AttackAnimation);
-            comboSet.Enqueue(comboAttack);
-
-            timeLastAttackExecuted = Time.time;
-        }
-        else
-        {
-            Debug.Log("Failed Combo");
-        }
-        
-    }
-
-    public void addAttackToCombo(Queue<AttackData> comboSet, AttackData attack)
+    public void addAttackToCombo(Queue<Weapon_Attack> comboSet, Weapon_Attack attack)
     {
         comboSet.Enqueue(attack);
         comboNumber++;
         attack.ComboNumber = comboNumber;
     }
 
-    public void removeAttackFromCombo(Queue<AttackData> comboSet, AttackData attack)
+    public void removeAttackFromCombo(Queue<Weapon_Attack> comboSet, Weapon_Attack attack)
     {
         comboSet.Dequeue();
         comboNumber--;
     }
+
+    public void executeComboSet(Queue<Weapon_Attack> comboSet)
+    {
+        Weapon_Attack comboAttack = comboSet.Dequeue();
+        animator_.SetTrigger(comboAttack.AttackAnimation);
+        comboSet.Enqueue(comboAttack);
+
+        Debug.Log(comboAttack.Tag + " executed");
+    }
+
+    public void restartCombo(Queue<Weapon_Attack> comboSet)
+    {
+        while (comboSet.Peek().ComboNumber != 0)
+        {
+            Weapon_Attack attack = comboSet.Dequeue();
+            comboSet.Enqueue(attack);
+        }
+    }
+
 }
