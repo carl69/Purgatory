@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InputManagerAsset : MonoBehaviour {
     //Player 1 data
+
+    public Text player1Text;
+    public Text player2Text;
 
     public string sceneName = "";
     bool player1Joined = false;     //When player1 is joined
@@ -40,6 +44,15 @@ public class InputManagerAsset : MonoBehaviour {
     int controllerCount = 1;    //Variable to control the number of player joined
     int controllers = 0;        //Number of controllers conected in every tick
 
+
+    private void Start()
+    {
+        player1Text.text = "Waiting for player 1";
+        player2Text.text = "Waiting for player 2";
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -65,6 +78,8 @@ public class InputManagerAsset : MonoBehaviour {
                         controllerCount++;
 
                         Debug.LogWarning("Player1 joined");
+                        player1Text.text = "Player1 joined";
+
                         player1Joined = true;
 
                         break;
@@ -80,6 +95,8 @@ public class InputManagerAsset : MonoBehaviour {
                         controllerCount++;
 
                         Debug.LogWarning("Player2 joined");
+                        player2Text.text = "Player2 joined";
+
                         player2Joined = true;
 
                         break;
@@ -495,6 +512,7 @@ public class InputManagerAsset : MonoBehaviour {
                     {
                         player1Start = true;
                         Debug.LogWarning("Player1 locked");
+                        player1Text.text = "Player1 locked, ready to go";
                         checks++;
                         break;
                     }
@@ -502,6 +520,8 @@ public class InputManagerAsset : MonoBehaviour {
                     {
                         player2Start = true;
                         Debug.LogWarning("Player2 locked");
+                        player2Text.text = "Player2 locked, ready to go";
+
                         checks++;
                         break;
                     }
@@ -541,6 +561,8 @@ public class InputManagerAsset : MonoBehaviour {
                         controllerCount++;
 
                         Debug.LogWarning("Player1 joined");
+                        player1Text.text = "Player1 joined";
+
                         player1Joined = true;
 
                         break;
@@ -556,6 +578,7 @@ public class InputManagerAsset : MonoBehaviour {
                         controllerCount++;
 
                         Debug.LogWarning("Player2 joined");
+                        player2Text.text = "Player2 joined";
                         player2Joined = true;
 
                         break;
@@ -967,6 +990,7 @@ public class InputManagerAsset : MonoBehaviour {
                     {
                         player1Start = true;
                         Debug.LogWarning("Player1 locked");
+                        player1Text.text = "Player 1 ready to go";
                         checks++;
                         break;
                     }
@@ -974,6 +998,7 @@ public class InputManagerAsset : MonoBehaviour {
                     {
                         player2Start = true;
                         Debug.LogWarning("Player2 locked");
+                        player2Text.text = "Player 2 ready to go";
                         checks++;
                         break;
                     }
