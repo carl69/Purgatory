@@ -13,12 +13,13 @@ public class MenuBehaviour : MonoBehaviour
     void Start()
     {
         AudioManagerObject = GameObject.FindGameObjectWithTag("AudioManager");
-        
-        if(GameObject.FindGameObjectWithTag("Menu_Pause").gameObject != null)
+
+        if (GameObject.FindGameObjectWithTag("Menu_Pause").gameObject != null)
         {
             PauseMenu = GameObject.FindGameObjectWithTag("Menu_Pause").gameObject;
             PauseMenu.SetActive(false);
         }
+        else return;
     
     }
     
@@ -35,7 +36,7 @@ public class MenuBehaviour : MonoBehaviour
 
     public void GoToArena()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
         AudioManagerObject.GetComponent<AudioManager>().ArenaStart();
     }
 
