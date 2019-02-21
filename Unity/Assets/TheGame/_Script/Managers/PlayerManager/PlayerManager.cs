@@ -41,12 +41,11 @@ public class PlayerManager : MonoBehaviour
     private Dictionary<string, InventoryItems> currentWeapons = new Dictionary<string, InventoryItems>();
     public Dictionary<string, InventoryItems> CurrentWeapons { get { return this.currentWeapons; } }
 
-
+    //----------------------------------------------------------------------------------
     // A dictionary with the CURRENT ATTACKS of the player
-    private string currentAttacksKey = "Attacks";
-    private Dictionary<string, InventoryItems> currentAttacks = new Dictionary<string, InventoryItems>();
-    public Dictionary<string, InventoryItems> CurrentAttacks { get { return this.currentAttacks; } }
-
+    private Dictionary<string, Queue<AttackData>> currentCombos = new Dictionary<string, Queue<AttackData>>();
+    public Dictionary<string, Queue<AttackData>> CurrentCombos { get { return this.currentCombos; } }
+    //-----------------------------------------------------------------------------------
 
     // Inventory Items for the equipment
     private string currentHelmetKey = "Helmets";
@@ -71,18 +70,20 @@ public class PlayerManager : MonoBehaviour
 
 
     // Inventory Items for Attacks
-    private string currentWeaponAttacksKey = "WeaponAttacks";
-    private InventoryItems WeaponAttack = new InventoryItems("Default", 0);
+    //private string currentWeaponAttacksKey = "WeaponAttacks";
+    //private InventoryItems WeaponAttack = new InventoryItems("Default", 0);
 
-    private string currentSpellAttacksKey = "SpellAttacks";
-    private InventoryItems SpellAttack = new InventoryItems("Default", 0);
+    //private string currentSpellAttacksKey = "SpellAttacks";
+    //private InventoryItems SpellAttack = new InventoryItems("Default", 0);
 
 
     // A queue with the first combo set the player can perform
+    private string currentCombo1Key = "ComboSet1";
     private Queue<AttackData> comboSet1 = new Queue<AttackData>();
     public Queue<AttackData> ComboSet1 { get { return this.comboSet1; } }
 
     // A queue with the second combo set the player can perform
+    private string currentCombo2Key = "ComboSet2";
     private Queue<AttackData> comboSet2 = new Queue<AttackData>();
     public Queue<AttackData> ComboSet2 { get { return this.comboSet2; } }
 
@@ -115,7 +116,7 @@ public class PlayerManager : MonoBehaviour
         // Adding each dictionary to the player's inventory
         currentInventory.Add(currentEquipmentKey, currentEquipment);
         currentInventory.Add(currentWeaponsKey, currentWeapons);
-        currentInventory.Add(currentAttacksKey, currentAttacks);
+        //currentInventory.Add(currentAttacksKey, currentAttacks);
 
 
         // Adding the Equipment
@@ -131,8 +132,10 @@ public class PlayerManager : MonoBehaviour
 
 
         // Adding the attacks
-        currentAttacks.Add(currentWeaponAttacksKey, WeaponAttack);
-        currentAttacks.Add(currentSpellAttacksKey, SpellAttack);
+        //currentAttacks.Add(currentWeaponAttacksKey, WeaponAttack);
+        //currentAttacks.Add(currentSpellAttacksKey, SpellAttack);
+        currentCombos.Add(currentCombo1Key, comboSet1);
+        currentCombos.Add(currentCombo2Key, comboSet2);
 
         playerManagerExtensions = GetComponent<PlayerManagerExtensions>();
     }
