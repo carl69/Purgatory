@@ -13,6 +13,7 @@ public class MovementState : State
     /// </summary>
 
     public CharacterController controller;
+    InputManager controllerManager;
     public Vector3 movementDirection;
 
 
@@ -27,35 +28,15 @@ public class MovementState : State
     public override void OnStateEnter()//MoementStatement start
     {
         controller = player.GetComponent<CharacterController>();
-
-
-        if (player.Testing)
-        {
-            if (player.TestingWithController)
-            {
-                verticalInput = "Vertical1Test";
-                horizontalInput = "Horizontal1Test";
-            }
-            else
-            {
-                verticalInput = "VerticalK";
-                horizontalInput = "HorizontalK";
-            }
-        }
-        else
-        {
-            verticalInput = "Vertical" + player.pNumber.ToString();
-            horizontalInput = "Horizontal" + player.pNumber.ToString();
-        }
-
-
+        controllerManager = player.GetComponent<InputManager>();
 
     }
 
     public override void Tick()//MovementStatement update
     {
         //horizontal plane movement (3D)
-        movementDirection = (player.transform.forward * Input.GetAxis(verticalInput/*"Vertical_P" + player.Player_Id + inputController*/) * moveSpeed) + (player.transform.right * Input.GetAxis(horizontalInput/*"Horizontal_P" + player.Player_Id + inputController*/) * moveSpeed);
+        movementDirection = (player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput) * moveSpeed) 
+            + (player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput) * moveSpeed);
         //vertical movement(3D) 
         movementDirection.y = movementDirection.y + gravityScale * (Physics.gravity.y * Time.deltaTime);
 

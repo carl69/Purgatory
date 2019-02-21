@@ -179,25 +179,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4074463964248107179, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
-      propertyPath: m_Enabled
+      propertyPath: testingWithXboxController
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: testingWithKeyBoard
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
-      propertyPath: testing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: testingWithController
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: isPs4Controller
-      value: 1
+      propertyPath: testingWithPs4Controller
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}

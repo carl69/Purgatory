@@ -23,16 +23,16 @@ public class Player : MonoBehaviour
 
 
     [SerializeField]
-    private bool testing = false;
-    public bool Testing { get { return this.testing; } set { this.testing = value; } }
+    private bool testingWithKeyBoard = false;
+    public bool TestingWithKeyBoard { get { return this.testingWithKeyBoard; } set { this.testingWithKeyBoard = value; } }
 
     [SerializeField]
-    private bool testingWithController = false;
-    public bool TestingWithController { get { return this.testingWithController; } set { this.testingWithController = value; } }
+    private bool testingWithPs4Controller = false;
+    public bool TestingWithPs4Controller { get { return this.testingWithPs4Controller; } set { this.testingWithPs4Controller = value; } }
 
     [SerializeField]
-    private bool isPs4Controller = false;
-    public bool IsPs4Controller { get { return this.isPs4Controller; } set { this.isPs4Controller = value; } }
+    private bool testingWithXboxController = false;
+    public bool TestingWithXboxController { get { return this.testingWithXboxController; } set { this.testingWithXboxController = value; } }
 
 
     /// </testing_purposes>

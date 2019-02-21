@@ -6,7 +6,9 @@ public class CameraController : MonoBehaviour
 {
     public Transform target;
     private Transform tagetParent;
+
     public Player player;
+    InputCameraManager cameraManager;
 
     public float smoothLevel = 100;
 
@@ -21,7 +23,7 @@ public class CameraController : MonoBehaviour
 
     public Transform pivot;
 
-    public bool invertedY = true;
+    public bool invertedY = false;
     string controller = "";
 
 
@@ -38,56 +40,15 @@ public class CameraController : MonoBehaviour
         pivot.transform.position = target.transform.position;
         pivot.transform.parent = target.transform;
 
-        player = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).GetComponent<Player>();//we get acces to the player 
-
-        //if (!player.JoyStickActive)
-        //{
-        //    controller = "K";
-        //     verticalInput = "Mouse Y" ;
-        //     horizontalInput = "Mouse X" ;
-
-        //}
-        //else { controller = "J";
-
-
-        //}
-
-
-        if (player.Testing)
-        {
-            if (player.TestingWithController)
-            {
-                if (player.IsPs4Controller)
-                {
-                    verticalInput = "RVertical1Ps4Test";
-                    horizontalInput = "RHorizontal1Ps4Test";
-
-                } else
-                {
-                    verticalInput = "RVertical1Test";
-                    horizontalInput = "RHorizontal1Test";
-                }
-
-            }
-            else
-            {
-                verticalInput = "Mouse Y";
-                horizontalInput = "Mouse X";
-            }
-        }
-        else
-        {
-            verticalInput = "RVertical" + player.isDS4 + player.pNumber.ToString();
-            horizontalInput = "RHorizontal" + player.isDS4 + player.pNumber.ToString();
-        }
-
+        player = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).GetComponent<Player>();//we get acces to the player
+        cameraManager = GetComponent<InputCameraManager>();
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
             float deadzone = 0.25f;
-        Vector2 stickInput = new Vector2(Input.GetAxis(horizontalInput /*"CameraX_P" + player.Player_Id + player.inputController*/), Input.GetAxis(verticalInput/*"CameraY_P" + player.Player_Id + player.inputController*/));/*= new Vector2(Input.GetAxis("CameraX_P" + player.Player_Id + controller), Input.GetAxis("CameraY_P" + player.Player_Id+ controller));*/
+        Vector2 stickInput = new Vector2(Input.GetAxis(cameraManager.cameraHorizontalInput ), Input.GetAxis(cameraManager.cameraVerticalInput));
         if (stickInput.magnitude < deadzone)
                 stickInput = Vector2.zero;
             else
@@ -106,7 +67,7 @@ public class CameraController : MonoBehaviour
                 vertical = -vertical;
             }
 
-            pivot.Rotate(-vertical, 0, 0);
+            pivot.Rotate(vertical, 0, 0);
 
             if (pivot.rotation.eulerAngles.x > maxAngle && pivot.rotation.eulerAngles.x < 180f)
             {

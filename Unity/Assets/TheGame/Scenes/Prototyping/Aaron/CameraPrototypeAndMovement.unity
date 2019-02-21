@@ -759,6 +759,10 @@ PrefabInstance:
       propertyPath: joyStickActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 863079903, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}
+      propertyPath: testingWithKeyBoard
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 300534039, guid: b956c7850cb7f12478d487b62d6e920d, type: 3}
       propertyPath: attack
       value: 
@@ -772,6 +776,21 @@ PrefabInstance:
     - target: {fileID: 4162778805603019742, guid: b956c7850cb7f12478d487b62d6e920d,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 94098574986543870, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: invertedY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6091378214720942583, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: testingWithKeyBoard
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4162778805603019714, guid: b956c7850cb7f12478d487b62d6e920d,
+        type: 3}
+      propertyPath: invertedY
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
