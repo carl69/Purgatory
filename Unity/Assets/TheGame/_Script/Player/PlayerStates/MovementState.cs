@@ -5,11 +5,11 @@ using UnityEngine;
 public class MovementState : State
 {
 
-    public float moveSpeed = 5;
-    public float gravityScale = 100;
+    public float playerMovementState = 5;
+    float gravityScale = 100;
 
     /// <summary>
-    private char inputController = 'K';
+    //private char inputController = 'K';
     /// </summary>
 
     public CharacterController controller;
@@ -35,8 +35,8 @@ public class MovementState : State
     public override void Tick()//MovementStatement update
     {
         //horizontal plane movement (3D)
-        movementDirection = (player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput) * moveSpeed) 
-            + (player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput) * moveSpeed);
+        movementDirection = (player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput) * playerMovementState) 
+            + (player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput) * playerMovementState);
         //vertical movement(3D) 
         movementDirection.y = movementDirection.y + gravityScale * (Physics.gravity.y * Time.deltaTime);
 
@@ -62,20 +62,43 @@ public class MovementState : State
         //////////{
 
 
-        //////////    if (Input.GetAxis("Vertical_P" + player.Player_Id + inputController) == 0 && Input.GetAxis("Horizontal_P" + player.Player_Id + inputController) == 0)
-        //////////    {//if the player is not movig the dash is backwards
-        //////////        dahsDirection =  -player.transform.forward;
-        //////////        player.SetState(new DashState(player, dahsDirection));
-        //////////    }
-        //////////    else
-        //////////    {//if not we calculate the dash direction on the direction of the player movement
-        //////////        Vector3 forwardMovement = player.transform.forward * Input.GetAxis("Vertical_P" + player.Player_Id + inputController);
-        //////////        Vector3 sideMovement = player.transform.right * Input.GetAxis("Horizontal_P" + player.Player_Id + inputController);
-        //////////        dahsDirection = sideMovement + forwardMovement;
+        ////    if (Input.GetAxis("Vertical_P" + player.Player_Id + inputController) == 0 && Input.GetAxis("Horizontal_P" + player.Player_Id + inputController) == 0)
+        ////    {//if the player is not movig the dash is backwards
+        ////        dahsDirection =  -player.transform.forward;
+        ////        player.SetState(new DashState(player, dahsDirection));
+        ////    }
+        ////    else
+        ////    {//if not we calculate the dash direction on the direction of the player movement
+        ////        Vector3 forwardMovement = player.transform.forward * Input.GetAxis("Vertical_P" + player.Player_Id + inputController);
+        ////        Vector3 sideMovement = player.transform.right * Input.GetAxis("Horizontal_P" + player.Player_Id + inputController);
+        ////        dahsDirection = sideMovement + forwardMovement;
 
-        //////////        player.SetState(new DashState(player, dahsDirection));
-        //////////    }
-        //////////}
+        ////        player.SetState(new DashState(player, dahsDirection));
+        ////    }
+        ////}
+        ///
+
+        Vector3 dahsDirection;
+
+            if (hInput.GetButtonDown("A" + player.isDS4 + player.pNumber.ToString()))
+            {
+            Debug.Log("se ha pulsado el boton");
+                if (Input.GetAxis(controllerManager.controllerVerticalInput) == 0 && Input.GetAxis(controllerManager.controllerHorizontalInput) == 0)
+                {//if the player is not movig the dash is backwards
+                    dahsDirection = -player.transform.forward;
+                    player.SetState(new DashState(player, dahsDirection));
+                }
+                else
+                {//if not we calculate the dash direction on the direction of the player movement
+                    Vector3 forwardMovement = player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput);
+                    Vector3 sideMovement = player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput);
+                    dahsDirection = sideMovement + forwardMovement;
+
+                    player.SetState(new DashState(player, dahsDirection));
+                }
+            }
+
+
 
         if (Input.GetKeyDown(KeyCode.N))
             player.SetState(new AttackState(player));
