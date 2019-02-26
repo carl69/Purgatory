@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AtackState : State
+public class AttackState : State
 {
     [SerializeField] 
     private float AllowedTimeBetweenButtons = 2.0f;
@@ -12,7 +12,7 @@ public class AtackState : State
     int index;
 
     WeaponDealDamage weaponDealDamage_;
-    public AtackState(Player player) : base(player)
+    public AttackState(Player player) : base(player)
     {
 
     }

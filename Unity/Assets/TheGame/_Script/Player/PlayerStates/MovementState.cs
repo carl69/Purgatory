@@ -78,7 +78,7 @@ public class MovementState : State
         //////////}
 
         if (Input.GetKeyDown(KeyCode.N))
-            player.SetState(new AtackState(player));
+            player.SetState(new AttackState(player));
 
         controller.Move(movementDirection * Time.deltaTime);
     }
