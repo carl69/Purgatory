@@ -355,11 +355,13 @@ ModelImporter:
     7400030: Armature|Combat_Movement_Idle
     7400032: Armature|Combat_Attack_Lunge.001
     7400034: Armature|Combat_Attack_FistedUpperCut
-    7400036: Armature|Combat_Movement_ShieldWalkdForward (1)
+    7400036: Armature|Combat_Movement_ShieldWalkdForward
     7400038: Armature|Combat_Attack_SureStrike
     7400040: Armature|Combat_Attack_SloppyStab
     7400042: Armature|Combat_Attack_FerventAnger
     7400044: Armature|Combat_Attack_FerventAnger (1)
+    7400046: Armature|Combat_Attack_LungeV1
+    7400048: Armature|Combat_Attack_LungeV2
     9500000: //RootNode
     11100000: //RootNode
     13700000: TheChosenOne
@@ -422,8 +424,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Combat_Attack_Lunge
-      takeName: Armature|Combat_Attack_Lunge
+      name: Armature|Combat_Attack_LungeV1
+      takeName: Armature|Combat_Attack_LungeV1
       firstFrame: 0
       lastFrame: 119
       wrapMode: 0
@@ -450,8 +452,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Combat_Attack_Lunge.001
-      takeName: Armature|Combat_Attack_Lunge.001
+      name: Armature|Combat_Attack_LungeV2
+      takeName: Armature|Combat_Attack_LungeV2
       firstFrame: 0
       lastFrame: 119
       wrapMode: 0
@@ -506,7 +508,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Combat_Movement_ShieldWalkdForward (1)
+      name: Armature|Combat_Movement_ShieldWalkdForward
       takeName: Armature|Combat_Movement_ShieldWalkdForward
       firstFrame: 0
       lastFrame: 59
@@ -591,34 +593,6 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Armature|Combat_Attack_FerventAnger
-      takeName: Armature|Combat_Attack_FerventAnger
-      firstFrame: 0
-      lastFrame: 107
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|Combat_Attack_FerventAnger (1)
       takeName: Armature|Combat_Attack_FerventAnger
       firstFrame: 0
       lastFrame: 107
