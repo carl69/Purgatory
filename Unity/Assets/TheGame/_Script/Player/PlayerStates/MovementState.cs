@@ -101,7 +101,7 @@ public class MovementState : State
 
 
         if (Input.GetKeyDown(KeyCode.N))
-            player.SetState(new AttackState(player));
+            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
 
         controller.Move(movementDirection * Time.deltaTime);
     }

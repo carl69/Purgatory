@@ -11,12 +11,14 @@ public class AttackState : State
     // variable to store te time when the button was pressed
     private float timeLastButtonPressed;
 
+    // The comboSet te player is going to execute
+    private Queue<Weapon_Attack> combo;
 
     WeaponDealDamage weaponDealDamage_;
     // Change the constructor to have a combo inserted
-    public AttackState(Player player) : base(player)
+    public AttackState(Player player, Queue<Weapon_Attack> comboSet) : base(player)
     {
-
+        combo = comboSet;
     }
 
 
@@ -48,7 +50,7 @@ public class AttackState : State
     // Method that throws the attack of the respective combo
     private void performAttack()
     {
-        player.PlayerManager.ComboSystem.executeComboSet(player.PlayerManager.ComboSet1);
+        player.PlayerManager.ComboSystem.executeComboSet(combo);
         timeLastButtonPressed = Time.time;
     }
 
@@ -68,6 +70,7 @@ public class AttackState : State
     {
         // When we exit from this state, we reset the combos
         player.PlayerManager.ComboSystem.restartCombo(player.PlayerManager.ComboSet1);
+        player.PlayerManager.ComboSystem.restartCombo(player.PlayerManager.ComboSet2);
     }
 
 }
