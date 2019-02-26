@@ -121,9 +121,9 @@ public class PlayerManager : MonoBehaviour
     {
         CreatePlayerInventory();
 
-        //comboSystem.addAttackToCombo(comboSet1, atk1);
-        //comboSystem.addAttackToCombo(comboSet1, atk2);
-        //comboSystem.addAttackToCombo(comboSet1, atk3);
+        comboSystem.addAttackToCombo(comboSet1, atk1);
+        comboSystem.addAttackToCombo(comboSet1, atk2);
+        comboSystem.addAttackToCombo(comboSet1, atk3);
     }
 
     private void CreatePlayerInventory()

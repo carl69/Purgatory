@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
     public string controllerVerticalInput;
 
     public string dashInput;
+    public string attackInput1;
+    public string attackInput2;
 
     Player player;
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class InputManager : MonoBehaviour
         player = GetComponent<Player>();
         axisInputManager();
         dashInputManager();
+        attackInputManager();
     }
 
     // Update is called once per frame
@@ -45,7 +48,32 @@ public class InputManager : MonoBehaviour
             dashInput = "B"+ player.isDS4 + player.pNumber.ToString();
         }
     }
-    
+
+
+    void attackInputManager()
+    {
+        if (player.TestingWithKeyBoard)
+        {
+            attackInput1 = "attack1K";
+            attackInput2 = "attack2K";
+        }
+        else if (player.TestingWithPs4Controller)
+        {
+            attackInput1 = "attack1Ps4Test";
+            attackInput2 = "attack2Ps4Test";
+        }
+        else if (player.TestingWithXboxController)
+        {
+            attackInput1 = "attack1XboxTest";
+            attackInput2 = "attack2XboxTest";
+        }
+        else
+        {
+            attackInput1 = "X" + player.isDS4 + player.pNumber.ToString();
+            attackInput2 = "Y" + player.pNumber.ToString();
+        }
+    }
+
     void axisInputManager()
     {
 

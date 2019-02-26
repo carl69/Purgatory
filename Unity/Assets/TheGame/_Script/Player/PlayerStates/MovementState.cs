@@ -60,12 +60,22 @@ public class MovementState : State
 
         if (player.TestingWithKeyBoard || player.TestingWithPs4Controller || player.TestingWithXboxController)
         {
+            //dashing
             dash_testing();
+            //attacking
+            attack_testing();
+
         }
         else
         {
+            //dashing
             dash_game();
+            //attacking
         }
+
+
+
+
 
         if (Input.GetKeyDown(KeyCode.N))
             player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
@@ -73,22 +83,7 @@ public class MovementState : State
         controller.Move(movementDirection * Time.deltaTime);
     }
 
-    void backwardsDash()
-    {
-        Vector3 dahsDirection;
-        dahsDirection = -player.transform.forward;
-        player.SetState(new DashState(player, dahsDirection));
-    }
 
-    void directionalDash()
-    {
-        Vector3 dahsDirection;
-        Vector3 forwardMovement = player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput);
-        Vector3 sideMovement = player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput);
-        dahsDirection = sideMovement + forwardMovement;
-
-        player.SetState(new DashState(player, dahsDirection));
-    }
 
 
     void dash_testing()
@@ -113,12 +108,36 @@ public class MovementState : State
             if (Input.GetAxis(controllerManager.controllerVerticalInput) == 0 && Input.GetAxis(controllerManager.controllerHorizontalInput) == 0)
             {//if the player is not movig the dash is backwards
                 backwardsDash();
+
             }
             else
             {//if not we calculate the dash direction on the direction of the player movement
                 directionalDash();
             }
         }
-
     }
+
+    void backwardsDash()
+    {
+        Vector3 dahsDirection;
+        dahsDirection = -player.transform.forward;
+        player.SetState(new DashState(player, dahsDirection));
+    }
+
+    void directionalDash()
+    {
+        Vector3 dahsDirection;
+        Vector3 forwardMovement = player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput);
+        Vector3 sideMovement = player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput);
+        dahsDirection = sideMovement + forwardMovement;
+
+        player.SetState(new DashState(player, dahsDirection));
+    }
+
+    void attack_testing()
+    {
+        if (Input.GetButtonDown(controllerManager.attackInput1))
+            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
+    }
+
 }
