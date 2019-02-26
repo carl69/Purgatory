@@ -57,58 +57,14 @@ public class MovementState : State
         //////////    player.SetState(new AtackState(player));
         //////////}
 
-        //////////Vector3 dahsDirection;
-        //////////if (Input.GetButtonDown("Dash_P" + player.Player_Id + inputController))//when the dash button is pressed we make the calculations of movement direction and use this information that it is going to be used for the DashState
-        //////////{
-
-
-        ////    if (Input.GetAxis("Vertical_P" + player.Player_Id + inputController) == 0 && Input.GetAxis("Horizontal_P" + player.Player_Id + inputController) == 0)
-        ////    {//if the player is not movig the dash is backwards
-        ////        dahsDirection =  -player.transform.forward;
-        ////        player.SetState(new DashState(player, dahsDirection));
-        ////    }
-        ////    else
-        ////    {//if not we calculate the dash direction on the direction of the player movement
-        ////        Vector3 forwardMovement = player.transform.forward * Input.GetAxis("Vertical_P" + player.Player_Id + inputController);
-        ////        Vector3 sideMovement = player.transform.right * Input.GetAxis("Horizontal_P" + player.Player_Id + inputController);
-        ////        dahsDirection = sideMovement + forwardMovement;
-
-        ////        player.SetState(new DashState(player, dahsDirection));
-        ////    }
-        ////}
-        ///
-
-
 
         if (player.TestingWithKeyBoard || player.TestingWithPs4Controller || player.TestingWithXboxController)
         {
-            if (Input.GetButtonDown(controllerManager.dashInput))
-            {
-                if (Input.GetAxis(controllerManager.controllerVerticalInput) == 0 && Input.GetAxis(controllerManager.controllerHorizontalInput) == 0)
-                {//if the player is not movig the dash is backwards
-                    backwardsDash();
-                }
-                else
-                {//if not we calculate the dash direction on the direction of the player movement
-                    directionalDash();
-                }
-            }
-
+            dash_testing();
         }
         else
         {
-            if (hInput.GetButtonDown(controllerManager.dashInput))
-            {
-                if (Input.GetAxis(controllerManager.controllerVerticalInput) == 0 && Input.GetAxis(controllerManager.controllerHorizontalInput) == 0)
-                {//if the player is not movig the dash is backwards
-                    backwardsDash();
-                }
-                else
-                {//if not we calculate the dash direction on the direction of the player movement
-                    directionalDash();
-                }
-            }
-
+            dash_game();
         }
 
         if (Input.GetKeyDown(KeyCode.N))
@@ -132,5 +88,37 @@ public class MovementState : State
         dahsDirection = sideMovement + forwardMovement;
 
         player.SetState(new DashState(player, dahsDirection));
+    }
+
+
+    void dash_testing()
+    {
+        if (Input.GetButtonDown(controllerManager.dashInput))
+        {
+            if (Input.GetAxis(controllerManager.controllerVerticalInput) == 0 && Input.GetAxis(controllerManager.controllerHorizontalInput) == 0)
+            {//if the player is not movig the dash is backwards
+                backwardsDash();
+            }
+            else
+            {//if not we calculate the dash direction on the direction of the player movement
+                directionalDash();
+            }
+        }
+    }
+
+    void dash_game()
+    {
+        if (hInput.GetButtonDown(controllerManager.dashInput))
+        {
+            if (Input.GetAxis(controllerManager.controllerVerticalInput) == 0 && Input.GetAxis(controllerManager.controllerHorizontalInput) == 0)
+            {//if the player is not movig the dash is backwards
+                backwardsDash();
+            }
+            else
+            {//if not we calculate the dash direction on the direction of the player movement
+                directionalDash();
+            }
+        }
+
     }
 }
