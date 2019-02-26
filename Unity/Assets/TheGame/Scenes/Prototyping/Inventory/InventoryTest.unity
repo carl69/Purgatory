@@ -1000,6 +1000,16 @@ PrefabInstance:
       propertyPath: attacks.weaponAttacks.Array.data[0].attackAnimation
       value: aaa
       objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: equipment.helmets.Array.data[0].helmetStats.strength
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106420068749274206, guid: 4b07725b817864d47a1d24e05e98c66d,
+        type: 3}
+      propertyPath: attacks.weaponAttacks.Array.data[0].weaponAttackStats.weapon_Power
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 8106420068749274207, guid: 4b07725b817864d47a1d24e05e98c66d,
         type: 3}
       propertyPath: m_LocalPosition.x

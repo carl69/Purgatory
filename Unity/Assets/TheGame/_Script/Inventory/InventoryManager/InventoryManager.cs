@@ -23,17 +23,53 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        InventoryItems ad = new InventoryItems("AttackSword", 1);
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            updateCombo("a", ad);
-            Debug.Log(playerManager.ComboSet1.Dequeue().Tag);
+            //Debug.Log(playerManager.ComboSet1.Dequeue().Tag);
+            Debug.Log(playerManager.ComboSet1.Peek().WeaponAttackStats.Weapon_Power);
         }
             
     }
 
-    public void updateHelmet(Helmet h)
+    // Method to update player's helmet
+    public void updatePlayerHelmet(Helmet h)
     {
         playerManager.CurrentHelmet = h;
+    }
+
+    // Method to update player's arm
+    public void updatePlayerArm(Arm a)
+    {
+        playerManager.CurrentArm = a;
+    }
+
+    // Method to update player's chest
+    public void updatePlayerChest(Chest c)
+    {
+        playerManager.CurrentChest = c;
+    }
+
+    // Method to update player's leg
+    public void updatePlayerLeg(Leg l)
+    {
+        playerManager.CurrentLeg = l;
+    }
+
+    // Method to update player's oneHandedWeapon
+    public void updatePlayerOneHandedWeapon(OneHandedWeapon w)
+    {
+        playerManager.CurrentOneHandedWeapon = w;
+    }
+
+    // Method to update player's twoHandedWeapon
+    public void updatePlayerTwoHandedWeapon(TwoHandedWeapon w)
+    {
+        playerManager.CurrentTwoHandedWeapon = w;
+    }
+
+    // Method to add one attack to a comboSet
+    public void updatePlayerComboSet(Weapon_Attack a)
+    {
+        playerManager.ComboSystem.addAttackToCombo(playerManager.ComboSet1, a);
     }
 }

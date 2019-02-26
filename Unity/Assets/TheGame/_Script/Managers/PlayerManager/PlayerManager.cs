@@ -97,8 +97,8 @@ public class PlayerManager : MonoBehaviour
     public OneHandedWeapon CurrentOneHandedWeapon { get { return this.currentOneHandedWeapon; } set { this.currentOneHandedWeapon = value; } }
 
     // Current TwoHandedWeapons
-    private OneHandedWeapon currentTwoHandedWeapon;
-    public OneHandedWeapon CurrentTwoHandedWeapon { get { return this.currentTwoHandedWeapon; } set { this.currentTwoHandedWeapon = value; } }
+    private TwoHandedWeapon currentTwoHandedWeapon;
+    public TwoHandedWeapon CurrentTwoHandedWeapon { get { return this.currentTwoHandedWeapon; } set { this.currentTwoHandedWeapon = value; } }
 
     // A queue with the first combo set the player can perform
     private Queue<Weapon_Attack> comboSet1 = new Queue<Weapon_Attack>();
@@ -121,9 +121,9 @@ public class PlayerManager : MonoBehaviour
     {
         CreatePlayerInventory();
 
-        comboSystem.addAttackToCombo(comboSet1, atk1);
-        comboSystem.addAttackToCombo(comboSet1, atk2);
-        comboSystem.addAttackToCombo(comboSet1, atk3);
+        //comboSystem.addAttackToCombo(comboSet1, atk1);
+        //comboSystem.addAttackToCombo(comboSet1, atk2);
+        //comboSystem.addAttackToCombo(comboSet1, atk3);
     }
 
     private void CreatePlayerInventory()

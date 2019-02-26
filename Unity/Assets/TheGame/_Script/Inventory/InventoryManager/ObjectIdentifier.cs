@@ -29,6 +29,8 @@ public class ObjectIdentifier : MonoBehaviour
 
     Leg leg;
 
+    Weapon_Attack attack;
+
     OneHandedWeapon oneHandedWeapon;
 
     TwoHandedWeapon twoHandedWeapon;
@@ -46,11 +48,42 @@ public class ObjectIdentifier : MonoBehaviour
     {
         itemType = item.ToString();
 
-        if (itemType == "Helmets")
+        if (itemType == TypeOfItem.Helmets.ToString())
+        {
             helmet = inventory.InventoryExtensions.FindHelmet(objectId);
-        else if (itemType == "Arms")
+            inventoryManager.updatePlayerHelmet(helmet);
+        }
+        else if (itemType == TypeOfItem.Arms.ToString())
+        {
             arm = inventory.InventoryExtensions.FindArm(objectId);
-     
+            inventoryManager.updatePlayerArm(arm);
+        }
+        else if (itemType == TypeOfItem.Chests.ToString())
+        {
+            chest = inventory.InventoryExtensions.FindChest(objectId);
+            inventoryManager.updatePlayerChest(chest);
+        }
+        else if (itemType == TypeOfItem.Legs.ToString())
+        {
+            leg = inventory.InventoryExtensions.FindLeg(objectId);
+            inventoryManager.updatePlayerLeg(leg);
+        }           
+        else if (itemType == TypeOfItem.WeaponAttacks.ToString())
+        {
+            attack = inventory.InventoryExtensions.FindWeaponAttack(objectId);
+            inventoryManager.updatePlayerComboSet(attack);
+        }            
+        else if (itemType == TypeOfItem.OneHandedWeapons.ToString())
+        {
+            oneHandedWeapon = inventory.InventoryExtensions.FindOneHandedWeapon(objectId);
+            inventoryManager.updatePlayerOneHandedWeapon(oneHandedWeapon);
+        }           
+        else if (itemType == TypeOfItem.TwoHandedWeapons.ToString())
+        {
+            twoHandedWeapon = inventory.InventoryExtensions.FindTwoHandedWeapon(objectId);
+            inventoryManager.updatePlayerTwoHandedWeapon(twoHandedWeapon);
+        }
+
         //InventoryItems i = inventory.InventoryExtensions.FindInventoryItem(inventoryItem.ToString(), item.ToString(), objectId);
 
         //if (inventoryItem.ToString() == "Attacks")
