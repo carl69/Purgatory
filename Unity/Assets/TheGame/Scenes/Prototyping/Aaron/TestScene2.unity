@@ -124,6 +124,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: testingWithXboxController
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: testingWithKeyBoard
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: testingWithPs4Controller
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6512038009061035647, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,20 +194,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+    - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
-      propertyPath: testingWithXboxController
-      value: 0
+      propertyPath: horizontalRotationSpeed
+      value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+    - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
-      propertyPath: testingWithKeyBoard
+      propertyPath: verticalRotationSpeed
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1166514417770565127, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: testingWithPs4Controller
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}

@@ -18,7 +18,8 @@ public class CameraController : MonoBehaviour
     public float maxAngle = 45;
     public float minAngle = 60;
 
-    public float rotateSpeed = 2;
+    public float horizontalRotationSpeed = 2;
+    public float verticalRotationSpeed = 1;
 
 
     public Transform pivot;
@@ -54,12 +55,12 @@ public class CameraController : MonoBehaviour
             else
                 stickInput = stickInput.normalized * ((stickInput.magnitude - deadzone) / (1 - deadzone));
 
-            float horizontal = stickInput.x * rotateSpeed;
+            float horizontal = stickInput.x * horizontalRotationSpeed;
 
             tagetParent.Rotate(0, horizontal, 0);
 
-            //get the y position of the mouse and rotates the pivot 
-            float vertical = stickInput.y * rotateSpeed;
+        //get the y position of the mouse and rotates the pivot 
+        float vertical = stickInput.y * verticalRotationSpeed;
 
             //
             if (invertedY)
