@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManagerExtensions : MonoBehaviour
+public class ComboSystem : MonoBehaviour
 {
     private PlayerManager playerManager_;
 
@@ -24,7 +24,7 @@ public class PlayerManagerExtensions : MonoBehaviour
         attack.ComboNumber = comboNumber;
     }
 
-    public void removeAttackFromCombo(Queue<Weapon_Attack> comboSet, Weapon_Attack attack)
+    public void removeAttackFromCombo(Queue<Weapon_Attack> comboSet)
     {
         comboSet.Dequeue();
         comboNumber--;

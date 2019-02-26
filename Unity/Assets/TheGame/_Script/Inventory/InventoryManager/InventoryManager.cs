@@ -16,7 +16,7 @@ public class InventoryManager : MonoBehaviour
 
     public void updateCombo(string comboSet, InventoryItems attack)
     {
-        playerManager.PlayerManagerExtensions.addAttackToCombo(playerManager.ComboSet1,(Weapon_Attack) attack);
+        playerManager.ComboSystem.addAttackToCombo(playerManager.ComboSet1,(Weapon_Attack) attack);
     }
 
     private void Update()

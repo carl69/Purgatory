@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    // A variable to access code extensions
-    private PlayerManagerExtensions playerManagerExtensions;
-    public PlayerManagerExtensions PlayerManagerExtensions { get { return this.playerManagerExtensions; } }
+    // A variable to access the combo system
+    private ComboSystem comboSystem;
+    public ComboSystem ComboSystem { get { return this.comboSystem; } }
 
     // Player STATS
     [SerializeField]
     private int player_id;
     public int Player_id { get { return this.player_id; } }
-
-    [SerializeField]
-    private float allowedTimeBetweenAttacks = 1.5f;
-    public float AllowedTimeBetweenAttacks { get { return this.allowedTimeBetweenAttacks; } }
 
     [SerializeField]
     private float stamina;
@@ -101,16 +97,16 @@ public class PlayerManager : MonoBehaviour
     {
         CreatePlayerInventory();
 
-        playerManagerExtensions.addAttackToCombo(comboSet1, atk1);
-        playerManagerExtensions.addAttackToCombo(comboSet1, atk2);
-        playerManagerExtensions.addAttackToCombo(comboSet1, atk3);
+        comboSystem.addAttackToCombo(comboSet1, atk1);
+        comboSystem.addAttackToCombo(comboSet1, atk2);
+        comboSystem.addAttackToCombo(comboSet1, atk3);
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            playerManagerExtensions.executeComboSet(comboSet1);
+            comboSystem.executeComboSet(comboSet1);
         }     
     }
 
@@ -140,7 +136,7 @@ public class PlayerManager : MonoBehaviour
         currentCombos.Add(currentCombo1Key, comboSet1);
         currentCombos.Add(currentCombo2Key, comboSet2);
 
-        playerManagerExtensions = GetComponent<PlayerManagerExtensions>();
+        comboSystem = GetComponent<ComboSystem>();
     }
 
 }

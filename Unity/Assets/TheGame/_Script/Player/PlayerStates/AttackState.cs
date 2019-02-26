@@ -4,41 +4,55 @@ using UnityEngine;
 
 public class AttackState : State
 {
+    // Time allowed to press the next button
     [SerializeField] 
     private float AllowedTimeBetweenButtons = 2.0f;
 
+    // variable to store te time when the button was pressed
     private float timeLastButtonPressed;
 
-    int index;
 
     WeaponDealDamage weaponDealDamage_;
+    // Change the constructor to have a combo inserted
     public AttackState(Player player) : base(player)
     {
 
     }
 
-    // Start is called before the first frame update
-    public override void Tick()// this work as the Update()
+
+    public override void Tick()
     {
         //if(!weaponDealDamage_.isAtacking())
         //    player.SetState(new MovementState(player));
 
-        if (Time.time - timeLastButtonPressed < AllowedTimeBetweenButtons)
+        // if the player can continue the combo, we give him the opportunity, if not, he returns to movement state
+        if (CanContinueCombo())
         {
             if (Input.GetKeyDown(KeyCode.N))
-            {
-                player.PlayerManager.PlayerManagerExtensions.executeComboSet(player.PlayerManager.ComboSet1);
-                timeLastButtonPressed = Time.time;
-            }
+                performAttack();
         }
         else
-        {
-            Debug.Log("Change to mov state");
             player.SetState(new MovementState(player));
-        }
+        
     }
 
-    public override void OnStateEnter()//MoementStatement start
+    // Boolean method to check if the player can continue with the combo
+    private bool CanContinueCombo()
+    {
+        if (Time.time - timeLastButtonPressed < AllowedTimeBetweenButtons)
+            return true;
+        else
+            return false;
+    }
+
+    // Method that throws the attack of the respective combo
+    private void performAttack()
+    {
+        player.PlayerManager.ComboSystem.executeComboSet(player.PlayerManager.ComboSet1);
+        timeLastButtonPressed = Time.time;
+    }
+
+    public override void OnStateEnter()
     {
         //weaponDealDamage_ = player.GetComponentInChildren<WeaponDealDamage>();
         //player.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
@@ -46,13 +60,14 @@ public class AttackState : State
 
         //weaponDealDamage_.Attack();
 
-        player.PlayerManager.PlayerManagerExtensions.executeComboSet(player.PlayerManager.ComboSet1);
-        timeLastButtonPressed = Time.time;
+        // We execute the first combo odf the queue
+        performAttack();
     }
 
     public override void OnStateExit()
     {
-        player.PlayerManager.PlayerManagerExtensions.restartCombo(player.PlayerManager.ComboSet1);
+        // When we exit from this state, we reset the combos
+        player.PlayerManager.ComboSystem.restartCombo(player.PlayerManager.ComboSet1);
     }
 
 }
