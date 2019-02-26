@@ -82,7 +82,17 @@ public class MovementState : State
 
         if (player.TestingWithKeyBoard || player.TestingWithPs4Controller || player.TestingWithXboxController)
         {
-
+            if (Input.GetButtonDown(controllerManager.dashInput))
+            {
+                if (Input.GetAxis(controllerManager.controllerVerticalInput) == 0 && Input.GetAxis(controllerManager.controllerHorizontalInput) == 0)
+                {//if the player is not movig the dash is backwards
+                    backwardsDash();
+                }
+                else
+                {//if not we calculate the dash direction on the direction of the player movement
+                    directionalDash();
+                }
+            }
 
         }
         else
