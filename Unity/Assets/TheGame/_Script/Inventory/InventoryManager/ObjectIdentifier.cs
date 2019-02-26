@@ -19,8 +19,21 @@ public class ObjectIdentifier : MonoBehaviour
     private int objectId;
     public int ObjectId { get { return this.objectId; } }
 
-
+    string itemType;
     
+    Helmet helmet;
+
+    Arm arm;
+
+    Chest chest;
+
+    Leg leg;
+
+    OneHandedWeapon oneHandedWeapon;
+
+    TwoHandedWeapon twoHandedWeapon;
+
+
     // I need it public to let the script know I'm referring to that specific inventory
     [SerializeField]
     private Inventory inventory;
@@ -31,12 +44,19 @@ public class ObjectIdentifier : MonoBehaviour
 
     public void ItemSelected()
     {
-        InventoryItems i = inventory.InventoryExtensions.FindInventoryItem(inventoryItem.ToString(), item.ToString(), objectId);
+        itemType = item.ToString();
 
-        if (inventoryItem.ToString() == "Attacks")
-            inventoryManager.updateCombo("ComboSet1", i);
-        else
-            inventoryManager.updateGear(inventoryItem.ToString(), item.ToString(), i);
+        if (itemType == "Helmets")
+            helmet = inventory.InventoryExtensions.FindHelmet(objectId);
+        else if (itemType == "Arms")
+            arm = inventory.InventoryExtensions.FindArm(objectId);
+     
+        //InventoryItems i = inventory.InventoryExtensions.FindInventoryItem(inventoryItem.ToString(), item.ToString(), objectId);
+
+        //if (inventoryItem.ToString() == "Attacks")
+        //    inventoryManager.updateCombo("ComboSet1", i);
+        //else
+        //    inventoryManager.updateGear(inventoryItem.ToString(), item.ToString(), i);
     }
 
 }

@@ -45,8 +45,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_id: 0
-  allowedTimeBetweenAttacks: 1.5
   stamina: 0
+--- !u!114 &692311827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667229570930043931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db185ea7c7543b849b205746ae764bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerHorizontalInput: 
+  controllerVerticalInput: 
 --- !u!114 &2045692220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,20 +91,6 @@ MonoBehaviour:
   testingWithXboxController: 0
   pNumber: 0
   isDS4: 
---- !u!114 &692311827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7667229570930043931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db185ea7c7543b849b205746ae764bd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controllerHorizontalInput: 
-  controllerVerticalInput: 
 --- !u!114 &609484404
 MonoBehaviour:
   m_ObjectHideFlags: 0

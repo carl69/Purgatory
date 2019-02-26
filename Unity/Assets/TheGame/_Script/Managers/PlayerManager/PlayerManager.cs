@@ -23,47 +23,47 @@ public class PlayerManager : MonoBehaviour
 
 
     // A dictionary with the CURRENT INVENTORY of the player
-    private Dictionary<string, Dictionary<string, InventoryItems>> currentInventory = new Dictionary<string, Dictionary<string, InventoryItems>>();
-    public Dictionary<string, Dictionary<string, InventoryItems>> CurrentInventory { get { return this.currentInventory; } }
+    //private Dictionary<string, Dictionary<string, InventoryItems>> currentInventory = new Dictionary<string, Dictionary<string, InventoryItems>>();
+    //public Dictionary<string, Dictionary<string, InventoryItems>> CurrentInventory { get { return this.currentInventory; } }
 
 
-    // A dictionary with the CURRENT EQUIPMENT of the player
-    private string currentEquipmentKey = "Equipment";
-    private Dictionary<string, InventoryItems> currentEquipment = new Dictionary<string, InventoryItems>();
-    public Dictionary<string, InventoryItems> CurrentEquipment { get { return this.currentEquipment; } }
+    //// A dictionary with the CURRENT EQUIPMENT of the player
+    //private string currentEquipmentKey = "Equipment";
+    //private Dictionary<string, InventoryItems> currentEquipment = new Dictionary<string, InventoryItems>();
+    //public Dictionary<string, InventoryItems> CurrentEquipment { get { return this.currentEquipment; } }
 
 
-    // A dictionary with the CURRENT WEAPONS of the player
-    private string currentWeaponsKey = "Weapons";
-    private Dictionary<string, InventoryItems> currentWeapons = new Dictionary<string, InventoryItems>();
-    public Dictionary<string, InventoryItems> CurrentWeapons { get { return this.currentWeapons; } }
+    //// A dictionary with the CURRENT WEAPONS of the player
+    //private string currentWeaponsKey = "Weapons";
+    //private Dictionary<string, InventoryItems> currentWeapons = new Dictionary<string, InventoryItems>();
+    //public Dictionary<string, InventoryItems> CurrentWeapons { get { return this.currentWeapons; } }
 
-    //----------------------------------------------------------------------------------
-    // A dictionary with the CURRENT ATTACKS of the player
-    private Dictionary<string, Queue<Weapon_Attack>> currentCombos = new Dictionary<string, Queue<Weapon_Attack>>();
-    public Dictionary<string, Queue<Weapon_Attack>> CurrentCombos { get { return this.currentCombos; } }
+    ////----------------------------------------------------------------------------------
+    //// A dictionary with the CURRENT ATTACKS of the player
+    //private Dictionary<string, Queue<Weapon_Attack>> currentCombos = new Dictionary<string, Queue<Weapon_Attack>>();
+    //public Dictionary<string, Queue<Weapon_Attack>> CurrentCombos { get { return this.currentCombos; } }
     //-----------------------------------------------------------------------------------
 
     // Inventory Items for the equipment
-    private string currentHelmetKey = "Helmets";
-    private InventoryItems helmet = new InventoryItems("Default", 0);
+    //private string currentHelmetKey = "Helmets";
+    //private InventoryItems helmet = new InventoryItems("Default", 0);
 
-    private string currentArmKey = "Arms";
-    private InventoryItems arm = new InventoryItems("Default", 0);
+    //private string currentArmKey = "Arms";
+    //private InventoryItems arm = new InventoryItems("Default", 0);
 
-    private string currentChestKey = "Chests";
-    private InventoryItems chest = new InventoryItems("Default", 0);
+    //private string currentChestKey = "Chests";
+    //private InventoryItems chest = new InventoryItems("Default", 0);
 
-    private string currentLegKey = "Legs";
-    private InventoryItems leg = new InventoryItems("Default", 0);
+    //private string currentLegKey = "Legs";
+    //private InventoryItems leg = new InventoryItems("Default", 0);
 
 
     // Inventory Items for the weapons
-    private string currentOneHandedWeaponKey = "OneHandedWeapons";
-    private InventoryItems oneHandedWeapon = new InventoryItems("Default", 0);
+    //private string currentOneHandedWeaponKey = "OneHandedWeapons";
+    //private InventoryItems oneHandedWeapon = new InventoryItems("Default", 0);
 
-    private string currentTwoHandedWeaponKey = "TwoHandedWeapons";
-    private InventoryItems twoHandedWeapon = new InventoryItems("Default", 0);
+    //private string currentTwoHandedWeaponKey = "TwoHandedWeapons";
+    //private InventoryItems twoHandedWeapon = new InventoryItems("Default", 0);
 
 
     // Inventory Items for Attacks
@@ -74,13 +74,37 @@ public class PlayerManager : MonoBehaviour
     //private InventoryItems SpellAttack = new InventoryItems("Default", 0);
 
 
+    // NEW PLAYERMANAGER STORING SYSTEM
+
+    // Current helmet
+    private Helmet currentHelmet;
+    public Helmet CurrentHelmet { get { return this.currentHelmet; } set { this.currentHelmet = value; } }
+
+    // Current arm
+    private Arm currentArm;
+    public Arm CurrentArm { get { return this.currentArm; } set { this.currentArm = value; } }
+
+    // Current chest
+    private Chest currentChest;
+    public Chest CurrentChest { get { return this.currentChest; } set { this.currentChest = value; } }
+
+    // Current leg
+    private Leg currentLeg;
+    public Leg CurrentLeg { get { return this.currentLeg; } set { this.currentLeg = value; } }
+
+    // Current OneHandedWeapons
+    private OneHandedWeapon currentOneHandedWeapon;
+    public OneHandedWeapon CurrentOneHandedWeapon { get { return this.currentOneHandedWeapon; } set { this.currentOneHandedWeapon = value; } }
+
+    // Current TwoHandedWeapons
+    private OneHandedWeapon currentTwoHandedWeapon;
+    public OneHandedWeapon CurrentTwoHandedWeapon { get { return this.currentTwoHandedWeapon; } set { this.currentTwoHandedWeapon = value; } }
+
     // A queue with the first combo set the player can perform
-    private string currentCombo1Key = "ComboSet1";
     private Queue<Weapon_Attack> comboSet1 = new Queue<Weapon_Attack>();
     public Queue<Weapon_Attack> ComboSet1 { get { return this.comboSet1; } }
 
     // A queue with the second combo set the player can perform
-    private string currentCombo2Key = "ComboSet2";
     private Queue<Weapon_Attack> comboSet2 = new Queue<Weapon_Attack>();
     public Queue<Weapon_Attack> ComboSet2 { get { return this.comboSet2; } }
 
@@ -102,39 +126,31 @@ public class PlayerManager : MonoBehaviour
         comboSystem.addAttackToCombo(comboSet1, atk3);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            comboSystem.executeComboSet(comboSet1);
-        }     
-    }
-
     private void CreatePlayerInventory()
     {
         // Adding each dictionary to the player's inventory
-        currentInventory.Add(currentEquipmentKey, currentEquipment);
-        currentInventory.Add(currentWeaponsKey, currentWeapons);
-        //currentInventory.Add(currentAttacksKey, currentAttacks);
+        //currentInventory.Add(currentEquipmentKey, currentEquipment);
+        //currentInventory.Add(currentWeaponsKey, currentWeapons);
+        ////currentInventory.Add(currentAttacksKey, currentAttacks);
 
 
-        // Adding the Equipment
-        currentEquipment.Add(currentHelmetKey, helmet);
-        currentEquipment.Add(currentArmKey, arm);
-        currentEquipment.Add(currentChestKey, chest);
-        currentEquipment.Add(currentLegKey, leg);
+        //// Adding the Equipment
+        //currentEquipment.Add(currentHelmetKey, helmet);
+        //currentEquipment.Add(currentArmKey, arm);
+        //currentEquipment.Add(currentChestKey, chest);
+        //currentEquipment.Add(currentLegKey, leg);
 
 
-        // Adding the wepaons
-        currentWeapons.Add(currentOneHandedWeaponKey, oneHandedWeapon);
-        currentWeapons.Add(currentTwoHandedWeaponKey, twoHandedWeapon);
+        //// Adding the wepaons
+        //currentWeapons.Add(currentOneHandedWeaponKey, oneHandedWeapon);
+        //currentWeapons.Add(currentTwoHandedWeaponKey, twoHandedWeapon);
 
 
-        // Adding the attacks
-        //currentAttacks.Add(currentWeaponAttacksKey, WeaponAttack);
-        //currentAttacks.Add(currentSpellAttacksKey, SpellAttack);
-        currentCombos.Add(currentCombo1Key, comboSet1);
-        currentCombos.Add(currentCombo2Key, comboSet2);
+        //// Adding the attacks
+        ////currentAttacks.Add(currentWeaponAttacksKey, WeaponAttack);
+        ////currentAttacks.Add(currentSpellAttacksKey, SpellAttack);
+        //currentCombos.Add(currentCombo1Key, comboSet1);
+        //currentCombos.Add(currentCombo2Key, comboSet2);
 
         comboSystem = GetComponent<ComboSystem>();
     }

@@ -9,9 +9,11 @@ public class InventoryManager : MonoBehaviour
     private PlayerManager playerManager;
 
 
-    public void updateGear(string inventoryItem, string listItem, InventoryItems item)
+    public void updateGear(string ItemType, InventoryItems item)
     {
-        playerManager.CurrentInventory[inventoryItem][listItem] = item;
+        //if(ItemType == "Helmets")
+
+        //playerManager.CurrentInventory[inventoryItem][listItem] = item;
     }
 
     public void updateCombo(string comboSet, InventoryItems attack)
@@ -28,5 +30,10 @@ public class InventoryManager : MonoBehaviour
             Debug.Log(playerManager.ComboSet1.Dequeue().Tag);
         }
             
+    }
+
+    public void updateHelmet(Helmet h)
+    {
+        playerManager.CurrentHelmet = h;
     }
 }
