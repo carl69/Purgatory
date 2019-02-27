@@ -30,8 +30,25 @@ public class AttackState : State
         // if the player can continue the combo, we give him the opportunity, if not, he returns to movement state
         if (CanContinueCombo())
         {
-            if (Input.GetKeyDown(KeyCode.N))
-                performAttack();
+
+            //for the final game = two controllers selected form the controller selection scene
+            try
+            {
+                if (hInput.GetButtonDown(player.InputManager.AttackInput1))
+                    performAttack();
+            }
+            catch { }
+
+
+            //for developing state of the game
+            try
+            {
+                if (Input.GetButtonDown(player.InputManager.AttackInput1))
+                    performAttack();
+            }
+            catch { }
+
+
         }
         else
             player.SetState(new MovementState(player));

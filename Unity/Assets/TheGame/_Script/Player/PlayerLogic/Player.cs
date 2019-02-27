@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     private PlayerManager playerManager;
     public PlayerManager PlayerManager { get { return this.playerManager; } }
 
+    private InputManager inputManager;
+    public InputManager InputManager { get { return this.inputManager; } }
 
     /// <testing_purposes>
     [SerializeField]
@@ -42,10 +44,16 @@ public class Player : MonoBehaviour
     public string isDS4 = "";
 
 
+    //public string attackInput1;
+    //public string attackInput2;
+
 
     private void Start()
     {
         playerManager = GetComponent<PlayerManager>();
+        inputManager = GetComponent<InputManager>();
+        //attackInput1 = GetComponent<InputManager>().returnAttack_1_InputString();
+        //attackInput2 = GetComponent<InputManager>().returnAttack_2_InputString();
 
         SetState(new MovementState(this));
     }
@@ -76,4 +84,14 @@ public class Player : MonoBehaviour
     {
         isDS4 = "PS";
     }
+
+    //public string returnAttack_1_InputString()
+    //{
+    //    return attackInput1;
+    //}
+
+    //public string returnAttack_2_InputString()
+    //{
+    //    return attackInput2;
+    //}
 }

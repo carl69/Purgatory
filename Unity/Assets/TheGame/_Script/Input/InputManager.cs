@@ -8,26 +8,55 @@ public class InputManager : MonoBehaviour
     public string controllerHorizontalInput;
     public string controllerVerticalInput;
 
-    public string dashInput;
-    public string attackInput1;
-    public string attackInput2;
+    //private string dashInput;
+    //public string DashInput { get { return this.dashInput; } }
+
+
+    private string dashInput;
+    public string DashInput { get { return this.dashInput; } }
+
+    private string attackInput1;
+    public string AttackInput1 { get { return this.attackInput1; } }
+
+    private string attackInput2;
+    public string AttackInput2 { get { return this.attackInput2; } }
+
 
     Player player;
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         player = GetComponent<Player>();
         axisInputManager();
         dashInputManager();
         attackInputManager();
     }
+    void Start()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
+    ////public string returnDashInputString()
+    ////{
+    ////    return dashInput;
+    ////}
+
+    ////public string returnAttack_1_InputString()
+    ////{
+    ////    return attackInput1;
+    ////}
+
+    ////public string returnAttack_2_InputString()
+    ////{
+    ////    return attackInput2;
+    ////}
 
     void dashInputManager()
     {
@@ -92,6 +121,5 @@ public class InputManager : MonoBehaviour
             controllerHorizontalInput = "Horizontal" + player.pNumber.ToString();
             controllerVerticalInput = "Vertical" + player.pNumber.ToString();
         }
-
     }
 }

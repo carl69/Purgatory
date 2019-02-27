@@ -63,7 +63,7 @@ public class MovementState : State
             //dashing
             dash_testing();
             //attacking
-            attack_testing();
+            attack_1_testing();
 
         }
         else
@@ -71,14 +71,11 @@ public class MovementState : State
             //dashing
             dash_game();
             //attacking
+            attack_1_game();
         }
 
-
-
-
-
-        if (Input.GetKeyDown(KeyCode.N))
-            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
+        //if (Input.GetKeyDown(KeyCode.N))
+        //    player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
 
         controller.Move(movementDirection * Time.deltaTime);
     }
@@ -88,7 +85,7 @@ public class MovementState : State
 
     void dash_testing()
     {
-        if (Input.GetButtonDown(controllerManager.dashInput))
+        if (Input.GetButtonDown(player.InputManager.DashInput))
         {
             if (Input.GetAxis(controllerManager.controllerVerticalInput) == 0 && Input.GetAxis(controllerManager.controllerHorizontalInput) == 0)
             {//if the player is not movig the dash is backwards
@@ -103,7 +100,7 @@ public class MovementState : State
 
     void dash_game()
     {
-        if (hInput.GetButtonDown(controllerManager.dashInput))
+        if (hInput.GetButtonDown(player.InputManager.DashInput))
         {
             if (Input.GetAxis(controllerManager.controllerVerticalInput) == 0 && Input.GetAxis(controllerManager.controllerHorizontalInput) == 0)
             {//if the player is not movig the dash is backwards
@@ -134,10 +131,28 @@ public class MovementState : State
         player.SetState(new DashState(player, dahsDirection));
     }
 
-    void attack_testing()
+    void attack_1_testing()
     {
-        if (Input.GetButtonDown(controllerManager.attackInput1))
+        if (Input.GetButtonDown(player.InputManager.AttackInput1))
+        {
             player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
+        }
+    }
+
+    void attack_2_testing()
+    {
+        //if (Input.GetButtonDown(player.InputManager.AttackInput1))
+        //{
+        //    player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
+        //}
+    }
+
+    void attack_1_game()
+    {
+        if (hInput.GetButtonDown(player.InputManager.AttackInput1))
+        {
+            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
+        }
     }
 
 }
