@@ -10,15 +10,29 @@ public class CameraController : MonoBehaviour
     public Player player;
     InputCameraManager cameraManager;
 
-    public float smoothLevel = 100;
+    float smoothLevel = 100;
 
 
-    public Vector3 offset;
+    float cameraOffsetX;
+    [Range(-5.0F, 5.0F)]
+    public float cameraOffsetY; // -0.08
+    [Range(0.5F, 5.0F)]
+    public float cameraOffsetZ; // 1.7
 
-    public float maxAngle = 45;
-    public float minAngle = 60;
+    float cameraOffsetZDeffault = 1.7f;
+    float cameraOffsetYDeffault = -0.08f;
 
+    public bool returnToDefault;
+
+    Vector3 offset;
+
+    float maxAngle = 45;
+    float minAngle = 60;
+
+    [Range(0.0f, 10.0f)]
     public float horizontalRotationSpeed = 2;
+
+    [Range(0.0f, 10.0f)]
     public float verticalRotationSpeed = 1;
 
 
@@ -38,11 +52,32 @@ public class CameraController : MonoBehaviour
         tagetParent = target.transform.parent;
 
         offset = target.position - transform.position;
+
+        //cameraOffsetX = offset.x;
+        //cameraOffsetY = offset.y;
+        //cameraOffsetZ = offset.z;
+
         pivot.transform.position = target.transform.position;
         pivot.transform.parent = target.transform;
 
         player = this.transform.parent.GetChild(this.transform.GetSiblingIndex() + 1).GetComponent<Player>();//we get acces to the player
         cameraManager = GetComponent<InputCameraManager>();
+    }
+
+
+
+
+    private void Update()
+    {
+
+        if (returnToDefault)
+        {
+            cameraOffsetY = cameraOffsetYDeffault;
+            cameraOffsetZ = cameraOffsetZDeffault;
+            returnToDefault = false;
+        }
+
+        offset = new Vector3(cameraOffsetX, cameraOffsetY,cameraOffsetZ);
     }
 
     // Update is called once per frame
