@@ -48,65 +48,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &568391325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7667229570930043931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f86b3061cfc0ee41a6e8787c486c795, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_id: 0
-  stamina: 0
---- !u!114 &692311827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7667229570930043931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db185ea7c7543b849b205746ae764bd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controllerHorizontalInput: 
-  controllerVerticalInput: 
---- !u!114 &2045692220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7667229570930043931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf37de79f0e92824eb5ab50892ab1d59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator_: {fileID: 584226550304985832}
---- !u!114 &1166514417770565127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7667229570930043931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 302f0b5efb3b9ce408a8fc8b0ef31c9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_Id: 49
-  testingWithKeyBoard: 1
-  testingWithPs4Controller: 0
-  testingWithXboxController: 0
-  pNumber: 0
-  isDS4: 
 --- !u!82 &1680291395
 AudioSource:
   m_ObjectHideFlags: 0
@@ -203,6 +144,65 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &568391325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667229570930043931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f86b3061cfc0ee41a6e8787c486c795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_id: 0
+  stamina: 0
+--- !u!114 &692311827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667229570930043931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db185ea7c7543b849b205746ae764bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerHorizontalInput: 
+  controllerVerticalInput: 
+--- !u!114 &2045692220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667229570930043931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf37de79f0e92824eb5ab50892ab1d59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator_: {fileID: 584226550304985832}
+--- !u!114 &1166514417770565127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667229570930043931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302f0b5efb3b9ce408a8fc8b0ef31c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_Id: 49
+  testingWithKeyBoard: 1
+  testingWithPs4Controller: 0
+  testingWithXboxController: 0
+  pNumber: 0
+  isDS4: 
 --- !u!114 &609484404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,13 +291,13 @@ PrefabInstance:
       objectReference: {fileID: 4074463963435811815}
     - target: {fileID: 5041472741597227281, guid: 2b769c3f104b2af4497249a8cc9420ec,
         type: 3}
-      propertyPath: horizontalRotationSpeed
-      value: 2
+      propertyPath: cameraOffsetY
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5041472741597227281, guid: 2b769c3f104b2af4497249a8cc9420ec,
         type: 3}
-      propertyPath: verticalRotationSpeed
-      value: 0.3
+      propertyPath: cameraOffsetZ
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 5041472741597227281, guid: 2b769c3f104b2af4497249a8cc9420ec,
         type: 3}
