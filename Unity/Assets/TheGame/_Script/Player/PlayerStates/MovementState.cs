@@ -135,7 +135,8 @@ public class MovementState : State
     {
         if (Input.GetButtonDown(player.InputManager.AttackInput1))
         {
-            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
+            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1, player.PlayerManager.ComboSet2, 
+                player.InputManager.AttackInput1));
         }
     }
 
@@ -151,7 +152,8 @@ public class MovementState : State
     {
         if (hInput.GetButtonDown(player.InputManager.AttackInput1))
         {
-            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1));
+            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1, player.PlayerManager.ComboSet2, 
+                player.InputManager.AttackInput1));
         }
     }
 

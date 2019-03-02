@@ -8,9 +8,7 @@ public class ComboSystem : MonoBehaviour
 
     [SerializeField]
     private Animator animator_;
-
-    private int comboNumber = -1;
-
+    
 
     private void Start()
     {
@@ -19,15 +17,13 @@ public class ComboSystem : MonoBehaviour
 
     public void addAttackToCombo(Queue<Weapon_Attack> comboSet, Weapon_Attack attack)
     {
+        attack.ComboNumber = comboSet.Count;
         comboSet.Enqueue(attack);
-        comboNumber++;
-        attack.ComboNumber = comboNumber;
     }
 
     public void removeAttackFromCombo(Queue<Weapon_Attack> comboSet)
     {
         comboSet.Dequeue();
-        comboNumber--;
     }
 
     public void executeComboSet(Queue<Weapon_Attack> comboSet)
@@ -37,6 +33,12 @@ public class ComboSystem : MonoBehaviour
         comboSet.Enqueue(comboAttack);
 
         Debug.Log(comboAttack.Tag + " executed");
+    }
+
+    public void advanceComboSet(Queue<Weapon_Attack> comboSet)
+    {
+        Weapon_Attack comboAttack = comboSet.Dequeue();
+        comboSet.Enqueue(comboAttack);
     }
 
     public void restartCombo(Queue<Weapon_Attack> comboSet)

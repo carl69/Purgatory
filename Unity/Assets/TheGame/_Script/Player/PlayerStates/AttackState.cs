@@ -11,14 +11,23 @@ public class AttackState : State
     // variable to store te time when the button was pressed
     private float timeLastButtonPressed;
 
-    // The comboSet te player is going to execute
+    // The combo set the player is going to execute
     private Queue<Weapon_Attack> combo;
+    
+    // The combo set the player could execute
+    private Queue<Weapon_Attack> auxCombo;
+
+    // The input to execute the combo
+    string input;
 
     WeaponDealDamage weaponDealDamage_;
-    // Change the constructor to have a combo inserted
-    public AttackState(Player player, Queue<Weapon_Attack> comboSet) : base(player)
+    
+    // Constructor changed to have the combos inserted
+    public AttackState(Player player, Queue<Weapon_Attack> comboSetToExecute, Queue<Weapon_Attack> auxComboSet, string inputToAttack) : base(player)
     {
-        combo = comboSet;
+        combo = comboSetToExecute;
+        auxCombo = auxComboSet;
+        input = inputToAttack;
     }
 
 
@@ -34,7 +43,7 @@ public class AttackState : State
             //for the final game = two controllers selected form the controller selection scene
             try
             {
-                if (hInput.GetButtonDown(player.InputManager.AttackInput1))
+                if (hInput.GetButtonDown(input))
                     performAttack();
             }
             catch { }
@@ -43,7 +52,7 @@ public class AttackState : State
             //for developing state of the game
             try
             {
-                if (Input.GetButtonDown(player.InputManager.AttackInput1))
+                if (Input.GetButtonDown(input))
                     performAttack();
             }
             catch { }
@@ -68,6 +77,7 @@ public class AttackState : State
     private void performAttack()
     {
         player.PlayerManager.ComboSystem.executeComboSet(combo);
+        player.PlayerManager.ComboSystem.advanceComboSet(auxCombo);
         timeLastButtonPressed = Time.time;
     }
 
