@@ -9,6 +9,8 @@ TagManager:
   - GM
   - Floor
   - AudioManager
+  - AaronTestTag
+  - Button
   layers:
   - Default
   - TransparentFX
