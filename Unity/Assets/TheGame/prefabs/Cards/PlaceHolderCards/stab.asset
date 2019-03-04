@@ -16,6 +16,8 @@ MonoBehaviour:
   Description: 
   ComboCost: 0
   StaminaCost: 0
-  CardType: 0
   CardSprite: {fileID: 0}
-  AttackAnimation: {fileID: 0}
+  AnimationTriggerName: 
+  pointOfNoReturn: 0
+  endOfAttack: 0
+  damage: 0
