@@ -11,7 +11,6 @@ TagManager:
   - AudioManager
   - AaronTestTag
   - Button
-  - ComboManager
   layers:
   - Default
   - TransparentFX

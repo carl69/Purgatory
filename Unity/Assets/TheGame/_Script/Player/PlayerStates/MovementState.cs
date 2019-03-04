@@ -43,13 +43,13 @@ public class MovementState : State
         // GONNA PUT PLACEHOLDER CODE HERE
         if (movementDirection.x != 0 || movementDirection.z != 0)
         {
-            player.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", true);
-            player.transform.GetChild(0).GetComponent<Animator>().SetFloat("WalkingSpeed", movementDirection.z);
+            player.GetComponent<Animator>().SetBool("Walking", true);
+            player.GetComponent<Animator>().SetFloat("WalkingSpeed", movementDirection.z);
 
         }
         else
         {
-            player.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", false);
+            player.GetComponent<Animator>().SetBool("Walking", false);
         }
 
         //////////if (Input.GetButtonDown("Atack_P" + player.Player_Id))
