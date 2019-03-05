@@ -27,14 +27,14 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
+
+    }
+    void Start()
+    {
         player = GetComponent<Player>();
         axisInputManager();
         dashInputManager();
         attackInputManager();
-    }
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
