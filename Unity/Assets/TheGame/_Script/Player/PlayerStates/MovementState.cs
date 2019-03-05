@@ -35,6 +35,7 @@ public class MovementState : State
     public override void Tick()//MovementStatement update
     {
         //horizontal plane movement (3D)
+        Debug.Log(player.PlayerManager.PlayerSpeed);
         movementDirection = (player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput) * player.PlayerManager.PlayerSpeed)
             + (player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput) * player.PlayerManager.PlayerSpeed);
         //vertical movement(3D) 
@@ -51,11 +52,6 @@ public class MovementState : State
         {
             player.GetComponent<Animator>().SetBool("Walking", false);
         }
-
-        //////////if (Input.GetButtonDown("Atack_P" + player.Player_Id))
-        //////////{
-        //////////    player.SetState(new AtackState(player));
-        //////////}
 
 
         if (player.TestingWithKeyBoard || player.TestingWithPs4Controller || player.TestingWithXboxController)
