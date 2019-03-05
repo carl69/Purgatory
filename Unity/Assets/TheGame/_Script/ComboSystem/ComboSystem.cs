@@ -5,14 +5,13 @@ using UnityEngine;
 public class ComboSystem : MonoBehaviour
 {
     private PlayerManager playerManager_;
-
-    [SerializeField]
     private Animator animator_;
     
 
     private void Start()
     {
         playerManager_ = GetComponent<PlayerManager>();
+        animator_ = GetComponent<Animator>();
     }
 
     public void addAttackToCombo(Queue<Weapon_Attack> comboSet, Weapon_Attack attack)
