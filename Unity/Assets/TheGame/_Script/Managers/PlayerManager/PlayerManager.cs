@@ -58,9 +58,12 @@ public class PlayerManager : MonoBehaviour
 
     //------------------------------------------------------
     // TESTING: CAN BE DELETED
-    Weapon_Attack atk1_1 = new Weapon_Attack("Attack 1_Combo1", 1, "Attack");
-    Weapon_Attack atk2_1 = new Weapon_Attack("Attack 2_Combo1", 2, "Attack");
-    Weapon_Attack atk3_1 = new Weapon_Attack("Attack 3_Combo1", 3, "Attack");
+    Weapon_Attack atk1_1 = new Weapon_Attack("Attack 1_Combo1", 1, "Sure Strike");
+    Weapon_Attack atk2_1 = new Weapon_Attack("Attack 2_Combo1", 2, "Sloppy Stab");
+    Weapon_Attack atk3_1 = new Weapon_Attack("Attack 3_Combo1", 3, "Lunge");
+    Weapon_Attack atk4_1 = new Weapon_Attack("Attack 2_Combo1", 4, "Fisted Uppercut");
+    Weapon_Attack atk5_1 = new Weapon_Attack("Attack 3_Combo1", 5, "Fervent Anger");
+
     //------------------------------------------------------
 
     //------------------------------------------------------
@@ -91,13 +94,15 @@ public class PlayerManager : MonoBehaviour
     {
         CreatePlayerInventory();
 
-        //comboSystem.addAttackToCombo(comboSet1, atk1_1);
-        //comboSystem.addAttackToCombo(comboSet1, atk2_1);
-        //comboSystem.addAttackToCombo(comboSet1, atk3_1);
+        comboSystem.addAttackToCombo(comboSet1, atk1_1);
+        comboSystem.addAttackToCombo(comboSet1, atk2_1);
+        comboSystem.addAttackToCombo(comboSet1, atk3_1);
+        comboSystem.addAttackToCombo(comboSet1, atk4_1);
+        comboSystem.addAttackToCombo(comboSet1, atk5_1);
 
-        //comboSystem.addAttackToCombo(comboSet2, atk1_2);
-        //comboSystem.addAttackToCombo(comboSet2, atk2_2);
-        //comboSystem.addAttackToCombo(comboSet2, atk3_2);
+        comboSystem.addAttackToCombo(comboSet2, atk1_2);
+        comboSystem.addAttackToCombo(comboSet2, atk2_2);
+        comboSystem.addAttackToCombo(comboSet2, atk3_2);
     }
 
     private void CreatePlayerInventory()
