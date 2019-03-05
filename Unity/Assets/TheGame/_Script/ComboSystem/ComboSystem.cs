@@ -16,6 +16,7 @@ public class ComboSystem : MonoBehaviour
 
     public void addAttackToCombo(Queue<Weapon_Attack> comboSet, Weapon_Attack attack)
     {
+        Debug.Log("Adding attack");
         if (comboSet.Count < 5)
         {
             attack.ComboNumber = comboSet.Count;

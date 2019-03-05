@@ -80,7 +80,12 @@ public class PlayerManager : MonoBehaviour
     private int playerSpeed;
     public float PlayerSpeed { get { return this.playerSpeed; } }
 
+    public static PlayerManager instance;
 
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {

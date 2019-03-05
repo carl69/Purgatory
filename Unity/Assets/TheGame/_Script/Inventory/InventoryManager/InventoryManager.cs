@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y))
         {
             //Debug.Log(playerManager.ComboSet1.Dequeue().Tag);
-            Debug.Log(playerManager.ComboSet1.Peek().WeaponAttackStats.Weapon_Power);
+            Debug.Log(playerManager.ComboSet1.Dequeue().Tag);
         }
             
     }
