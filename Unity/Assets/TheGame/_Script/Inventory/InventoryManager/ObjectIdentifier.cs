@@ -83,8 +83,6 @@ public class ObjectIdentifier : MonoBehaviour
             twoHandedWeapon = inventory.InventoryExtensions.FindTwoHandedWeapon(objectId);
             inventoryManager.updatePlayerTwoHandedWeapon(twoHandedWeapon);
         }
-
-        Debug.Log("Item added!");
     }
 
 }
