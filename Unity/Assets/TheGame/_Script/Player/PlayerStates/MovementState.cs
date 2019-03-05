@@ -35,8 +35,8 @@ public class MovementState : State
     public override void Tick()//MovementStatement update
     {
         //horizontal plane movement (3D)
-        movementDirection = (player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput) * player.PlayerManager.playerSpeed)
-            + (player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput) * player.PlayerManager.playerSpeed);
+        movementDirection = (player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput) * player.PlayerManager.PlayerSpeed)
+            + (player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput) * player.PlayerManager.PlayerSpeed);
         //vertical movement(3D) 
         movementDirection.y = movementDirection.y + gravityScale * (Physics.gravity.y * Time.deltaTime);
 

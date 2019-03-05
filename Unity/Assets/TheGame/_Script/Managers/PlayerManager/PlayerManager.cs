@@ -128,8 +128,11 @@ public class PlayerManager : MonoBehaviour
     private int dashDistance;
     public float DashDistance { get { return this.dashDistance; } }
 
+    [SerializeField]
     [Range(1.0f, 20.0f)]
-    public int playerSpeed;
+    private int playerSpeed;
+    public float PlayerSpeed { get { return this.playerSpeed; } }
+
 
 
     private void Start()
