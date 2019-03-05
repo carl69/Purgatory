@@ -123,6 +123,14 @@ public class PlayerManager : MonoBehaviour
     Weapon_Attack atk3_2 = new Weapon_Attack("Attack 3_Combo3", 3, "Attack");
     //------------------------------------------------------
 
+    [SerializeField]
+    [Range(1.0f, 20.0f)]
+    private int dashDistance;
+    public float DashDistance { get { return this.dashDistance; } }
+
+    [Range(1.0f, 20.0f)]
+    public int playerSpeed;
+
 
     private void Start()
     {

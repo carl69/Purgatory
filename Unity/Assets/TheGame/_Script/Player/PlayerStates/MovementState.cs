@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementState : State
 {
 
-    public float playerMovementState = 5;
+    public float playerSpeed = 5;
     float gravityScale = 100;
 
     /// <summary>
@@ -35,8 +35,8 @@ public class MovementState : State
     public override void Tick()//MovementStatement update
     {
         //horizontal plane movement (3D)
-        movementDirection = (player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput) * playerMovementState) 
-            + (player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput) * playerMovementState);
+        movementDirection = (player.transform.forward * Input.GetAxis(controllerManager.controllerVerticalInput) * player.PlayerManager.playerSpeed)
+            + (player.transform.right * Input.GetAxis(controllerManager.controllerHorizontalInput) * player.PlayerManager.playerSpeed);
         //vertical movement(3D) 
         movementDirection.y = movementDirection.y + gravityScale * (Physics.gravity.y * Time.deltaTime);
 
@@ -135,7 +135,7 @@ public class MovementState : State
     {
         if (Input.GetButtonDown(player.InputManager.AttackInput1))
         {
-            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1, player.PlayerManager.ComboSet2, 
+            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1, player.PlayerManager.ComboSet2,
                 player.InputManager.AttackInput1));
         }
     }
@@ -152,9 +152,10 @@ public class MovementState : State
     {
         if (hInput.GetButtonDown(player.InputManager.AttackInput1))
         {
-            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1, player.PlayerManager.ComboSet2, 
+            player.SetState(new AttackState(player, player.PlayerManager.ComboSet1, player.PlayerManager.ComboSet2,
                 player.InputManager.AttackInput1));
         }
     }
+
 
 }
