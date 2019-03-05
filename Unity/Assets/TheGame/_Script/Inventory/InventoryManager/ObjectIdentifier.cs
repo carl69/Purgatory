@@ -84,12 +84,7 @@ public class ObjectIdentifier : MonoBehaviour
             inventoryManager.updatePlayerTwoHandedWeapon(twoHandedWeapon);
         }
 
-        //InventoryItems i = inventory.InventoryExtensions.FindInventoryItem(inventoryItem.ToString(), item.ToString(), objectId);
-
-        //if (inventoryItem.ToString() == "Attacks")
-        //    inventoryManager.updateCombo("ComboSet1", i);
-        //else
-        //    inventoryManager.updateGear(inventoryItem.ToString(), item.ToString(), i);
+        Debug.Log("Item added!");
     }
 
 }

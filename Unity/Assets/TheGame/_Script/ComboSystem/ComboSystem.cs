@@ -16,8 +16,12 @@ public class ComboSystem : MonoBehaviour
 
     public void addAttackToCombo(Queue<Weapon_Attack> comboSet, Weapon_Attack attack)
     {
-        attack.ComboNumber = comboSet.Count;
-        comboSet.Enqueue(attack);
+        if (comboSet.Count < 5)
+        {
+            attack.ComboNumber = comboSet.Count;
+            comboSet.Enqueue(attack);
+        }
+        
     }
 
     public void removeAttackFromCombo(Queue<Weapon_Attack> comboSet)

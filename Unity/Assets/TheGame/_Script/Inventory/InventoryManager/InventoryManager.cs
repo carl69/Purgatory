@@ -68,7 +68,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Method to add one attack to a comboSet
-    public void updatePlayerComboSet(Weapon_Attack a)
+    public void updatePlayerComboSet(/*Queue<Weapon_Attack> comboSet,*/ Weapon_Attack a)
     {
         playerManager.ComboSystem.addAttackToCombo(playerManager.ComboSet1, a);
     }
