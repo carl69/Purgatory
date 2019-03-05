@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1006303635}
-  m_IndirectSpecularColor: {r: 0.441732, g: 0.2514944, b: 0.16580123, a: 1}
+  m_IndirectSpecularColor: {r: 0.44174328, g: 0.25150505, b: 0.1657846, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -426,11 +426,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1474879975583442488, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerSystem
-      objectReference: {fileID: 0}
     - target: {fileID: 6512038009061035647, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -486,6 +481,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1474879975583442488, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerSystem
+      objectReference: {fileID: 0}
     - target: {fileID: 9042541803799483442, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: invertedY
@@ -500,11 +500,6 @@ PrefabInstance:
         type: 3}
       propertyPath: horizontalRotationSpeed
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1174502400704459158, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7667229570930043930, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
@@ -525,13 +520,23 @@ PrefabInstance:
       propertyPath: animator_
       value: 
       objectReference: {fileID: 1776905418}
+    - target: {fileID: 1680291395, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2660018524565706215, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1680291395, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
-      propertyPath: BypassReverbZones
+    - target: {fileID: 1174502400704459158, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968790221914687023, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
