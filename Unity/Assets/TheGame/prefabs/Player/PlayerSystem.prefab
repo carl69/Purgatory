@@ -170,6 +170,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraT: {fileID: 4074463963435811815}
   cameraTHeight: 0
+--- !u!114 &692311831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667229570930043931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce81b69e63421754f8e13c6b192410ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 5164974674314753076}
+  maxHealth: 100
+  damaged: 0
 --- !u!114 &1166514417770565127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,21 +204,6 @@ MonoBehaviour:
   testingWithXboxController: 0
   pNumber: 0
   isDS4: 
---- !u!114 &692311831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7667229570930043931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce81b69e63421754f8e13c6b192410ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 5164974674314753076}
-  maxHealth: 100
-  damaged: 0
 --- !u!114 &609484404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 8856890850004661705, guid: 31bbed80c9d4f584c91039cbb4614d5a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.18
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 8856890850004661705, guid: 31bbed80c9d4f584c91039cbb4614d5a,
         type: 3}
