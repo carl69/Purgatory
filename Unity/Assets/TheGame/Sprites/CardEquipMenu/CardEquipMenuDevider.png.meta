@@ -1,7 +1,9 @@
 fileFormatVersion: 2
 guid: 47e965ab7404be94bb6301117e5ae2de
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: CardEquipMenuDevider_0
+    21300002: CardEquipMenuDevider_1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -82,11 +84,51 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: CardEquipMenuDevider_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19.5
+        width: 1920
+        height: 19.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91564aeffce314d47b885750a7bbb42d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CardEquipMenuDevider_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.5
+        width: 1920
+        height: 19.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86b5212a6d5a2041b4875d979b4dd42
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2572118d99258f34a88bf0b3999bfb24
     vertices: []
     indices: 
     edges: []
