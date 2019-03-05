@@ -25,32 +25,39 @@ MonoBehaviour:
     legs: []
   attacks:
     weaponAttacks:
-    - tag: 
-      id: 0
+    - tag: Sure Strike
+      id: 1
       image: {fileID: 0}
       description: 
-      attackAnimation: 
+      attackAnimation: Sure Strike
       weaponAttackStats:
         weapon_Power: 0
-    - tag: 
-      id: 0
+    - tag: Sloppy Stab
+      id: 2
       image: {fileID: 0}
       description: 
-      attackAnimation: 
+      attackAnimation: Sloppy Stab
       weaponAttackStats:
         weapon_Power: 0
-    - tag: 
-      id: 0
+    - tag: Lunge
+      id: 3
       image: {fileID: 0}
       description: 
-      attackAnimation: 
+      attackAnimation: Lunge
       weaponAttackStats:
         weapon_Power: 0
-    - tag: 
+    - tag: Fisted Uppercut
       id: 0
       image: {fileID: 0}
       description: 
-      attackAnimation: 
+      attackAnimation: Fisted Uppercut
+      weaponAttackStats:
+        weapon_Power: 0
+    - tag: Fervent Anger
+      id: 5
+      image: {fileID: 0}
+      description: 
+      attackAnimation: Fervent Anger
       weaponAttackStats:
         weapon_Power: 0
     spellAttacks: []
