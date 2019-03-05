@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private State currentState;
 
     // Player Manager with the current items of the player
+    [SerializeField]
     private PlayerManager playerManager;
     public PlayerManager PlayerManager { get { return this.playerManager; } }
 
@@ -50,7 +51,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        playerManager = GetComponent<PlayerManager>();
         inputManager = GetComponent<InputManager>();
         //attackInput1 = GetComponent<InputManager>().returnAttack_1_InputString();
         //attackInput2 = GetComponent<InputManager>().returnAttack_2_InputString();
