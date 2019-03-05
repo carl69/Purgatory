@@ -2365,6 +2365,15 @@ PrefabInstance:
       propertyPath: animator_
       value: 
       objectReference: {fileID: 1776905418}
+    - target: {fileID: 2660018524565706215, guid: 4936fc5338b1e2a47a6ac97770b10fa8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680291395, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4936fc5338b1e2a47a6ac97770b10fa8, type: 3}
 --- !u!1 &502476651
