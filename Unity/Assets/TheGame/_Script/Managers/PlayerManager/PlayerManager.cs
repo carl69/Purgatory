@@ -21,59 +21,6 @@ public class PlayerManager : MonoBehaviour
     private Player player;
     public Player Player { get { return this.player; } }
 
-
-    // A dictionary with the CURRENT INVENTORY of the player
-    //private Dictionary<string, Dictionary<string, InventoryItems>> currentInventory = new Dictionary<string, Dictionary<string, InventoryItems>>();
-    //public Dictionary<string, Dictionary<string, InventoryItems>> CurrentInventory { get { return this.currentInventory; } }
-
-
-    //// A dictionary with the CURRENT EQUIPMENT of the player
-    //private string currentEquipmentKey = "Equipment";
-    //private Dictionary<string, InventoryItems> currentEquipment = new Dictionary<string, InventoryItems>();
-    //public Dictionary<string, InventoryItems> CurrentEquipment { get { return this.currentEquipment; } }
-
-
-    //// A dictionary with the CURRENT WEAPONS of the player
-    //private string currentWeaponsKey = "Weapons";
-    //private Dictionary<string, InventoryItems> currentWeapons = new Dictionary<string, InventoryItems>();
-    //public Dictionary<string, InventoryItems> CurrentWeapons { get { return this.currentWeapons; } }
-
-    ////----------------------------------------------------------------------------------
-    //// A dictionary with the CURRENT ATTACKS of the player
-    //private Dictionary<string, Queue<Weapon_Attack>> currentCombos = new Dictionary<string, Queue<Weapon_Attack>>();
-    //public Dictionary<string, Queue<Weapon_Attack>> CurrentCombos { get { return this.currentCombos; } }
-    //-----------------------------------------------------------------------------------
-
-    // Inventory Items for the equipment
-    //private string currentHelmetKey = "Helmets";
-    //private InventoryItems helmet = new InventoryItems("Default", 0);
-
-    //private string currentArmKey = "Arms";
-    //private InventoryItems arm = new InventoryItems("Default", 0);
-
-    //private string currentChestKey = "Chests";
-    //private InventoryItems chest = new InventoryItems("Default", 0);
-
-    //private string currentLegKey = "Legs";
-    //private InventoryItems leg = new InventoryItems("Default", 0);
-
-
-    // Inventory Items for the weapons
-    //private string currentOneHandedWeaponKey = "OneHandedWeapons";
-    //private InventoryItems oneHandedWeapon = new InventoryItems("Default", 0);
-
-    //private string currentTwoHandedWeaponKey = "TwoHandedWeapons";
-    //private InventoryItems twoHandedWeapon = new InventoryItems("Default", 0);
-
-
-    // Inventory Items for Attacks
-    //private string currentWeaponAttacksKey = "WeaponAttacks";
-    //private InventoryItems WeaponAttack = new InventoryItems("Default", 0);
-
-    //private string currentSpellAttacksKey = "SpellAttacks";
-    //private InventoryItems SpellAttack = new InventoryItems("Default", 0);
-
-
     // NEW PLAYERMANAGER STORING SYSTEM
 
     // Current helmet
@@ -150,30 +97,6 @@ public class PlayerManager : MonoBehaviour
 
     private void CreatePlayerInventory()
     {
-        // Adding each dictionary to the player's inventory
-        //currentInventory.Add(currentEquipmentKey, currentEquipment);
-        //currentInventory.Add(currentWeaponsKey, currentWeapons);
-        ////currentInventory.Add(currentAttacksKey, currentAttacks);
-
-
-        //// Adding the Equipment
-        //currentEquipment.Add(currentHelmetKey, helmet);
-        //currentEquipment.Add(currentArmKey, arm);
-        //currentEquipment.Add(currentChestKey, chest);
-        //currentEquipment.Add(currentLegKey, leg);
-
-
-        //// Adding the wepaons
-        //currentWeapons.Add(currentOneHandedWeaponKey, oneHandedWeapon);
-        //currentWeapons.Add(currentTwoHandedWeaponKey, twoHandedWeapon);
-
-
-        //// Adding the attacks
-        ////currentAttacks.Add(currentWeaponAttacksKey, WeaponAttack);
-        ////currentAttacks.Add(currentSpellAttacksKey, SpellAttack);
-        //currentCombos.Add(currentCombo1Key, comboSet1);
-        //currentCombos.Add(currentCombo2Key, comboSet2);
-
         comboSystem = GetComponent<ComboSystem>();
     }
 

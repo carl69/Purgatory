@@ -50,7 +50,6 @@ public class InventoryExtensions : MonoBehaviour
     // Method to find an specific Weapon Attack
     public Weapon_Attack FindWeaponAttack(int weaponAttackId)
     {
-        Debug.Log("Hi");
         Weapon_Attack attack = (Weapon_Attack) FindInventoryItem(inv.AttacksKey, inv.Attacks.WeaponAttacksKey, weaponAttackId);
         return attack;
     }

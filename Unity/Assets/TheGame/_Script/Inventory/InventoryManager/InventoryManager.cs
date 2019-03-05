@@ -9,13 +9,6 @@ public class InventoryManager : MonoBehaviour
     private PlayerManager playerManager;
 
 
-    public void updateGear(string ItemType, InventoryItems item)
-    {
-        //if(ItemType == "Helmets")
-
-        //playerManager.CurrentInventory[inventoryItem][listItem] = item;
-    }
-
     public void updateCombo(string comboSet, InventoryItems attack)
     {
         playerManager.ComboSystem.addAttackToCombo(playerManager.ComboSet1,(Weapon_Attack) attack);
