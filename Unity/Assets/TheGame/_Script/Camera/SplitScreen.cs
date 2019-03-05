@@ -52,14 +52,13 @@ public class SplitScreen : MonoBehaviour
     {
         if (vertical) // it changes the offset of the cameras depending on the offset selected;
         {
-
-            player1Camera.rect = new Rect(0, 0, 0.5f, 1);
-            player2Camera.rect = new Rect(0.5f, 0, 0.5f, 1);
+            player1Camera.rect = new Rect(0,0.5f,1,0.5f);
+            player2Camera.rect = new Rect(0, 0.0f, 1, 0.5f);
         }
         else
         {
-            player1Camera.rect = new Rect(0, 0.5f, 1, 0.5f);
-            player2Camera.rect = new Rect(0, 0.0f, 1, 0.5f);
+            player1Camera.rect = new Rect(0, 0,0.5f, 1);
+            player2Camera.rect = new Rect(0.5f, 0, 0.5f, 1);
         }
     }
 

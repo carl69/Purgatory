@@ -7,13 +7,20 @@ public class InventoryManager : MonoBehaviour
 
     [SerializeField]
     private PlayerManager playerManager;
-    public PlayerManager PlayerManager { get { return this.playerManager; } }
 
+
+    public void updateCombo(string comboSet, InventoryItems attack)
+    {
+        playerManager.ComboSystem.addAttackToCombo(playerManager.ComboSet1,(Weapon_Attack) attack);
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Y))
+        {
+            //Debug.Log(playerManager.ComboSet1.Dequeue().Tag);
             Debug.Log(playerManager.ComboSet1.Dequeue().Tag);
+        }
             
     }
 
@@ -54,8 +61,8 @@ public class InventoryManager : MonoBehaviour
     }
 
     // Method to add one attack to a comboSet
-    public void updatePlayerComboSet(Queue<Weapon_Attack> comboSet, Weapon_Attack a)
+    public void updatePlayerComboSet(/*Queue<Weapon_Attack> comboSet,*/ Weapon_Attack a)
     {
-        playerManager.ComboSystem.addAttackToCombo(comboSet, a);
+        playerManager.ComboSystem.addAttackToCombo(playerManager.ComboSet1, a);
     }
 }

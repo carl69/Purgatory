@@ -44,7 +44,7 @@ public class ObjectIdentifier : MonoBehaviour
     private InventoryManager inventoryManager;
 
 
-    public void EquipmentSelected()
+    public void ItemSelected()
     {
         itemType = item.ToString();
 
@@ -67,34 +67,24 @@ public class ObjectIdentifier : MonoBehaviour
         {
             leg = inventory.InventoryExtensions.FindLeg(objectId);
             inventoryManager.updatePlayerLeg(leg);
-        }                          
-    }
-
-    public void AttackSelected()
-    {
-        itemType = item.ToString();
-
-        if (itemType == TypeOfItem.WeaponAttacks.ToString())
+        }           
+        else if (itemType == TypeOfItem.WeaponAttacks.ToString())
         {
             attack = inventory.InventoryExtensions.FindWeaponAttack(objectId);
-            inventoryManager.updatePlayerComboSet(inventoryManager.PlayerManager.ComboSet1, attack);
-        }
-    }
-
-    public void WeaponSelected()
-    {
-        itemType = item.ToString();
-
-        if (itemType == TypeOfItem.OneHandedWeapons.ToString())
+            inventoryManager.updatePlayerComboSet(attack);
+        }            
+        else if (itemType == TypeOfItem.OneHandedWeapons.ToString())
         {
             oneHandedWeapon = inventory.InventoryExtensions.FindOneHandedWeapon(objectId);
             inventoryManager.updatePlayerOneHandedWeapon(oneHandedWeapon);
-        }
+        }           
         else if (itemType == TypeOfItem.TwoHandedWeapons.ToString())
         {
             twoHandedWeapon = inventory.InventoryExtensions.FindTwoHandedWeapon(objectId);
             inventoryManager.updatePlayerTwoHandedWeapon(twoHandedWeapon);
         }
+
+        Debug.Log("Item added!");
     }
 
 }
